@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-13",
+  "scope": "Shared CSV Trends period and scrolling fix; frontend only",
+  "behavior": {
+    "controls": "Sidebar/mobile filter sheet: shared year range plus final month",
+    "history": "Ends at selected final month",
+    "population": "Uses the same final month and same-year denominator; monthly rows stop at cutoff",
+    "presentation": "Ranking sort remains local; geographic source retains its independent controls"
+  },
+  "scroll": {
+    "cause": "Absolutely positioned screen-reader captions escaped an unpositioned scroll container and expanded the desktop document",
+    "fix": "Position Trends scroll container relative; preserve accessible captions and native compact-layout page scrolling",
+    "before": {
+      "viewport": 900,
+      "document": 2407,
+      "scrollY": 1507
+    },
+    "after": {
+      "viewport": 900,
+      "document": 900,
+      "scrollY": 0
+    },
+    "regression": "Desktop browser test failed on the preceding build and passed after the CSS fix"
+  },
+  "validation": {
+    "unit": {
+      "passed": 134,
+      "failed": 0,
+      "command": "npm test"
+    },
+    "browser": {
+      "passed": 36,
+      "failed": 0,
+      "projects": [
+        "desktop",
+        "mobile"
+      ],
+      "command": "npm run test:e2e:built"
+    },
+    "live": {
+      "passed": 2,
+      "widths": [
+        1440,
+        390
+      ],
+      "source": "existing official local imports",
+      "sharedMonth": "August 2026",
+      "reports": 70279,
+      "javascriptErrors": 0,
+      "desktopBlankTail": false
+    },
+    "build": "npm run build passed (TypeScript + Vite)",
+    "lint": "npm run lint passed",
+    "format": "npm run format:check passed"
+  },
+  "requirementEvidence": {
+    "sharedDateState": "sharedTrendPeriod tests; App.test.tsx: defaults to Map and preserves geographic filters when switching to Trends and back",
+    "monthCutoff": "PopulationComparison.test.tsx: limits monthly rows to the shared closing month",
+    "mobileSynchronization": "population comparison preserves counts, filters and source separation",
+    "scrollRegression": "trend scrolling stays within its panel without a blank document tail"
+  },
+  "skills": {
+    "shadcn": "Inspected project configuration and slider/field documentation; reused installed Base UI slider and native accessible controls",
+    "react": "Derived one shared period rather than duplicate local state; cancellation and scalar request keys retained",
+    "webGuidelines": "Grouped controls, accessible labels/help text, scroll containment, mobile overflow checked",
+    "viewTransitions": "Audited React 19.3 support and patterns; shared persistent controls/background data refresh do not require navigation or list animations"
+  },
+  "runtime": "Local web container rebuilt and running at http://localhost:5173/tendencias",
+  "untouched": [
+    "Backend contracts",
+    "Database schema and imported statistics",
+    "Supabase",
+    "Production and cloud infrastructure"
+  ]
+}
