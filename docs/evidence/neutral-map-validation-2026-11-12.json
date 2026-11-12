@@ -1,0 +1,18 @@
+{
+  "allTogglesOffKeepsNeutralMap": true,
+  "officialDepartments": 25,
+  "statisticalFillHidden": true,
+  "statisticalLegendHidden": true,
+  "restoresStatisticalColors": true,
+  "geographicFocusAndLimitsPreserved": true,
+  "streetFailureKeepsFallback": true,
+  "mobileOverflow": false,
+  "pageErrors": [],
+  "date": "2026-11-12",
+  "frontendTestsPassed": 97,
+  "frontendProductionBuildAndTypeScript": true,
+  "backendChanged": false,
+  "schemaChanged": false,
+  "productionChanged": false,
+  "implementation": "Existing neutral INEI surfaces and outlines remain when optional statistical coloring is off and the street source is unavailable. Statistical fills, count legend and popups stay disabled."
+}

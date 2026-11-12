@@ -1,0 +1,37 @@
+{
+  "nationalLimit": [
+    -90.05950360695014,
+    -19.710314130801915,
+    -59.92097039304984,
+    1.399276346026414
+  ],
+  "minimumZoom": 4.552730385875645,
+  "escapeClamped": true,
+  "cardinalPansClamped": true,
+  "departmentFocusPreserved": true,
+  "mobileLimit": [
+    -85.53029771784085,
+    -20.982737831476506,
+    -64.45017628215913,
+    2.7554854266950906
+  ],
+  "mobileOverflow": false,
+  "legendMaxDiameter": {
+    "zoom10": 43.2,
+    "zoom12": 57.6,
+    "zoom15": 82.8,
+    "zoom18": 95.4
+  },
+  "diameterCapped": true,
+  "zoomKeptCountsAndCells": true,
+  "zoomMadeNoExtraRequests": true,
+  "pageErrors": [],
+  "mapErrors": [],
+  "date": "2026-11-12",
+  "frontendTestsPassed": 93,
+  "frontendProductionBuildAndTypeScript": true,
+  "backendChanged": false,
+  "databaseChanged": false,
+  "productionChanged": false,
+  "neighboringCountries": "Basemap unchanged; visible in national screenshot. Limits constrain the camera only."
+}
