@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-12",
+  "scope": "Phase 3 first increment: private source catalogue and durable ingestion attempts",
+  "database": {
+    "engine": "PostgreSQL 17 / PostGIS 3.5",
+    "environment": "disposable Docker container",
+    "application_or_production_database_modified": false
+  },
+  "checks": {
+    "python_local": {
+      "version": "3.14",
+      "tests": 69,
+      "skipped": 0,
+      "result": "passed",
+      "command": "CTC_TEST_DATABASE_URL=<isolated test DSN> python -m unittest discover -s ingestion/tests -q"
+    },
+    "python_etl_image": {
+      "version": "3.13",
+      "tests": 69,
+      "skipped": 0,
+      "result": "passed",
+      "image": "chapa-tu-choro-etl:latest"
+    },
+    "backend": {
+      "configuration": "Release",
+      "build": "passed",
+      "tests": 143,
+      "skipped": 0,
+      "result": "passed",
+      "environment": "SDK 10 Docker container with isolated PostGIS"
+    },
+    "compose_etl_config": "passed",
+    "compose_etl_image_build": "passed",
+    "lambda_package": {
+      "command": "bash scripts/package-ingestion.sh",
+      "runtime": "python3.13",
+      "architecture": "x86_64",
+      "build": "passed",
+      "zip_integrity": "passed",
+      "current_production_modules_match": true,
+      "test_modules_excluded": true
+    },
+    "python_compileall": "passed",
+    "bootstrap_and_upgrade_migration_match": true
+  },
+  "coverage": [
+    "migration reruns preserve catalogue edits",
+    "missing migration fails before extraction",
+    "RLS denies non-owner reads even with SELECT grants",
+    "disabled/browser sources rejected",
+    "durable failure without exception payload retention",
+    "data and success receipts roll back together",
+    "post-commit exception does not relabel success",
+    "distinct attempt IDs and unchanged/unavailable outcomes",
+    "Lambda shared statistics runner import/repeat",
+    "concentration source/month import/repeat/unavailable/failure",
+    "manual imports tracked; check-only untracked",
+    "read-only catalogue/run CLI with source receipts and limit validation"
+  ],
+  "official_provider_requests": false,
+  "frontend_modified": false,
+  "deployment_performed": false,
+  "limitations": [
+    "Existing databases need migration 005 before updated jobs.",
+    "AWS Lambda execution and Supabase target role policies were not verified remotely.",
+    "Hard termination may leave running attempts; no heartbeat or automatic reconciliation.",
+    "Low-level importer calls without a tracker are not execution-history entry points.",
+    "No past failed attempts are fabricated from legacy successful-import records.",
+    "Catalogue evidence does not grant unresolved data-use permissions."
+  ]
+}
