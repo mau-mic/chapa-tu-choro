@@ -1,0 +1,454 @@
+{
+  "checkedDateLocal": "2026-11-12",
+  "timeZone": "America/Lima",
+  "viewerUrl": "https://aplicaciones.mininter.gob.pe/mapadeldelitogeoreferenciado/",
+  "iframeUrl": "https://mininter-dgis.maps.arcgis.com/apps/webappviewer/index.html?id=ffc03c3586b142b988c931312d7da17b",
+  "application": {
+    "id": "ffc03c3586b142b988c931312d7da17b",
+    "title": "Mapa del Delito v2.0",
+    "type": "Web Mapping Application",
+    "url": "https://mininter-dgis.maps.arcgis.com/apps/webappviewer/index.html?id=ffc03c3586b142b988c931312d7da17b",
+    "access": "public",
+    "modified": 1793846477000,
+    "description": null,
+    "licenseInfo": null,
+    "accessInformation": null
+  },
+  "webMapId": "12c50349456c4ad5b253d522f2fab73c",
+  "portalUrl": "https://mininter-dgis.maps.arcgis.com",
+  "crimeLayers": [
+    {
+      "id": "1a1a31deb64-layer-26",
+      "title": "MICROCOMERCIALIZACION DE DROGAS",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25",
+      "itemId": "56e5f902d25c4fd3af88d43970896339",
+      "layerType": "ArcGISFeatureLayer",
+      "visibility": false,
+      "layerDefinition": {
+        "definitionExpression": "(id_modalidad_hecho = 1120341) OR (id_modalidad_hecho = 5070112) OR (id_modalidad_hecho = 5070122)",
+        "maxScale": 21.150519
+      },
+      "rendererType": "simple"
+    },
+    {
+      "id": "1a1a31c3bfb-layer-25",
+      "title": "PANDILLAJE",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25",
+      "itemId": "56e5f902d25c4fd3af88d43970896339",
+      "layerType": "ArcGISFeatureLayer",
+      "visibility": false,
+      "layerDefinition": {
+        "definitionExpression": "id_modalidad_hecho = 4010101 OR id_modalidad_hecho = 4010102 OR id_modalidad_hecho = 4010103 OR id_modalidad_hecho = 4010104 OR id_modalidad_hecho = 4010105 OR id_modalidad_hecho = 4010106 OR id_modalidad_hecho = 4010107",
+        "maxScale": 21.150519
+      },
+      "rendererType": "simple"
+    },
+    {
+      "id": "1a1a30a88eb-layer-20",
+      "title": "VIOLENCIA CONTRA LA MUJER",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25",
+      "itemId": "56e5f902d25c4fd3af88d43970896339",
+      "layerType": "ArcGISFeatureLayer",
+      "visibility": false,
+      "layerDefinition": {
+        "definitionExpression": "id_modalidad_hecho IN (5040202,5040201,5040204,5040205,5040124,5040125)",
+        "maxScale": 21.150519
+      },
+      "rendererType": "simple"
+    },
+    {
+      "id": "1a1a3192470-layer-24",
+      "title": "ESTAFA",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25",
+      "itemId": "56e5f902d25c4fd3af88d43970896339",
+      "layerType": "ArcGISFeatureLayer",
+      "visibility": false,
+      "layerDefinition": {
+        "definitionExpression": "(id_modalidad_hecho = 1050601) OR (id_modalidad_hecho = 1050609) OR (id_modalidad_hecho = 1050602)",
+        "maxScale": 21.150519
+      },
+      "rendererType": "simple"
+    },
+    {
+      "id": "1a1c62b1d62-layer-19",
+      "title": "SECUESTRO",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25",
+      "itemId": "56e5f902d25c4fd3af88d43970896339",
+      "layerType": "ArcGISFeatureLayer",
+      "visibility": false,
+      "layerDefinition": {
+        "definitionExpression": "id_modalidad_hecho = 2530383 OR id_modalidad_hecho = 1040103 OR id_modalidad_hecho = 1040103",
+        "maxScale": 21.150519
+      },
+      "rendererType": "simple"
+    },
+    {
+      "id": "1a1c62a054d-layer-18",
+      "title": "ROBO DE VEHÍCULOS",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25",
+      "itemId": "56e5f902d25c4fd3af88d43970896339",
+      "layerType": "ArcGISFeatureLayer",
+      "visibility": false,
+      "layerDefinition": {
+        "definitionExpression": "id_modalidad_hecho = 1050236",
+        "maxScale": 21.150519
+      },
+      "rendererType": "simple"
+    },
+    {
+      "id": "1a1a30fe50c-layer-22",
+      "title": "ROBO",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25",
+      "itemId": "56e5f902d25c4fd3af88d43970896339",
+      "layerType": "ArcGISFeatureLayer",
+      "visibility": false,
+      "layerDefinition": {
+        "definitionExpression": "id_modalidad_hecho IN (1050201,1050215,1050204,1050209,1050203,1050205,1050207,1050217)",
+        "maxScale": 21.150519
+      },
+      "rendererType": "simple"
+    },
+    {
+      "id": "1a1a3117af3-layer-23",
+      "title": "HURTO",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25",
+      "itemId": "56e5f902d25c4fd3af88d43970896339",
+      "layerType": "ArcGISFeatureLayer",
+      "visibility": false,
+      "layerDefinition": {
+        "definitionExpression": "(id_modalidad_hecho = 1050107) OR (id_modalidad_hecho = 1050101) OR (id_modalidad_hecho = 1050119) OR (id_modalidad_hecho = 1050122) OR (id_modalidad_hecho = 1050121) OR (id_modalidad_hecho = 1050103) OR (id_modalidad_hecho = 1050104) OR (id_modalidad_hecho = 1050109) OR (id_modalidad_hecho = 1050106)",
+        "maxScale": 21.150519
+      },
+      "rendererType": "simple"
+    },
+    {
+      "id": "1a1a3044f08-layer-18",
+      "title": "EXTORSION",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25",
+      "itemId": "56e5f902d25c4fd3af88d43970896339",
+      "layerType": "ArcGISFeatureLayer",
+      "visibility": true,
+      "layerDefinition": {
+        "definitionExpression": "id_modalidad_hecho IN (1050803,1050804)",
+        "maxScale": 17.913195
+      },
+      "rendererType": "simple"
+    },
+    {
+      "id": "1a1a30d071a-layer-21",
+      "title": "HOMICIDIO",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25",
+      "itemId": "56e5f902d25c4fd3af88d43970896339",
+      "layerType": "ArcGISFeatureLayer",
+      "visibility": true,
+      "layerDefinition": {
+        "definitionExpression": "id_modalidad_hecho IN (1010124,1010108,1010123,1010125,1010101,1010126,1010129,1010103,1010102,1010128)",
+        "maxScale": 0
+      },
+      "rendererType": "simple"
+    },
+    {
+      "id": "1a1a308e9fb-layer-19",
+      "title": "DELITOS PRIORIZADOS",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25",
+      "itemId": "56e5f902d25c4fd3af88d43970896339",
+      "layerType": "ArcGISFeatureLayer",
+      "visibility": true,
+      "layerDefinition": {
+        "definitionExpression": null
+      },
+      "rendererType": "heatmap"
+    }
+  ],
+  "crimeItem": {
+    "id": "56e5f902d25c4fd3af88d43970896339",
+    "title": "SIDPOL_DELITOS_TOTAL",
+    "type": "Feature Service",
+    "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer",
+    "access": "public",
+    "modified": 1794281283000,
+    "description": "",
+    "licenseInfo": "",
+    "accessInformation": ""
+  },
+  "layerMetadata": {
+    "name": "SIDPOL_DELITOS_TOTAL_PC",
+    "type": "Feature Layer",
+    "description": "",
+    "copyrightText": "",
+    "geometryType": "esriGeometryPoint",
+    "capabilities": "Query,Append",
+    "maxRecordCount": 2000,
+    "supportedQueryFormats": "JSON, geoJSON, PBF",
+    "timeInfo": null,
+    "editingInfo": {
+      "lastEditDate": 1794326061303,
+      "schemaLastEditDate": 1794326061303,
+      "dataLastEditDate": 1794281280140
+    },
+    "advancedQueryCapabilities": {
+      "supportsPagination": true,
+      "supportsPaginationOnAggregatedQueries": true,
+      "supportsQueryRelatedPagination": true,
+      "supportsQueryWithDistance": true,
+      "supportsOutDistance": true,
+      "supportsReturningQueryExtent": true,
+      "supportsStatistics": true,
+      "supportsOrderBy": true,
+      "supportsDistinct": true,
+      "supportsQueryWithResultType": true,
+      "supportsSqlExpression": true,
+      "supportsTimeRelation": true,
+      "supportsAdvancedQueryRelated": true,
+      "supportsCountDistinct": true,
+      "supportsPercentileStatistics": true,
+      "supportsApproxPercentileStatistics": true,
+      "supportsSpatialAggregationStatistics": true,
+      "supportedSpatialAggregationStatistics": [
+        "EnvelopeAggregate",
+        "CentroidAggregate",
+        "ConvexHullAggregate"
+      ],
+      "supportsLod": true,
+      "supportsQueryWithLodSR": false,
+      "supportedLodTypes": [
+        "geohash"
+      ],
+      "supportsReturningGeometryCentroid": false,
+      "supportsReturningGeometryEnvelope": false,
+      "supportsQueryWithDatumTransformation": true,
+      "supportsCurrentUserQueries": true,
+      "supportsHavingClause": true,
+      "supportsOutFieldSQLExpression": true,
+      "supportsMaxRecordCountFactor": true,
+      "supportsTopFeaturesQuery": true,
+      "supportsDisjointSpatialRel": true,
+      "supportsQueryWithCacheHint": true,
+      "supportedOperationsWithCacheHint": [
+        "query",
+        "queryTopFilter",
+        "queryAnalytics",
+        "queryAttachments",
+        "queryRelated",
+        "queryBins",
+        "queryPivot"
+      ],
+      "supportsQueryAnalytic": true,
+      "supportsQueryPivot": true,
+      "supportsQueryBins": true,
+      "supportsDefaultSR": true,
+      "supportsTranslations": false,
+      "supportsAggIds": true,
+      "supportsQueryWithCollation": true,
+      "supportsISODOW": true,
+      "supportsISOWeek": true,
+      "supportsFullTextSearch": true,
+      "fullTextSearchCapabilities": {
+        "supportsAccentSensitivity": true,
+        "supportsStopWords": true,
+        "supportsSearchOperator": true,
+        "supportsOperator": true
+      }
+    },
+    "fields": [
+      {
+        "name": "OBJECTID",
+        "type": "esriFieldTypeOID",
+        "alias": "OBJECTID"
+      },
+      {
+        "name": "id_dgc",
+        "type": "esriFieldTypeInteger",
+        "alias": "id_dgc"
+      },
+      {
+        "name": "ubigeo_cia_registro",
+        "type": "esriFieldTypeInteger",
+        "alias": "ubigeo_cia_registro"
+      },
+      {
+        "name": "id_comisaria_registro",
+        "type": "esriFieldTypeInteger",
+        "alias": "id_comisaria_registro"
+      },
+      {
+        "name": "comisaria_registro",
+        "type": "esriFieldTypeString",
+        "alias": "comisaria_registro"
+      },
+      {
+        "name": "ubic_comisaria_registro",
+        "type": "esriFieldTypeString",
+        "alias": "ubic_comisaria_registro"
+      },
+      {
+        "name": "fecha_hora_registro_hecho",
+        "type": "esriFieldTypeTimestampOffset",
+        "alias": "fecha_hora_registro_hecho"
+      },
+      {
+        "name": "turno_hecho",
+        "type": "esriFieldTypeString",
+        "alias": "turno_hecho"
+      },
+      {
+        "name": "año_hecho",
+        "type": "esriFieldTypeInteger",
+        "alias": "año_hecho"
+      },
+      {
+        "name": "mes_hecho",
+        "type": "esriFieldTypeInteger",
+        "alias": "mes_hecho"
+      },
+      {
+        "name": "dia_hecho",
+        "type": "esriFieldTypeInteger",
+        "alias": "dia_hecho"
+      },
+      {
+        "name": "ubigeo_hecho_delito",
+        "type": "esriFieldTypeInteger",
+        "alias": "ubigeo_hecho_delito"
+      },
+      {
+        "name": "lat_hecho",
+        "type": "esriFieldTypeDouble",
+        "alias": "lat_hecho"
+      },
+      {
+        "name": "long_hecho",
+        "type": "esriFieldTypeDouble",
+        "alias": "long_hecho"
+      },
+      {
+        "name": "departamento_hecho",
+        "type": "esriFieldTypeString",
+        "alias": "departamento_hecho"
+      },
+      {
+        "name": "provincia_hecho",
+        "type": "esriFieldTypeString",
+        "alias": "provincia_hecho"
+      },
+      {
+        "name": "id_dist_hecho",
+        "type": "esriFieldTypeString",
+        "alias": "id_dist_hecho"
+      },
+      {
+        "name": "distrito_hecho",
+        "type": "esriFieldTypeString",
+        "alias": "distrito_hecho"
+      },
+      {
+        "name": "id_materia_hecho",
+        "type": "esriFieldTypeInteger",
+        "alias": "id_materia_hecho"
+      },
+      {
+        "name": "materia_hecho",
+        "type": "esriFieldTypeString",
+        "alias": "materia_hecho"
+      },
+      {
+        "name": "id_tipo_hecho",
+        "type": "esriFieldTypeInteger",
+        "alias": "id_tipo_hecho"
+      },
+      {
+        "name": "tipo_hecho",
+        "type": "esriFieldTypeString",
+        "alias": "tipo_hecho"
+      },
+      {
+        "name": "id_subtipo_hecho",
+        "type": "esriFieldTypeInteger",
+        "alias": "id_subtipo_hecho"
+      },
+      {
+        "name": "subtipo_hecho",
+        "type": "esriFieldTypeString",
+        "alias": "subtipo_hecho"
+      },
+      {
+        "name": "id_modalidad_hecho",
+        "type": "esriFieldTypeInteger",
+        "alias": "id_modalidad_hecho"
+      },
+      {
+        "name": "modalidad_hecho",
+        "type": "esriFieldTypeString",
+        "alias": "modalidad_hecho"
+      },
+      {
+        "name": "fecha_actualizacion",
+        "type": "esriFieldTypeTimestampOffset",
+        "alias": "fecha_actualizacion"
+      },
+      {
+        "name": "estado",
+        "type": "esriFieldTypeInteger",
+        "alias": "estado"
+      }
+    ]
+  },
+  "coverage": {
+    "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25/query?f=json&where=1%3D1&returnGeometry=false&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22row_count%22%7D%2C+%7B%22statisticType%22%3A+%22min%22%2C+%22onStatisticField%22%3A+%22a%5Cu00f1o_hecho%22%2C+%22outStatisticFieldName%22%3A+%22min_year%22%7D%2C+%7B%22statisticType%22%3A+%22max%22%2C+%22onStatisticField%22%3A+%22a%5Cu00f1o_hecho%22%2C+%22outStatisticFieldName%22%3A+%22max_year%22%7D%5D",
+    "error": null,
+    "rows": [
+      {
+        "row_count": 487787,
+        "min_year": 2026,
+        "max_year": 2026
+      }
+    ]
+  },
+  "latestYearMonths": {
+    "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25/query?f=json&where=a%C3%B1o_hecho+%3D+2026&returnGeometry=false&groupByFieldsForStatistics=mes_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22row_count%22%7D%5D&orderByFields=mes_hecho",
+    "error": null,
+    "rows": [
+      {
+        "row_count": 50745,
+        "mes_hecho": 1
+      },
+      {
+        "row_count": 48042,
+        "mes_hecho": 2
+      },
+      {
+        "row_count": 53833,
+        "mes_hecho": 3
+      },
+      {
+        "row_count": 50599,
+        "mes_hecho": 4
+      },
+      {
+        "row_count": 51830,
+        "mes_hecho": 5
+      },
+      {
+        "row_count": 47843,
+        "mes_hecho": 6
+      },
+      {
+        "row_count": 48746,
+        "mes_hecho": 7
+      },
+      {
+        "row_count": 46529,
+        "mes_hecho": 8
+      },
+      {
+        "row_count": 45558,
+        "mes_hecho": 9
+      },
+      {
+        "row_count": 44062,
+        "mes_hecho": 10
+      }
+    ]
+  },
+  "scope": "Public viewer/configuration/item/layer metadata and two aggregate queries only. No incident features downloaded. Not a location-quality, deduplication, licensing or completeness audit."
+}

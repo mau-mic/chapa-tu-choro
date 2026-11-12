@@ -1,0 +1,1441 @@
+{
+  "checkedDateLocal": "2026-11-12",
+  "timeZone": "America/Lima",
+  "viewer": "https://aplicaciones.mininter.gob.pe/mapadeldelitogeoreferenciado/",
+  "scope": "Browser tour and read-only public metadata/aggregate historical-availability checks. No integration, full export, uploads, geolocation permission or print job.",
+  "header": {
+    "title": "MAPA DEL DELITO GEORREFERENCIADO",
+    "cutoff": "Fecha de corte: 31.10.2026"
+  },
+  "widgets": [
+    {
+      "id": "widgets_HomeButton_Widget_23",
+      "uri": "widgets/HomeButton/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_Scalebar_Widget_24",
+      "uri": "widgets/Scalebar/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_Search_Widget_25",
+      "uri": "widgets/Search/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_Coordinate_Widget_26",
+      "uri": "widgets/Coordinate/Widget",
+      "label": null
+    },
+    {
+      "id": "_27",
+      "uri": "widgets/Legend/Widget",
+      "label": "Leyenda_2"
+    },
+    {
+      "id": "_28",
+      "uri": "widgets/BasemapGallery/Widget",
+      "label": null
+    },
+    {
+      "id": "_29",
+      "uri": "widgets/Measurement/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_OverviewMap_Widget_30",
+      "uri": "widgets/OverviewMap/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_MyLocation_Widget_31",
+      "uri": "widgets/MyLocation/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_AttributeTable_Widget_32",
+      "uri": "widgets/AttributeTable/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_Splash_Widget_33",
+      "uri": "widgets/Splash/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_ZoomSlider_Widget_34",
+      "uri": "widgets/ZoomSlider/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_ExtentNavigate_Widget_35",
+      "uri": "widgets/ExtentNavigate/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_FullScreen_Widget_36",
+      "uri": "widgets/FullScreen/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_Infographic_Widget_37",
+      "uri": "widgets/Infographic/Widget",
+      "label": "RESUMEN DEPARTAMENTAL"
+    },
+    {
+      "id": "widgets_LayerList_Widget_19",
+      "uri": "widgets/LayerList/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_InfoSummary_Widget_40",
+      "uri": "widgets/InfoSummary/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_Print_Widget_38",
+      "uri": "widgets/Print/Widget",
+      "label": null
+    },
+    {
+      "id": "widgets_AddData_Widget_39",
+      "uri": "widgets/AddData/Widget",
+      "label": null
+    }
+  ],
+  "publicCatalogue": {
+    "url": "https://mininter-dgis.maps.arcgis.com/sharing/rest/search?f=json&q=orgid%3AlMIZrqiJkpM748BR&num=100&sortField=title&sortOrder=asc",
+    "total": 31,
+    "nextStart": -1,
+    "results": [
+      {
+        "id": "b47930be2b064704baaa3c200607f6b9",
+        "title": "DISTRITOS DASHBOARD VICEMINISTRO",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/DISTRITOS_DASHBOARD_VICEMINISTRO/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "79611104b0814c359955d81043afa2a8",
+        "title": "DISTRITOS DASHBOARD VICEMINISTRO",
+        "type": "Service Definition",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "3450dc784dbb43198f9b8c9b573d7a48",
+        "title": "DISTRITOS DASHBOARD VICEMINISTRO",
+        "type": "Web Map",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "7c52dbb97f624b4898fdc9c106c39506",
+        "title": "ESTADISTICAS INTEGRADAS MININTER",
+        "type": "Dashboard",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "e6a9a21b05f24c37bb56fd769c6a26e9",
+        "title": "ESTAFA_IDSUBTIPO_10506",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/ESTAFA_IDSUBTIPO_10506/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "a4cf2b0f30f8440196c746eef059148d",
+        "title": "ESTAFA_IDSUBTIPO_10506",
+        "type": "Service Definition",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "5b133960c1a1442d9493da85075aa18c",
+        "title": "EXTORSION_IDSUBTIPO_10508",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/EXTORSION_IDSUBTIPO_10508/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "197ba30a214544408c299c92f582e518",
+        "title": "EXTORSION_IDSUBTIPO_10508",
+        "type": "Service Definition",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "6079eeff767c435299b4580d473100ae",
+        "title": "HOMICIDIO_IDMODALIDAD_1010102_AL_1010130",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/HOMICIDIO_IDMODALIDAD_1010102_AL_1010130/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "ff783b8f3aa74b989524980301867230",
+        "title": "HOMICIDIO_IDMODALIDAD_1010102_AL_1010130",
+        "type": "Service Definition",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "83e9b188e3144a02a799cc9b9b84ac54",
+        "title": "HURTO_IDSUBTIPO_10501",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/HURTO_IDSUBTIPO_10501/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "3d4034a984f34cc48a04596cb80e78b4",
+        "title": "HURTO_IDSUBTIPO_10501",
+        "type": "Service Definition",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "e5884b067c1d4fe3a9b013b4be4044e8",
+        "title": "INSTITUCIONES EDUCATIVAS",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/INSTITUCIONES_EDUCATIVAS/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "12c50349456c4ad5b253d522f2fab73c",
+        "title": "Maba Base Mapa del Delito v.2",
+        "type": "Web Map",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "108a8c3ea217428183179e0ac4302359",
+        "title": "MAPA BASE",
+        "type": "Web Map",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "eb4ab336b33d4ca3bcd6bd9a6a6844d0",
+        "title": "MAPA BASE",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/MAPA_BASE/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "03a76b7d8fb149d79c966fbc2e1c3ed0",
+        "title": "MAPA BASE",
+        "type": "Service Definition",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "ffc03c3586b142b988c931312d7da17b",
+        "title": "Mapa del Delito v2.0",
+        "type": "Web Mapping Application",
+        "url": "https://mininter-dgis.maps.arcgis.com/apps/webappviewer/index.html?id=ffc03c3586b142b988c931312d7da17b",
+        "access": "public"
+      },
+      {
+        "id": "a2af83c99c8c4c86a54fe6e6e7ab7815",
+        "title": "Mapa del Delito v2.0",
+        "type": "Code Attachment",
+        "url": "//mininter-dgis.maps.arcgis.com/sharing/rest/content/items/ffc03c3586b142b988c931312d7da17b/package",
+        "access": "public"
+      },
+      {
+        "id": "fd53914b844f4e188265e501509e6144",
+        "title": "MICROCOMERCIALIZACION_IDMODALIDAD_1120341_5070112_5070122",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/MICROCOMERCIALIZACION_IDMODALIDAD_1120341_5070112_5070122/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "9f83e513ca8d41cca589cf4ccb3c8ee1",
+        "title": "MICROCOMERCIALIZACION_IDMODALIDAD_1120341_5070112_5070122",
+        "type": "Service Definition",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "ed23d8771db746ff86d96122f4cf9289",
+        "title": "OCURRENCIAS_SIPCOP_MUNICIPAL_DDGIS",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/OCURRENCIAS_SIPCOP_MUNICIPAL_DDGIS/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "e2e2ac32966d4751829ceff6d8b4df72",
+        "title": "PANDILLAJE_IDSUBTIPO_40101",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/PANDILLAJE_IDSUBTIPO_40101/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "2e06192c839744aeb0d1780ff2ad8c08",
+        "title": "PANDILLAJE_IDSUBTIPO_40101",
+        "type": "Service Definition",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "c34de9c591594f59a9149d0b16a7e923",
+        "title": "ROBO_IDSUBTIPO_10502",
+        "type": "Service Definition",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "302b01f6d2634ecf87ef16107bbdc65a",
+        "title": "ROBO_IDSUBTIPO_10502",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/ROBO_IDSUBTIPO_10502/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "a2684e2083954a71872f5a38dbd47416",
+        "title": "SIDPOL_DELITOS",
+        "type": "Service Definition",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "472a49e7793a4fe2b565b8d1e2ee9b56",
+        "title": "SIDPOL_DELITOS",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "56e5f902d25c4fd3af88d43970896339",
+        "title": "SIDPOL_DELITOS_TOTAL",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer",
+        "access": "public"
+      },
+      {
+        "id": "1bfcd9c6d8164fcbba737a15cc890f66",
+        "title": "VCM_IDTIPO_504",
+        "type": "Service Definition",
+        "url": "",
+        "access": "public"
+      },
+      {
+        "id": "8f11eac0b7ba4234a8012c0099d0bb83",
+        "title": "VCM_IDTIPO_504",
+        "type": "Feature Service",
+        "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/VCM_IDTIPO_504/FeatureServer",
+        "access": "public"
+      }
+    ]
+  },
+  "activeService": {
+    "layers": [
+      {
+        "id": 25,
+        "name": "SIDPOL_DELITOS_TOTAL_PC",
+        "parentLayerId": -1,
+        "defaultVisibility": true,
+        "subLayerIds": null,
+        "minScale": 0,
+        "maxScale": 0,
+        "type": "Feature Layer",
+        "geometryType": "esriGeometryPoint"
+      }
+    ],
+    "hasStaticData": false
+  },
+  "historicalChecks": [
+    {
+      "name": "active",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer",
+      "advertisedLayers": [
+        {
+          "id": 25,
+          "name": "SIDPOL_DELITOS_TOTAL_PC"
+        }
+      ],
+      "queries": [
+        {
+          "layer": 25,
+          "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25/query?f=json&where=1%3D1&returnGeometry=false&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22row_count%22%7D%2C+%7B%22statisticType%22%3A+%22min%22%2C+%22onStatisticField%22%3A+%22a%5Cu00f1o_hecho%22%2C+%22outStatisticFieldName%22%3A+%22min_year%22%7D%2C+%7B%22statisticType%22%3A+%22max%22%2C+%22onStatisticField%22%3A+%22a%5Cu00f1o_hecho%22%2C+%22outStatisticFieldName%22%3A+%22max_year%22%7D%5D",
+          "yearField": "año_hecho",
+          "rows": [
+            {
+              "row_count": 487787,
+              "min_year": 2026,
+              "max_year": 2026
+            }
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "older_sidpol",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS/FeatureServer",
+      "advertisedLayers": [],
+      "queries": []
+    },
+    {
+      "name": "extortion_archive",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/EXTORSION_IDSUBTIPO_10508/FeatureServer",
+      "advertisedLayers": [
+        {
+          "id": 1,
+          "name": "EXTORSION"
+        }
+      ],
+      "queries": [
+        {
+          "layer": 1,
+          "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/EXTORSION_IDSUBTIPO_10508/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22row_count%22%7D%2C+%7B%22statisticType%22%3A+%22min%22%2C+%22onStatisticField%22%3A+%22a%5Cu00f1o_hecho%22%2C+%22outStatisticFieldName%22%3A+%22min_year%22%7D%2C+%7B%22statisticType%22%3A+%22max%22%2C+%22onStatisticField%22%3A+%22a%5Cu00f1o_hecho%22%2C+%22outStatisticFieldName%22%3A+%22max_year%22%7D%5D",
+          "yearField": "año_hecho",
+          "rows": [
+            {
+              "row_count": 28621,
+              "min_year": 2025,
+              "max_year": 2026
+            }
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "homicide_archive",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/HOMICIDIO_IDMODALIDAD_1010102_AL_1010130/FeatureServer",
+      "advertisedLayers": [
+        {
+          "id": 2,
+          "name": "HOMICIDIOS"
+        }
+      ],
+      "queries": [
+        {
+          "layer": 2,
+          "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/HOMICIDIO_IDMODALIDAD_1010102_AL_1010130/FeatureServer/2/query?f=json&where=1%3D1&returnGeometry=false&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22row_count%22%7D%2C+%7B%22statisticType%22%3A+%22min%22%2C+%22onStatisticField%22%3A+%22a%5Cu00f1o_hecho%22%2C+%22outStatisticFieldName%22%3A+%22min_year%22%7D%2C+%7B%22statisticType%22%3A+%22max%22%2C+%22onStatisticField%22%3A+%22a%5Cu00f1o_hecho%22%2C+%22outStatisticFieldName%22%3A+%22max_year%22%7D%5D",
+          "yearField": "año_hecho",
+          "rows": [
+            {
+              "row_count": 3084,
+              "min_year": 2025,
+              "max_year": 2026
+            }
+          ],
+          "error": null
+        }
+      ]
+    }
+  ],
+  "archivePeriodQueries": [
+    {
+      "title": "VCM_IDTIPO_504",
+      "itemId": "8f11eac0b7ba4234a8012c0099d0bb83",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/VCM_IDTIPO_504/FeatureServer",
+      "serviceError": null,
+      "layers": [
+        {
+          "id": 0,
+          "name": "VCM",
+          "query": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/VCM_IDTIPO_504/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&groupByFieldsForStatistics=a%C3%B1o_hecho%2Cmes_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22rows%22%7D%5D&orderByFields=a%C3%B1o_hecho%2Cmes_hecho",
+          "error": null,
+          "exceededTransferLimit": null,
+          "yearField": "año_hecho",
+          "monthField": "mes_hecho",
+          "periodCounts": [
+            {
+              "rows": 28571,
+              "año_hecho": 2025,
+              "mes_hecho": 1
+            },
+            {
+              "rows": 26482,
+              "año_hecho": 2025,
+              "mes_hecho": 2
+            },
+            {
+              "rows": 28995,
+              "año_hecho": 2025,
+              "mes_hecho": 3
+            },
+            {
+              "rows": 25782,
+              "año_hecho": 2025,
+              "mes_hecho": 4
+            },
+            {
+              "rows": 24343,
+              "año_hecho": 2025,
+              "mes_hecho": 5
+            },
+            {
+              "rows": 24059,
+              "año_hecho": 2025,
+              "mes_hecho": 6
+            },
+            {
+              "rows": 22915,
+              "año_hecho": 2025,
+              "mes_hecho": 7
+            },
+            {
+              "rows": 23600,
+              "año_hecho": 2025,
+              "mes_hecho": 8
+            },
+            {
+              "rows": 23894,
+              "año_hecho": 2025,
+              "mes_hecho": 9
+            },
+            {
+              "rows": 24115,
+              "año_hecho": 2025,
+              "mes_hecho": 10
+            },
+            {
+              "rows": 24706,
+              "año_hecho": 2025,
+              "mes_hecho": 11
+            },
+            {
+              "rows": 22740,
+              "año_hecho": 2025,
+              "mes_hecho": 12
+            },
+            {
+              "rows": 24466,
+              "año_hecho": 2026,
+              "mes_hecho": 1
+            },
+            {
+              "rows": 21341,
+              "año_hecho": 2026,
+              "mes_hecho": 2
+            }
+          ],
+          "geometryType": "esriGeometryPoint",
+          "coordinateStatusField": null,
+          "licenseInfo": null
+        }
+      ]
+    },
+    {
+      "title": "HOMICIDIO_IDMODALIDAD_1010102_AL_1010130",
+      "itemId": "6079eeff767c435299b4580d473100ae",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/HOMICIDIO_IDMODALIDAD_1010102_AL_1010130/FeatureServer",
+      "serviceError": null,
+      "layers": [
+        {
+          "id": 2,
+          "name": "HOMICIDIOS",
+          "query": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/HOMICIDIO_IDMODALIDAD_1010102_AL_1010130/FeatureServer/2/query?f=json&where=1%3D1&returnGeometry=false&groupByFieldsForStatistics=a%C3%B1o_hecho%2Cmes_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22rows%22%7D%5D&orderByFields=a%C3%B1o_hecho%2Cmes_hecho",
+          "error": null,
+          "exceededTransferLimit": null,
+          "yearField": "año_hecho",
+          "monthField": "mes_hecho",
+          "periodCounts": [
+            {
+              "rows": 246,
+              "año_hecho": 2025,
+              "mes_hecho": 1
+            },
+            {
+              "rows": 213,
+              "año_hecho": 2025,
+              "mes_hecho": 2
+            },
+            {
+              "rows": 237,
+              "año_hecho": 2025,
+              "mes_hecho": 3
+            },
+            {
+              "rows": 239,
+              "año_hecho": 2025,
+              "mes_hecho": 4
+            },
+            {
+              "rows": 221,
+              "año_hecho": 2025,
+              "mes_hecho": 5
+            },
+            {
+              "rows": 227,
+              "año_hecho": 2025,
+              "mes_hecho": 6
+            },
+            {
+              "rows": 233,
+              "año_hecho": 2025,
+              "mes_hecho": 7
+            },
+            {
+              "rows": 269,
+              "año_hecho": 2025,
+              "mes_hecho": 8
+            },
+            {
+              "rows": 206,
+              "año_hecho": 2025,
+              "mes_hecho": 9
+            },
+            {
+              "rows": 214,
+              "año_hecho": 2025,
+              "mes_hecho": 10
+            },
+            {
+              "rows": 180,
+              "año_hecho": 2025,
+              "mes_hecho": 11
+            },
+            {
+              "rows": 216,
+              "año_hecho": 2025,
+              "mes_hecho": 12
+            },
+            {
+              "rows": 193,
+              "año_hecho": 2026,
+              "mes_hecho": 1
+            },
+            {
+              "rows": 190,
+              "año_hecho": 2026,
+              "mes_hecho": 2
+            }
+          ],
+          "geometryType": "esriGeometryPoint",
+          "coordinateStatusField": null,
+          "licenseInfo": null
+        }
+      ]
+    },
+    {
+      "title": "EXTORSION_IDSUBTIPO_10508",
+      "itemId": "5b133960c1a1442d9493da85075aa18c",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/EXTORSION_IDSUBTIPO_10508/FeatureServer",
+      "serviceError": null,
+      "layers": [
+        {
+          "id": 1,
+          "name": "EXTORSION",
+          "query": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/EXTORSION_IDSUBTIPO_10508/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&groupByFieldsForStatistics=a%C3%B1o_hecho%2Cmes_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22rows%22%7D%5D&orderByFields=a%C3%B1o_hecho%2Cmes_hecho",
+          "error": null,
+          "exceededTransferLimit": null,
+          "yearField": "año_hecho",
+          "monthField": "mes_hecho",
+          "periodCounts": [
+            {
+              "rows": 2162,
+              "año_hecho": 2025,
+              "mes_hecho": 1
+            },
+            {
+              "rows": 2085,
+              "año_hecho": 2025,
+              "mes_hecho": 2
+            },
+            {
+              "rows": 2522,
+              "año_hecho": 2025,
+              "mes_hecho": 3
+            },
+            {
+              "rows": 2601,
+              "año_hecho": 2025,
+              "mes_hecho": 4
+            },
+            {
+              "rows": 2384,
+              "año_hecho": 2025,
+              "mes_hecho": 5
+            },
+            {
+              "rows": 2185,
+              "año_hecho": 2025,
+              "mes_hecho": 6
+            },
+            {
+              "rows": 2214,
+              "año_hecho": 2025,
+              "mes_hecho": 7
+            },
+            {
+              "rows": 2300,
+              "año_hecho": 2025,
+              "mes_hecho": 8
+            },
+            {
+              "rows": 2273,
+              "año_hecho": 2025,
+              "mes_hecho": 9
+            },
+            {
+              "rows": 2397,
+              "año_hecho": 2025,
+              "mes_hecho": 10
+            },
+            {
+              "rows": 1796,
+              "año_hecho": 2025,
+              "mes_hecho": 11
+            },
+            {
+              "rows": 1336,
+              "año_hecho": 2025,
+              "mes_hecho": 12
+            },
+            {
+              "rows": 1257,
+              "año_hecho": 2026,
+              "mes_hecho": 1
+            },
+            {
+              "rows": 1109,
+              "año_hecho": 2026,
+              "mes_hecho": 2
+            }
+          ],
+          "geometryType": "esriGeometryPoint",
+          "coordinateStatusField": null,
+          "licenseInfo": null
+        }
+      ]
+    },
+    {
+      "title": "SIDPOL_DELITOS",
+      "itemId": "472a49e7793a4fe2b565b8d1e2ee9b56",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS/FeatureServer",
+      "serviceError": null,
+      "layers": []
+    },
+    {
+      "title": "PANDILLAJE_IDSUBTIPO_40101",
+      "itemId": "e2e2ac32966d4751829ceff6d8b4df72",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/PANDILLAJE_IDSUBTIPO_40101/FeatureServer",
+      "serviceError": null,
+      "layers": [
+        {
+          "id": 6,
+          "name": "PANDILLAJE_IDSUBTIPO_40101",
+          "query": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/PANDILLAJE_IDSUBTIPO_40101/FeatureServer/6/query?f=json&where=1%3D1&returnGeometry=false&groupByFieldsForStatistics=a%C3%B1o_hecho%2Cmes_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22rows%22%7D%5D&orderByFields=a%C3%B1o_hecho%2Cmes_hecho",
+          "error": null,
+          "exceededTransferLimit": null,
+          "yearField": "año_hecho",
+          "monthField": "mes_hecho",
+          "periodCounts": [
+            {
+              "rows": 30,
+              "año_hecho": 2025,
+              "mes_hecho": 1
+            },
+            {
+              "rows": 32,
+              "año_hecho": 2025,
+              "mes_hecho": 2
+            },
+            {
+              "rows": 33,
+              "año_hecho": 2025,
+              "mes_hecho": 3
+            },
+            {
+              "rows": 42,
+              "año_hecho": 2025,
+              "mes_hecho": 4
+            },
+            {
+              "rows": 32,
+              "año_hecho": 2025,
+              "mes_hecho": 5
+            },
+            {
+              "rows": 30,
+              "año_hecho": 2025,
+              "mes_hecho": 6
+            },
+            {
+              "rows": 31,
+              "año_hecho": 2025,
+              "mes_hecho": 7
+            },
+            {
+              "rows": 28,
+              "año_hecho": 2025,
+              "mes_hecho": 8
+            },
+            {
+              "rows": 26,
+              "año_hecho": 2025,
+              "mes_hecho": 9
+            }
+          ],
+          "geometryType": "esriGeometryPoint",
+          "coordinateStatusField": "ESTADO_COORD",
+          "licenseInfo": null
+        }
+      ]
+    },
+    {
+      "title": "ESTAFA_IDSUBTIPO_10506",
+      "itemId": "e6a9a21b05f24c37bb56fd769c6a26e9",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/ESTAFA_IDSUBTIPO_10506/FeatureServer",
+      "serviceError": null,
+      "layers": [
+        {
+          "id": 4,
+          "name": "ESTAFA_IDSUBTIPO_10506",
+          "query": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/ESTAFA_IDSUBTIPO_10506/FeatureServer/4/query?f=json&where=1%3D1&returnGeometry=false&groupByFieldsForStatistics=a%C3%B1o_hecho%2Cmes_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22rows%22%7D%5D&orderByFields=a%C3%B1o_hecho%2Cmes_hecho",
+          "error": null,
+          "exceededTransferLimit": null,
+          "yearField": "año_hecho",
+          "monthField": "mes_hecho",
+          "periodCounts": [
+            {
+              "rows": 3431,
+              "año_hecho": 2025,
+              "mes_hecho": 1
+            },
+            {
+              "rows": 3110,
+              "año_hecho": 2025,
+              "mes_hecho": 2
+            },
+            {
+              "rows": 3134,
+              "año_hecho": 2025,
+              "mes_hecho": 3
+            },
+            {
+              "rows": 3208,
+              "año_hecho": 2025,
+              "mes_hecho": 4
+            },
+            {
+              "rows": 3047,
+              "año_hecho": 2025,
+              "mes_hecho": 5
+            },
+            {
+              "rows": 2938,
+              "año_hecho": 2025,
+              "mes_hecho": 6
+            },
+            {
+              "rows": 3120,
+              "año_hecho": 2025,
+              "mes_hecho": 7
+            },
+            {
+              "rows": 2879,
+              "año_hecho": 2025,
+              "mes_hecho": 8
+            },
+            {
+              "rows": 2193,
+              "año_hecho": 2025,
+              "mes_hecho": 9
+            }
+          ],
+          "geometryType": "esriGeometryPoint",
+          "coordinateStatusField": "ESTADO_COORD",
+          "licenseInfo": null
+        }
+      ]
+    },
+    {
+      "title": "ROBO_IDSUBTIPO_10502",
+      "itemId": "302b01f6d2634ecf87ef16107bbdc65a",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/ROBO_IDSUBTIPO_10502/FeatureServer",
+      "serviceError": null,
+      "layers": [
+        {
+          "id": 3,
+          "name": "ROBO_IDSUBTIPO_10502",
+          "query": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/ROBO_IDSUBTIPO_10502/FeatureServer/3/query?f=json&where=1%3D1&returnGeometry=false&groupByFieldsForStatistics=a%C3%B1o_hecho%2Cmes_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22rows%22%7D%5D&orderByFields=a%C3%B1o_hecho%2Cmes_hecho",
+          "error": null,
+          "exceededTransferLimit": null,
+          "yearField": "año_hecho",
+          "monthField": "mes_hecho",
+          "periodCounts": [
+            {
+              "rows": 5767,
+              "año_hecho": 2025,
+              "mes_hecho": 1
+            },
+            {
+              "rows": 5307,
+              "año_hecho": 2025,
+              "mes_hecho": 2
+            },
+            {
+              "rows": 5973,
+              "año_hecho": 2025,
+              "mes_hecho": 3
+            },
+            {
+              "rows": 5163,
+              "año_hecho": 2025,
+              "mes_hecho": 4
+            },
+            {
+              "rows": 5211,
+              "año_hecho": 2025,
+              "mes_hecho": 5
+            },
+            {
+              "rows": 5111,
+              "año_hecho": 2025,
+              "mes_hecho": 6
+            },
+            {
+              "rows": 5271,
+              "año_hecho": 2025,
+              "mes_hecho": 7
+            },
+            {
+              "rows": 5368,
+              "año_hecho": 2025,
+              "mes_hecho": 8
+            },
+            {
+              "rows": 4914,
+              "año_hecho": 2025,
+              "mes_hecho": 9
+            }
+          ],
+          "geometryType": "esriGeometryPoint",
+          "coordinateStatusField": "ESTADO_COORD",
+          "licenseInfo": null
+        }
+      ]
+    },
+    {
+      "title": "HURTO_IDSUBTIPO_10501",
+      "itemId": "83e9b188e3144a02a799cc9b9b84ac54",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/HURTO_IDSUBTIPO_10501/FeatureServer",
+      "serviceError": null,
+      "layers": [
+        {
+          "id": 2,
+          "name": "HURTO_IDSUBTIPO_10501",
+          "query": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/HURTO_IDSUBTIPO_10501/FeatureServer/2/query?f=json&where=1%3D1&returnGeometry=false&groupByFieldsForStatistics=a%C3%B1o_hecho%2Cmes_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22rows%22%7D%5D&orderByFields=a%C3%B1o_hecho%2Cmes_hecho",
+          "error": null,
+          "exceededTransferLimit": null,
+          "yearField": "año_hecho",
+          "monthField": "mes_hecho",
+          "periodCounts": [
+            {
+              "rows": 14903,
+              "año_hecho": 2025,
+              "mes_hecho": 1
+            },
+            {
+              "rows": 14263,
+              "año_hecho": 2025,
+              "mes_hecho": 2
+            },
+            {
+              "rows": 15968,
+              "año_hecho": 2025,
+              "mes_hecho": 3
+            },
+            {
+              "rows": 14567,
+              "año_hecho": 2025,
+              "mes_hecho": 4
+            },
+            {
+              "rows": 14732,
+              "año_hecho": 2025,
+              "mes_hecho": 5
+            },
+            {
+              "rows": 14478,
+              "año_hecho": 2025,
+              "mes_hecho": 6
+            },
+            {
+              "rows": 14588,
+              "año_hecho": 2025,
+              "mes_hecho": 7
+            },
+            {
+              "rows": 14500,
+              "año_hecho": 2025,
+              "mes_hecho": 8
+            },
+            {
+              "rows": 13356,
+              "año_hecho": 2025,
+              "mes_hecho": 9
+            }
+          ],
+          "geometryType": "esriGeometryPoint",
+          "coordinateStatusField": "ESTADO_COORD",
+          "licenseInfo": null
+        }
+      ]
+    },
+    {
+      "title": "MICROCOMERCIALIZACION_IDMODALIDAD_1120341_5070112_5070122",
+      "itemId": "fd53914b844f4e188265e501509e6144",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/MICROCOMERCIALIZACION_IDMODALIDAD_1120341_5070112_5070122/FeatureServer",
+      "serviceError": null,
+      "layers": [
+        {
+          "id": 1,
+          "name": "MICROCOMERCIALIZACION_IDMODALIDAD_1120341_5070112_5070122",
+          "query": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/MICROCOMERCIALIZACION_IDMODALIDAD_1120341_5070112_5070122/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&groupByFieldsForStatistics=a%C3%B1o_hecho%2Cmes_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22rows%22%7D%5D&orderByFields=a%C3%B1o_hecho%2Cmes_hecho",
+          "error": null,
+          "exceededTransferLimit": null,
+          "yearField": "año_hecho",
+          "monthField": "mes_hecho",
+          "periodCounts": [
+            {
+              "rows": 417,
+              "año_hecho": 2025,
+              "mes_hecho": 1
+            },
+            {
+              "rows": 380,
+              "año_hecho": 2025,
+              "mes_hecho": 2
+            },
+            {
+              "rows": 439,
+              "año_hecho": 2025,
+              "mes_hecho": 3
+            },
+            {
+              "rows": 421,
+              "año_hecho": 2025,
+              "mes_hecho": 4
+            },
+            {
+              "rows": 406,
+              "año_hecho": 2025,
+              "mes_hecho": 5
+            },
+            {
+              "rows": 405,
+              "año_hecho": 2025,
+              "mes_hecho": 6
+            },
+            {
+              "rows": 356,
+              "año_hecho": 2025,
+              "mes_hecho": 7
+            },
+            {
+              "rows": 376,
+              "año_hecho": 2025,
+              "mes_hecho": 8
+            },
+            {
+              "rows": 294,
+              "año_hecho": 2025,
+              "mes_hecho": 9
+            }
+          ],
+          "geometryType": "esriGeometryPoint",
+          "coordinateStatusField": "ESTADO_COORD",
+          "licenseInfo": null
+        }
+      ]
+    }
+  ],
+  "archiveSummary": [
+    {
+      "title": "VCM_IDTIPO_504",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/VCM_IDTIPO_504/FeatureServer",
+      "layer": 0,
+      "periods": {
+        "2025": {
+          "months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "rows": 300202
+        },
+        "2026": {
+          "months": [
+            1,
+            2
+          ],
+          "rows": 45807
+        }
+      }
+    },
+    {
+      "title": "HOMICIDIO_IDMODALIDAD_1010102_AL_1010130",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/HOMICIDIO_IDMODALIDAD_1010102_AL_1010130/FeatureServer",
+      "layer": 2,
+      "periods": {
+        "2025": {
+          "months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "rows": 2701
+        },
+        "2026": {
+          "months": [
+            1,
+            2
+          ],
+          "rows": 383
+        }
+      }
+    },
+    {
+      "title": "EXTORSION_IDSUBTIPO_10508",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/EXTORSION_IDSUBTIPO_10508/FeatureServer",
+      "layer": 1,
+      "periods": {
+        "2025": {
+          "months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "rows": 26255
+        },
+        "2026": {
+          "months": [
+            1,
+            2
+          ],
+          "rows": 2366
+        }
+      }
+    },
+    {
+      "title": "PANDILLAJE_IDSUBTIPO_40101",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/PANDILLAJE_IDSUBTIPO_40101/FeatureServer",
+      "layer": 6,
+      "periods": {
+        "2025": {
+          "months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "rows": 284
+        }
+      }
+    },
+    {
+      "title": "ESTAFA_IDSUBTIPO_10506",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/ESTAFA_IDSUBTIPO_10506/FeatureServer",
+      "layer": 4,
+      "periods": {
+        "2025": {
+          "months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "rows": 27060
+        }
+      }
+    },
+    {
+      "title": "ROBO_IDSUBTIPO_10502",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/ROBO_IDSUBTIPO_10502/FeatureServer",
+      "layer": 3,
+      "periods": {
+        "2025": {
+          "months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "rows": 48085
+        }
+      }
+    },
+    {
+      "title": "HURTO_IDSUBTIPO_10501",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/HURTO_IDSUBTIPO_10501/FeatureServer",
+      "layer": 2,
+      "periods": {
+        "2025": {
+          "months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "rows": 131355
+        }
+      }
+    },
+    {
+      "title": "MICROCOMERCIALIZACION_IDMODALIDAD_1120341_5070112_5070122",
+      "service": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/MICROCOMERCIALIZACION_IDMODALIDAD_1120341_5070112_5070122/FeatureServer",
+      "layer": 1,
+      "periods": {
+        "2025": {
+          "months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "rows": 3494
+        }
+      }
+    }
+  ],
+  "currentQualityAggregates": [
+    {
+      "name": "no_prior_years",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25/query?f=json&returnGeometry=false&where=a%C3%B1o_hecho+%3C+2026&returnCountOnly=true",
+      "result": {
+        "count": 0
+      }
+    },
+    {
+      "name": "state_counts",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25/query?f=json&returnGeometry=false&where=1%3D1&groupByFieldsForStatistics=estado&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22rows%22%7D%5D",
+      "result": {
+        "rows": [
+          {
+            "rows": 125368,
+            "estado": 1
+          },
+          {
+            "rows": 362419,
+            "estado": 2
+          }
+        ],
+        "exceededTransferLimit": null
+      }
+    },
+    {
+      "name": "invalid_coordinate_attributes",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25/query?f=json&returnGeometry=false&where=lat_hecho+IS+NULL+OR+long_hecho+IS+NULL+OR+lat_hecho+%3D+0+OR+long_hecho+%3D+0+OR+lat_hecho+%3C+-90+OR+lat_hecho+%3E+90+OR+long_hecho+%3C+-180+OR+long_hecho+%3E+180&returnCountOnly=true",
+      "result": {
+        "count": 0
+      }
+    },
+    {
+      "name": "distinct_business_ids",
+      "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25/query?f=json&returnGeometry=false&where=1%3D1&outFields=id_dgc&returnDistinctValues=true&returnCountOnly=true",
+      "result": {
+        "count": 421196
+      }
+    }
+  ],
+  "nullBusinessIds": {
+    "url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25/query?f=json&where=id_dgc+IS+NULL&returnCountOnly=true&returnGeometry=false",
+    "result": {
+      "count": 0
+    }
+  },
+  "browser": {
+    "initialTitleObserved": "MAPA DEL DELITO GEORREFERENCIADO",
+    "panels": [
+      {
+        "label": "Layer List",
+        "result": "opened",
+        "error": null
+      },
+      {
+        "label": "Info Summary",
+        "result": "opened",
+        "error": null
+      },
+      {
+        "label": "Leyenda_2",
+        "result": "opened",
+        "error": null
+      },
+      {
+        "label": "Measurement",
+        "result": "opened",
+        "error": null
+      },
+      {
+        "label": "Basemap Gallery",
+        "result": "opened",
+        "error": null
+      },
+      {
+        "label": "Print",
+        "result": "opened",
+        "error": null
+      },
+      {
+        "label": "Add Data",
+        "result": "opened",
+        "error": null
+      }
+    ],
+    "interactions": [
+      {
+        "feature": "layer toggles",
+        "heatmapBefore": "true",
+        "heatmapAfter": "false",
+        "heatmapRestored": "true",
+        "theftEnabled": "true"
+      },
+      {
+        "feature": "search scopes",
+        "menu": [
+          {
+            "text": "DEPARTAMENTO",
+            "role": "menuitem",
+            "class": ""
+          },
+          {
+            "text": "PROVINCIA",
+            "role": "menuitem",
+            "class": ""
+          },
+          {
+            "text": "DISTRITO",
+            "role": "menuitem",
+            "class": ""
+          },
+          {
+            "text": "COMISARIA",
+            "role": "menuitem",
+            "class": ""
+          }
+        ]
+      },
+      {
+        "feature": "department search",
+        "suggestions": [
+          {
+            "text": "AREQUIPA",
+            "role": "menuitem",
+            "class": ""
+          }
+        ]
+      },
+      {
+        "feature": "department navigation",
+        "selected": "AREQUIPA"
+      }
+    ],
+    "clusterClick": {
+      "feature": "cluster popup",
+      "summaryVisible": false,
+      "aggregateCount": null,
+      "individualRecordsBrowsed": false
+    },
+    "attributeTable": {
+      "feature": "attribute table",
+      "opened": true,
+      "headers": [],
+      "tabs": [
+        "DELITOS PRIORIZADOS",
+        "HOMICIDIO",
+        "EXTORSION",
+        "COMISARIAS BASICAS",
+        "LIMITE DISTRITAL",
+        "LIMITE PROVINCIAL",
+        "LIMITE DEPARTAMENTAL"
+      ],
+      "individualRowsRead": false,
+      "exported": false
+    },
+    "mobile": {
+      "feature": "mobile viewport",
+      "outer": {
+        "viewport": 390,
+        "scrollWidth": 390
+      },
+      "inner": {
+        "viewport": 390,
+        "scrollWidth": 390
+      },
+      "controlsVisible": true
+    },
+    "visualReview": [
+      "National heatmap, circle aggregates and departmental bar chart rendered.",
+      "Arequipa search selected and focused the department, with official department metadata popup.",
+      "Mobile resize: no horizontal overflow, but an off-country map viewport and a large table panel were observed."
+    ],
+    "limitations": [
+      "Cluster popup is demonstrated by user screenshot and configured behavior; test click did not confirm it.",
+      "Attribute-table panel/tabs opened; individual rows and export were not tested.",
+      "Measurement/basemap/print/add-data panels opened; measurement accuracy, basemap switching, print execution and uploads were not tested.",
+      "Browser loads normal viewer data, but no incident response bodies, exact locations, raw incident rows or full screenshots are retained in this evidence."
+    ]
+  },
+  "technicalReferences": [
+    "https://maplibre.org/maplibre-gl-js/docs/examples/create-a-heatmap-layer/",
+    "https://maplibre.org/maplibre-gl-js/docs/examples/create-and-style-clusters/",
+    "https://developers.arcgis.com/rest/services-reference/enterprise/query-feature-service-layer/"
+  ],
+  "limitations": [
+    "Public archive periods are occurrence-field groups, not guarantees of complete coverage.",
+    "Sources overlap and must not be unioned as independent incidents.",
+    "No provider-specific license, counting-identity, coordinate-accuracy or nationwide containment approval was established.",
+    "Catalogue search is limited to anonymously visible indexed organization items.",
+    "Aggregates are separate reads, not a transactional source snapshot."
+  ]
+}

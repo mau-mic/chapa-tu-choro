@@ -1,0 +1,69 @@
+{
+  "checkedDateLocal": "2026-11-12",
+  "scope": "Local development upgrade only; no source addresses, case IDs or raw source coordinate lists in this evidence. Public reference center is a user-picked test area, not a source case location.",
+  "backfillExitCode": 0,
+  "baselinePreserved": true,
+  "categorySnapshotsCompared": 171,
+  "statisticalRows": 376714,
+  "statisticalTotal": 7509690,
+  "storage": {
+    "sourceSnapshots": 91,
+    "upgradedSnapshots": 91,
+    "locationGroups": 625367,
+    "reconciliationFailures": 0,
+    "rlsEnabled": true,
+    "noPublicSelect": true
+  },
+  "radiusDistanceCrossCheckMetres": [
+    500,
+    1000,
+    2000
+  ],
+  "radiusDistanceCrossCheckCounts": [
+    67,
+    149,
+    384
+  ],
+  "years": [
+    {
+      "year": 2026,
+      "month": 10,
+      "category": "all",
+      "spatialDetailAvailable": true,
+      "gridMetres": 500,
+      "radiusResultAvailable": true
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "extortion",
+      "spatialDetailAvailable": true,
+      "gridMetres": 500,
+      "radiusResultAvailable": true
+    }
+  ],
+  "tests": {
+    "backend": 127,
+    "frontend": 85,
+    "ingestion": 55
+  },
+  "browser": {
+    "period": "2026-10",
+    "department": "15",
+    "publicReferenceCenter": {
+      "longitude": -77.03299999999936,
+      "latitude": -12.120000000000331
+    },
+    "records500m": 67,
+    "records1000m": 149,
+    "records2000m": 384,
+    "heatmapGridMetres": 500,
+    "underlyingDepartmentPreserved": true,
+    "circleRendered": true,
+    "clearWorked": true,
+    "apiFailureIsolated": true,
+    "retryRecovered": true,
+    "mobileOverflow": false,
+    "pageErrors": []
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "checkedDateLocal": "2026-11-12",
+  "scope": "Local development repair and backfill. No production/AWS changes. Aggregate audit counts only; archives must not be added as distinct crimes.",
+  "backfillExitCode": 0,
+  "completed2025Snapshots": 81,
+  "archives": [
+    {
+      "source_key": "active-2026",
+      "year": 2026,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "source_rows": 487787,
+      "mapped_rows": 411685,
+      "unavailable_business_id_snapshots": 0
+    },
+    {
+      "source_key": "archive-2025-drugs",
+      "year": 2025,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "source_rows": 3494,
+      "mapped_rows": 237,
+      "unavailable_business_id_snapshots": 0
+    },
+    {
+      "source_key": "archive-2025-extortion",
+      "year": 2025,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source_rows": 26255,
+      "mapped_rows": 24638,
+      "unavailable_business_id_snapshots": 12
+    },
+    {
+      "source_key": "archive-2025-fraud",
+      "year": 2025,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "source_rows": 27060,
+      "mapped_rows": 3344,
+      "unavailable_business_id_snapshots": 0
+    },
+    {
+      "source_key": "archive-2025-gangs",
+      "year": 2025,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "source_rows": 284,
+      "mapped_rows": 56,
+      "unavailable_business_id_snapshots": 0
+    },
+    {
+      "source_key": "archive-2025-homicide",
+      "year": 2025,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source_rows": 2701,
+      "mapped_rows": 2587,
+      "unavailable_business_id_snapshots": 0
+    },
+    {
+      "source_key": "archive-2025-robbery",
+      "year": 2025,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "source_rows": 48085,
+      "mapped_rows": 5955,
+      "unavailable_business_id_snapshots": 0
+    },
+    {
+      "source_key": "archive-2025-theft",
+      "year": 2025,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "source_rows": 131355,
+      "mapped_rows": 21139,
+      "unavailable_business_id_snapshots": 0
+    },
+    {
+      "source_key": "archive-2025-violence",
+      "year": 2025,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source_rows": 300202,
+      "mapped_rows": 287405,
+      "unavailable_business_id_snapshots": 0
+    }
+  ],
+  "apiChecks": [
+    {
+      "category": "drugs",
+      "month": 9,
+      "mappedRecords": 22,
+      "visibleRecords": 0,
+      "nullableAuditCorrect": true,
+      "aggregatesReconcile": true
+    },
+    {
+      "category": "extortion",
+      "month": 12,
+      "mappedRecords": 1144,
+      "visibleRecords": 909,
+      "nullableAuditCorrect": true,
+      "aggregatesReconcile": true
+    },
+    {
+      "category": "fraud",
+      "month": 9,
+      "mappedRecords": 293,
+      "visibleRecords": 174,
+      "nullableAuditCorrect": true,
+      "aggregatesReconcile": true
+    },
+    {
+      "category": "gangs",
+      "month": 9,
+      "mappedRecords": 5,
+      "visibleRecords": 0,
+      "nullableAuditCorrect": true,
+      "aggregatesReconcile": true
+    },
+    {
+      "category": "homicide",
+      "month": 12,
+      "mappedRecords": 191,
+      "visibleRecords": 86,
+      "nullableAuditCorrect": true,
+      "aggregatesReconcile": true
+    },
+    {
+      "category": "robbery",
+      "month": 9,
+      "mappedRecords": 597,
+      "visibleRecords": 424,
+      "nullableAuditCorrect": true,
+      "aggregatesReconcile": true
+    },
+    {
+      "category": "theft",
+      "month": 9,
+      "mappedRecords": 2286,
+      "visibleRecords": 1891,
+      "nullableAuditCorrect": true,
+      "aggregatesReconcile": true
+    },
+    {
+      "category": "violence",
+      "month": 12,
+      "mappedRecords": 20686,
+      "visibleRecords": 19252,
+      "nullableAuditCorrect": true,
+      "aggregatesReconcile": true
+    }
+  ],
+  "sidpolSeptember2026Unchanged": 63043,
+  "tests": {
+    "backend": 116,
+    "frontend": 72,
+    "ingestion": 55
+  },
+  "browser": {
+    "realExtortionMappedRows": 2069,
+    "unavailableIdentifierLabel": true,
+    "mapReady": true,
+    "pageErrors": []
+  }
+}

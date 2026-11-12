@@ -1,0 +1,33 @@
+{
+  "period": "2026-10",
+  "scope": "Todo el Per\u00fa",
+  "globalRecords": 38414,
+  "zoom": 10,
+  "cells500m": 1162,
+  "cells10km": 33,
+  "radius500m": 61,
+  "smallPanReused": true,
+  "failureClearedCells": true,
+  "retryRecovered": true,
+  "sidebarAndLegendSynced": true,
+  "mobileOverflow": false,
+  "pageErrors": [],
+  "requests": 6,
+  "date": "2026-11-12",
+  "backendTests": {
+    "passed": 135,
+    "failed": 0,
+    "skipped": 0,
+    "database": "isolated PostGIS"
+  },
+  "frontendTests": {
+    "passed": 91,
+    "failed": 0
+  },
+  "backendReleaseBuild": true,
+  "frontendProductionBuildAndTypeScript": true,
+  "newImportRequiredForExistingLocationSnapshots": false,
+  "databaseChanges": false,
+  "productionChanges": false,
+  "interpretation": "500 m denotes projected cell side length; the independently activated radius tool uses geodesic distance. Counts represent source classification rows; groups below five are suppressed."
+}
