@@ -1,0 +1,57 @@
+{
+  "name": "chapa-tu-choro-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc -b",
+    "test:e2e": "npm run build && npm run test:e2e:built",
+    "test:e2e:ui": "npm run build && npm run typecheck:e2e && playwright test --ui",
+    "typecheck:e2e": "tsc -p tsconfig.e2e.json",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write src",
+    "format:check": "prettier --check src",
+    "test:e2e:built": "npm run typecheck:e2e && playwright test"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.9.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "1.72.0",
+    "maplibre-gl": "6.18.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss": "^4.3.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "1.65.0",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/geojson": "^7946.0.16",
+    "@types/node": "22.20.5",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "eslint": "^10.14.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "jsdom": "^31.0.0",
+    "prettier": "^3.10.1",
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.72.2",
+    "vite": "^6.3.5",
+    "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+  },
+  "overrides": {
+    "minimatch": "^11.0.1"
+  }
+}
