@@ -1,0 +1,170 @@
+{
+  "date": "2026-11-13",
+  "scope": "Phase 4 initial population comparison; local only",
+  "dataset": {
+    "publisher": "INEI",
+    "kind": "preliminary annual projections; not Census 2025 results",
+    "years": [
+      2018,
+      2026
+    ],
+    "sha256": "9436df29b883fd4a9db3705040a6668ff4efe7047c2643249b6b6bedd90d5c8b",
+    "observations": 19026,
+    "unavailable_historical_values": 59,
+    "imported": 19026,
+    "rejected": 0,
+    "unmatched_geometry_codes": [
+      "130112",
+      "160405"
+    ],
+    "report_district_year_without_population": {
+      "ubigeo": "080915",
+      "year": 2020,
+      "months": [
+        5,
+        6,
+        10,
+        12
+      ],
+      "reports": 4
+    },
+    "replay": "skipped; no duplicates"
+  },
+  "storage": {
+    "migration": "007_population.sql",
+    "applied_to": "local Docker PostgreSQL only",
+    "supabase_or_production_changed": false,
+    "tables": [
+      "population_releases",
+      "population_observations"
+    ],
+    "browser_roles": "RLS enabled; PUBLIC/anon/authenticated privileges revoked"
+  },
+  "checks": {
+    "backend": {
+      "passed": 176,
+      "failed": 0,
+      "skipped": 0,
+      "build_warnings": 0,
+      "build_errors": 0,
+      "runner": "cached SDK 10.0 Docker image; host ASP.NET runtime absent",
+      "command": "dotnet test backend/ChapaTuChoro.slnx --artifacts-path /workspace/backend/tests/ChapaTuChoro.Tests/bin -m:1 -p:UseSharedCompilation=false --verbosity normal",
+      "postgis_enabled": true
+    },
+    "ingestion": {
+      "passed": 99,
+      "failed": 0,
+      "skipped": 0,
+      "command": "uv run --with-requirements ingestion/requirements.txt python -m unittest discover -s ingestion/tests -v",
+      "postgis_enabled": true
+    },
+    "frontend": {
+      "passed": 129,
+      "failed": 0,
+      "command": "npm test",
+      "typescript_and_production_build": "passed",
+      "eslint_and_prettier": "passed"
+    },
+    "browser_regressions": {
+      "passed": 34,
+      "failed": 0,
+      "command": "npm run test:e2e:built",
+      "projects": [
+        "desktop",
+        "mobile"
+      ],
+      "data": "synthetic fixtures only"
+    },
+    "live_browsers": {
+      "passed": 2,
+      "projects": [
+        "desktop 1440x1000",
+        "mobile 390x844"
+      ],
+      "origin": "http://127.0.0.1:5173",
+      "real_data": true,
+      "javascript_errors": 0,
+      "horizontal_overflow": false
+    },
+    "python_tools": {
+      "ruff_new_module_and_tests": "passed",
+      "ty_new_module_and_tests": "passed"
+    },
+    "compose": "configuration and app build/start passed"
+  },
+  "requirement_evidence": {
+    "workbook_validation_and_idempotence": "PopulationWorkbookTests.test_import_is_atomic_versioned_idempotent_and_reports_unmatched; test_rejects_inconsistent_totals; test_preserves_codes_years_and_unavailable_districts",
+    "exact_rates_missing_values_and_filters": "PopulationTests.UsesAnnualPopulationAndKeepsMissingMonthsNull; MissingPopulationSuppressesRatesAndPreservesReports; PostgisPopulationTests.FiltersAggregatesAndSuppressesUnmatchedRatesInPostgres",
+    "bounded_query_count": "PostgisPopulationTests.FiltersAggregatesAndSuppressesUnmatchedRatesInPostgres asserts three EF commands and GROUP BY",
+    "api_protection": "PopulationApiTests.InvalidSelectionReturnsProblemDetails; MissingPopulationReturns404AndUnexpectedErrorsStayPrivate; SuccessfulComparisonIsProtectedByAnalyticsRateLimit",
+    "frontend_resilience": "PopulationComparison.test.tsx: offers retry after an API failure; does not show a late response from a previous territory; times out a hanging request and provides a retry action",
+    "mobile_and_source_separation": "population comparison preserves counts, filters and source separation (desktop/mobile)"
+  },
+  "live_api_observations": [
+    {
+      "year": 2026,
+      "month": 9,
+      "scope": "",
+      "population": 34660114,
+      "selected": {
+        "month": 9,
+        "reports": 63043,
+        "ratePer100k": 181.89,
+        "rowsWithoutPopulation": 0
+      },
+      "ranking_territories": 25,
+      "request_ms": 1340.86
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "scope": "&department=15&province=1501&district=150101",
+      "population": 265503,
+      "selected": {
+        "month": 1,
+        "reports": 3321,
+        "ratePer100k": 1250.83,
+        "rowsWithoutPopulation": 0
+      },
+      "ranking_territories": 1,
+      "request_ms": 130.34
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "scope": "",
+      "population": 32625948,
+      "selected": {
+        "month": 5,
+        "reports": 31137,
+        "ratePer100k": null,
+        "rowsWithoutPopulation": 1
+      },
+      "ranking_territories": 25,
+      "request_ms": 164.08
+    },
+    {
+      "year": 2020,
+      "month": 1,
+      "scope": "",
+      "population": 32625948,
+      "selected": {
+        "month": 1,
+        "reports": 83286,
+        "ratePer100k": 255.28,
+        "rowsWithoutPopulation": 0
+      },
+      "ranking_territories": 25,
+      "request_ms": 43.62
+    }
+  ],
+  "performance_limits": "Three bounded EF queries; timings are individual local requests, not load benchmarks or AWS/Supabase latency guarantees. First request includes cold model/JIT setup.",
+  "limitations": [
+    "Population series is preliminary and not rebased to definitive Census 2025 results.",
+    "No within-district resident distribution or population-based heatmap is inferred.",
+    "Map and existing trend charts retain count semantics; rates are a separate CSV Trends panel.",
+    "Automatic population source discovery/download and scheduled population Lambda adapter are not implemented.",
+    "Existing MapLibre chunk-size build warning remains.",
+    "Remote CI, AWS deployment and Supabase role/policy provisioning were not executed."
+  ]
+}
