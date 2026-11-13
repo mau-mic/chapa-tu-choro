@@ -1,0 +1,294 @@
+{
+  "date": "2026-11-13",
+  "scope": "Full Phase 4 advanced official statistics, local end-to-end implementation",
+  "implemented": {
+    "movingAverages": "Complete rolling 3/12 calendar months including the observed month",
+    "historicalBaseline": "Complete preceding 36 months, excluding current month",
+    "seasonalBaseline": "Same month in preceding three years, all required",
+    "nationalComparison": "National reports / national population *100000; same category/month and own-year denominators, including selected territory",
+    "missingValues": "Never zero-filled; counts and rates have independent sample availability; zero references suppress percent changes",
+    "sourceAlignment": "Parallel history/insights must agree on release, dates, counts, rates and population"
+  },
+  "checks": {
+    "backend": {
+      "passed": 199,
+      "skipped": 0,
+      "command": "dotnet test backend/ChapaTuChoro.slnx (SDK 10 container; disposable local PostGIS schemas)"
+    },
+    "frontend": {
+      "passed": 153,
+      "command": "npm test"
+    },
+    "browser": {
+      "passed": 48,
+      "projects": [
+        "desktop",
+        "mobile"
+      ],
+      "command": "npm run test:e2e:built"
+    },
+    "buildAndTypes": "npm run build passed",
+    "browserTypes": "npm run typecheck:e2e passed",
+    "lint": "npm run lint passed",
+    "format": "npm run format:check passed",
+    "compose": "Local API, web and PostGIS updated; no remote changes"
+  },
+  "requirementEvidence": [
+    {
+      "requirement": "Moving averages",
+      "tests": [
+        "RollingMeansRequireCalendarWindowsAndPreserveZero",
+        "switches moving windows and baselines locally and exposes national rates and differences"
+      ]
+    },
+    {
+      "requirement": "Historical and seasonal references",
+      "tests": [
+        "BaselinesUseOnlyEarlierMonthsAndEachYearsPopulation",
+        "reports incomplete seasonal samples and keeps count and rate availability distinct"
+      ]
+    },
+    {
+      "requirement": "Weighted national comparison",
+      "tests": [
+        "NationalReferenceUsesWeightedTotalsAndDoesNotHideLocalDenominatorFailures",
+        "FiltersAggregatesAndSuppressesUnmatchedRatesInPostgres",
+        "advanced statistics share dates and switch smoothing without new requests"
+      ]
+    },
+    {
+      "requirement": "Resilience and contracts",
+      "tests": [
+        "CallerCancellationIsPropagatedAndCategoryIsNormalized",
+        "NewAnalyticsEndpointsAreRateLimited",
+        "EveryApplicationEndpointDocumentsSuccessAndProblemDetailsSchemas",
+        "suppresses a national comparison if counts changed between parallel requests",
+        "times out an aborted fetch and allows an explicit retry",
+        "failed advanced analysis preserves reports and recovers explicitly"
+      ]
+    }
+  ],
+  "queryEvidence": {
+    "commands": 3,
+    "scope": "Active release, bounded national/scoped annual denominators, one grouped national/scoped facts query",
+    "testedInPostgres": true,
+    "rawReportsMaterialized": false,
+    "additionalIndexes": false
+  },
+  "realImportedData": {
+    "checkedMonths": 69,
+    "sourceMatches": true,
+    "coldSeconds": 0.832,
+    "warmSeconds": 0.491,
+    "lastMonth": {
+      "period": {
+        "year": 2026,
+        "month": 9
+      },
+      "scope": {
+        "reports": 25739,
+        "population": 11618679,
+        "ratePer100k": 221.53,
+        "rolling3": {
+          "reports": 26601,
+          "ratePer100k": 228.95,
+          "reportObservations": 3,
+          "rateObservations": 3,
+          "requiredObservations": 3
+        },
+        "rolling12": {
+          "reports": 28183.33,
+          "ratePer100k": 243.4,
+          "reportObservations": 12,
+          "rateObservations": 12,
+          "requiredObservations": 12
+        },
+        "historicalBaseline": {
+          "reports": 31038.28,
+          "ratePer100k": 272.33,
+          "reportObservations": 36,
+          "rateObservations": 36,
+          "requiredObservations": 36
+        },
+        "seasonalBaseline": {
+          "reports": 31585.33,
+          "ratePer100k": 279.66,
+          "reportObservations": 3,
+          "rateObservations": 3,
+          "requiredObservations": 3
+        },
+        "historicalChange": {
+          "reportsPercent": -17.07,
+          "ratePercent": -18.65
+        },
+        "seasonalChange": {
+          "reportsPercent": -18.51,
+          "ratePercent": -20.79
+        }
+      },
+      "national": {
+        "reports": 63043,
+        "population": 34660114,
+        "ratePer100k": 181.89,
+        "rolling3": {
+          "reports": 68080,
+          "ratePer100k": 196.42,
+          "reportObservations": 3,
+          "rateObservations": 3,
+          "requiredObservations": 3
+        },
+        "rolling12": {
+          "reports": 71387.58,
+          "ratePer100k": 206.43,
+          "reportObservations": 12,
+          "rateObservations": 12,
+          "requiredObservations": 12
+        },
+        "historicalBaseline": {
+          "reports": 79044.5,
+          "ratePer100k": 230.98,
+          "reportObservations": 36,
+          "rateObservations": 36,
+          "requiredObservations": 36
+        },
+        "seasonalBaseline": {
+          "reports": 81285.67,
+          "ratePer100k": 238.96,
+          "reportObservations": 3,
+          "rateObservations": 3,
+          "requiredObservations": 3
+        },
+        "historicalChange": {
+          "reportsPercent": -20.24,
+          "ratePercent": -21.25
+        },
+        "seasonalChange": {
+          "reportsPercent": -22.44,
+          "ratePercent": -23.88
+        }
+      },
+      "nationalDifferencePer100k": 39.64,
+      "nationalDifferencePercent": 21.79
+    },
+    "firstMonth": {
+      "period": {
+        "year": 2021,
+        "month": 1
+      },
+      "scope": {
+        "reports": 22191,
+        "population": 10814450,
+        "ratePer100k": 205.2,
+        "rolling3": {
+          "reports": 21655,
+          "ratePer100k": 202.55,
+          "reportObservations": 3,
+          "rateObservations": 3,
+          "requiredObservations": 3
+        },
+        "rolling12": {
+          "reports": 18436,
+          "ratePer100k": 173.16,
+          "reportObservations": 12,
+          "rateObservations": 12,
+          "requiredObservations": 12
+        },
+        "historicalBaseline": {
+          "reports": 24337.92,
+          "ratePer100k": 234.39,
+          "reportObservations": 36,
+          "rateObservations": 36,
+          "requiredObservations": 36
+        },
+        "seasonalBaseline": {
+          "reports": 29150.33,
+          "ratePer100k": 279.77,
+          "reportObservations": 3,
+          "rateObservations": 3,
+          "requiredObservations": 3
+        },
+        "historicalChange": {
+          "reportsPercent": -8.82,
+          "ratePercent": -12.45
+        },
+        "seasonalChange": {
+          "reportsPercent": -23.87,
+          "ratePercent": -26.65
+        }
+      },
+      "national": {
+        "reports": 61616,
+        "population": 33035304,
+        "ratePer100k": 186.52,
+        "rolling3": {
+          "reports": 61273.33,
+          "ratePer100k": null,
+          "reportObservations": 3,
+          "rateObservations": 2,
+          "requiredObservations": 3
+        },
+        "rolling12": {
+          "reports": 52296.67,
+          "ratePer100k": null,
+          "reportObservations": 12,
+          "rateObservations": 8,
+          "requiredObservations": 12
+        },
+        "historicalBaseline": {
+          "reports": 63305.67,
+          "ratePer100k": null,
+          "reportObservations": 36,
+          "rateObservations": 32,
+          "requiredObservations": 36
+        },
+        "seasonalBaseline": {
+          "reports": 72247.33,
+          "ratePer100k": 224.67,
+          "reportObservations": 3,
+          "rateObservations": 3,
+          "requiredObservations": 3
+        },
+        "historicalChange": {
+          "reportsPercent": -2.67,
+          "ratePercent": null
+        },
+        "seasonalChange": {
+          "reportsPercent": -14.72,
+          "ratePercent": -16.98
+        }
+      },
+      "nationalDifferencePer100k": 18.68,
+      "nationalDifferencePercent": 10.02
+    },
+    "nationalReportRowsPreserved": 63043
+  },
+  "realBrowsers": [
+    {
+      "name": "desktop",
+      "nationalRate18189Visible": true,
+      "rolling12": true,
+      "historicalBaseline": true,
+      "errors": [],
+      "overflow": false
+    },
+    {
+      "name": "mobile",
+      "nationalRate18189Visible": true,
+      "rolling12": true,
+      "historicalBaseline": true,
+      "errors": [],
+      "overflow": false
+    }
+  ],
+  "populationWorkbook": {
+    "sha256": "9436df29b883fd4a9db3705040a6668ff4efe7047c2643249b6b6bedd90d5c8b",
+    "modified": false
+  },
+  "limits": [
+    "Preliminary INEI projections remain the denominator, not definitive Census 2025 results",
+    "Early or incomplete reference windows are unavailable, with explicit observation counts",
+    "Local single-request timings are not a benchmark or AWS/Supabase guarantee",
+    "Existing MapLibre bundle-size warning remains",
+    "No database migration, reimport, new service or dependency, production/Supabase write or cloud deployment"
+  ]
+}
