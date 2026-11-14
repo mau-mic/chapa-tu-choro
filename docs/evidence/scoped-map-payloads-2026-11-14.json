@@ -1,0 +1,3785 @@
+{
+  "date": "2026-11-14",
+  "period": {
+    "year": 2026,
+    "month": 9
+  },
+  "departments": 25,
+  "detailScopes": 221,
+  "totalSuccessfulRequests": 520,
+  "budgetBytes": 5000000,
+  "allMapExplorerCountsMatch": true,
+  "unscopedStatus": 400,
+  "largestBody": {
+    "path": "/api/explorer/rates?year=2026&month=9",
+    "status": 200,
+    "bodyBytes": 1468689,
+    "estimatedProxyEnvelopeBytes": 1470219,
+    "milliseconds": 617
+  },
+  "largestProxyEstimate": {
+    "path": "/api/explorer/rates?year=2026&month=9",
+    "status": 200,
+    "bodyBytes": 1468689,
+    "estimatedProxyEnvelopeBytes": 1470219,
+    "milliseconds": 617
+  },
+  "samples": [
+    {
+      "path": "/api/metadata",
+      "status": 200,
+      "bodyBytes": 4495,
+      "estimatedProxyEnvelopeBytes": 5113,
+      "milliseconds": 1040
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9",
+      "status": 200,
+      "bodyBytes": 1467939,
+      "estimatedProxyEnvelopeBytes": 1469441,
+      "milliseconds": 758
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=01",
+      "status": 200,
+      "bodyBytes": 264171,
+      "estimatedProxyEnvelopeBytes": 266291,
+      "milliseconds": 113
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02",
+      "status": 200,
+      "bodyBytes": 475931,
+      "estimatedProxyEnvelopeBytes": 480019,
+      "milliseconds": 177
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=01",
+      "status": 200,
+      "bodyBytes": 276730,
+      "estimatedProxyEnvelopeBytes": 281130,
+      "milliseconds": 187
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02",
+      "status": 200,
+      "bodyBytes": 498987,
+      "estimatedProxyEnvelopeBytes": 507275,
+      "milliseconds": 269
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=01",
+      "status": 200,
+      "bodyBytes": 277406,
+      "estimatedProxyEnvelopeBytes": 281834,
+      "milliseconds": 436
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=02",
+      "status": 200,
+      "bodyBytes": 499784,
+      "estimatedProxyEnvelopeBytes": 508100,
+      "milliseconds": 294
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=03",
+      "status": 200,
+      "bodyBytes": 272778,
+      "estimatedProxyEnvelopeBytes": 274922,
+      "milliseconds": 80
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=04",
+      "status": 200,
+      "bodyBytes": 507070,
+      "estimatedProxyEnvelopeBytes": 509790,
+      "milliseconds": 181
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=03",
+      "status": 200,
+      "bodyBytes": 285939,
+      "estimatedProxyEnvelopeBytes": 290449,
+      "milliseconds": 189
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=04",
+      "status": 200,
+      "bodyBytes": 524703,
+      "estimatedProxyEnvelopeBytes": 530573,
+      "milliseconds": 279
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=03",
+      "status": 200,
+      "bodyBytes": 286625,
+      "estimatedProxyEnvelopeBytes": 291163,
+      "milliseconds": 222
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05",
+      "status": 200,
+      "bodyBytes": 475632,
+      "estimatedProxyEnvelopeBytes": 478712,
+      "milliseconds": 160
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=04",
+      "status": 200,
+      "bodyBytes": 525538,
+      "estimatedProxyEnvelopeBytes": 531436,
+      "milliseconds": 276
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06",
+      "status": 200,
+      "bodyBytes": 397749,
+      "estimatedProxyEnvelopeBytes": 400901,
+      "milliseconds": 146
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05",
+      "status": 200,
+      "bodyBytes": 493453,
+      "estimatedProxyEnvelopeBytes": 499737,
+      "milliseconds": 247
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06",
+      "status": 200,
+      "bodyBytes": 417522,
+      "estimatedProxyEnvelopeBytes": 424208,
+      "milliseconds": 247
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=05",
+      "status": 200,
+      "bodyBytes": 494184,
+      "estimatedProxyEnvelopeBytes": 500496,
+      "milliseconds": 265
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=07",
+      "status": 200,
+      "bodyBytes": 10116,
+      "estimatedProxyEnvelopeBytes": 10388,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=07",
+      "status": 200,
+      "bodyBytes": 12523,
+      "estimatedProxyEnvelopeBytes": 13263,
+      "milliseconds": 110
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=06",
+      "status": 200,
+      "bodyBytes": 418315,
+      "estimatedProxyEnvelopeBytes": 425029,
+      "milliseconds": 252
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=07",
+      "status": 200,
+      "bodyBytes": 13087,
+      "estimatedProxyEnvelopeBytes": 13855,
+      "milliseconds": 117
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=09",
+      "status": 200,
+      "bodyBytes": 323664,
+      "estimatedProxyEnvelopeBytes": 326216,
+      "milliseconds": 98
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08",
+      "status": 200,
+      "bodyBytes": 564210,
+      "estimatedProxyEnvelopeBytes": 567098,
+      "milliseconds": 182
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=09",
+      "status": 200,
+      "bodyBytes": 337189,
+      "estimatedProxyEnvelopeBytes": 342197,
+      "milliseconds": 203
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08",
+      "status": 200,
+      "bodyBytes": 583335,
+      "estimatedProxyEnvelopeBytes": 589665,
+      "milliseconds": 287
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=09",
+      "status": 200,
+      "bodyBytes": 337826,
+      "estimatedProxyEnvelopeBytes": 342862,
+      "milliseconds": 213
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10",
+      "status": 200,
+      "bodyBytes": 369059,
+      "estimatedProxyEnvelopeBytes": 371179,
+      "milliseconds": 126
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=08",
+      "status": 200,
+      "bodyBytes": 584194,
+      "estimatedProxyEnvelopeBytes": 590552,
+      "milliseconds": 286
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=11",
+      "status": 200,
+      "bodyBytes": 164825,
+      "estimatedProxyEnvelopeBytes": 165961,
+      "milliseconds": 54
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10",
+      "status": 200,
+      "bodyBytes": 382271,
+      "estimatedProxyEnvelopeBytes": 386759,
+      "milliseconds": 227
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=11",
+      "status": 200,
+      "bodyBytes": 173157,
+      "estimatedProxyEnvelopeBytes": 175789,
+      "milliseconds": 165
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=10",
+      "status": 200,
+      "bodyBytes": 382969,
+      "estimatedProxyEnvelopeBytes": 387485,
+      "milliseconds": 250
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=11",
+      "status": 200,
+      "bodyBytes": 173871,
+      "estimatedProxyEnvelopeBytes": 176531,
+      "milliseconds": 172
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13",
+      "status": 200,
+      "bodyBytes": 254133,
+      "estimatedProxyEnvelopeBytes": 256229,
+      "milliseconds": 96
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=12",
+      "status": 200,
+      "bodyBytes": 414689,
+      "estimatedProxyEnvelopeBytes": 417769,
+      "milliseconds": 137
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13",
+      "status": 200,
+      "bodyBytes": 268386,
+      "estimatedProxyEnvelopeBytes": 273052,
+      "milliseconds": 200
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=12",
+      "status": 200,
+      "bodyBytes": 434137,
+      "estimatedProxyEnvelopeBytes": 440685,
+      "milliseconds": 239
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=13",
+      "status": 200,
+      "bodyBytes": 269176,
+      "estimatedProxyEnvelopeBytes": 273870,
+      "milliseconds": 221
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=14",
+      "status": 200,
+      "bodyBytes": 103231,
+      "estimatedProxyEnvelopeBytes": 104247,
+      "milliseconds": 34
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=12",
+      "status": 200,
+      "bodyBytes": 434976,
+      "estimatedProxyEnvelopeBytes": 441552,
+      "milliseconds": 256
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=14",
+      "status": 200,
+      "bodyBytes": 110928,
+      "estimatedProxyEnvelopeBytes": 113344,
+      "milliseconds": 142
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=15",
+      "status": 200,
+      "bodyBytes": 471940,
+      "estimatedProxyEnvelopeBytes": 476148,
+      "milliseconds": 176
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=14",
+      "status": 200,
+      "bodyBytes": 111646,
+      "estimatedProxyEnvelopeBytes": 114090,
+      "milliseconds": 153
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=16",
+      "status": 200,
+      "bodyBytes": 589987,
+      "estimatedProxyEnvelopeBytes": 591363,
+      "milliseconds": 158
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=15",
+      "status": 200,
+      "bodyBytes": 497714,
+      "estimatedProxyEnvelopeBytes": 506458,
+      "milliseconds": 264
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=16",
+      "status": 200,
+      "bodyBytes": 597871,
+      "estimatedProxyEnvelopeBytes": 600703,
+      "milliseconds": 250
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=15",
+      "status": 200,
+      "bodyBytes": 498814,
+      "estimatedProxyEnvelopeBytes": 507586,
+      "milliseconds": 277
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=17",
+      "status": 200,
+      "bodyBytes": 354717,
+      "estimatedProxyEnvelopeBytes": 355085,
+      "milliseconds": 119
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=16",
+      "status": 200,
+      "bodyBytes": 598479,
+      "estimatedProxyEnvelopeBytes": 601339,
+      "milliseconds": 277
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=18",
+      "status": 200,
+      "bodyBytes": 115826,
+      "estimatedProxyEnvelopeBytes": 116434,
+      "milliseconds": 35
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=17",
+      "status": 200,
+      "bodyBytes": 357760,
+      "estimatedProxyEnvelopeBytes": 358718,
+      "milliseconds": 218
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=18",
+      "status": 200,
+      "bodyBytes": 119805,
+      "estimatedProxyEnvelopeBytes": 121177,
+      "milliseconds": 140
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=18",
+      "status": 200,
+      "bodyBytes": 120375,
+      "estimatedProxyEnvelopeBytes": 121775,
+      "milliseconds": 151
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=17",
+      "status": 200,
+      "bodyBytes": 358326,
+      "estimatedProxyEnvelopeBytes": 359312,
+      "milliseconds": 227
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=19",
+      "status": 200,
+      "bodyBytes": 172195,
+      "estimatedProxyEnvelopeBytes": 172995,
+      "milliseconds": 58
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=20",
+      "status": 200,
+      "bodyBytes": 234456,
+      "estimatedProxyEnvelopeBytes": 236120,
+      "milliseconds": 112
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=19",
+      "status": 200,
+      "bodyBytes": 177964,
+      "estimatedProxyEnvelopeBytes": 179810,
+      "milliseconds": 157
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=20",
+      "status": 200,
+      "bodyBytes": 246531,
+      "estimatedProxyEnvelopeBytes": 250347,
+      "milliseconds": 182
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=19",
+      "status": 200,
+      "bodyBytes": 178566,
+      "estimatedProxyEnvelopeBytes": 180440,
+      "milliseconds": 164
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=20",
+      "status": 200,
+      "bodyBytes": 247279,
+      "estimatedProxyEnvelopeBytes": 251123,
+      "milliseconds": 194
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21",
+      "status": 200,
+      "bodyBytes": 609614,
+      "estimatedProxyEnvelopeBytes": 612358,
+      "milliseconds": 189
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=22",
+      "status": 200,
+      "bodyBytes": 375872,
+      "estimatedProxyEnvelopeBytes": 377848,
+      "milliseconds": 121
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21",
+      "status": 200,
+      "bodyBytes": 626054,
+      "estimatedProxyEnvelopeBytes": 631794,
+      "milliseconds": 302
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=22",
+      "status": 200,
+      "bodyBytes": 389592,
+      "estimatedProxyEnvelopeBytes": 394014,
+      "milliseconds": 235
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=22",
+      "status": 200,
+      "bodyBytes": 390352,
+      "estimatedProxyEnvelopeBytes": 394802,
+      "milliseconds": 247
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=23",
+      "status": 200,
+      "bodyBytes": 112176,
+      "estimatedProxyEnvelopeBytes": 112952,
+      "milliseconds": 35
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=21",
+      "status": 200,
+      "bodyBytes": 626771,
+      "estimatedProxyEnvelopeBytes": 632539,
+      "milliseconds": 306
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=24",
+      "status": 200,
+      "bodyBytes": 55338,
+      "estimatedProxyEnvelopeBytes": 55754,
+      "milliseconds": 23
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=23",
+      "status": 200,
+      "bodyBytes": 117376,
+      "estimatedProxyEnvelopeBytes": 119120,
+      "milliseconds": 134
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=24",
+      "status": 200,
+      "bodyBytes": 58885,
+      "estimatedProxyEnvelopeBytes": 59965,
+      "milliseconds": 137
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=23",
+      "status": 200,
+      "bodyBytes": 117974,
+      "estimatedProxyEnvelopeBytes": 119746,
+      "milliseconds": 152
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=24",
+      "status": 200,
+      "bodyBytes": 59465,
+      "estimatedProxyEnvelopeBytes": 60573,
+      "milliseconds": 135
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=25",
+      "status": 200,
+      "bodyBytes": 262498,
+      "estimatedProxyEnvelopeBytes": 263058,
+      "milliseconds": 94
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=25",
+      "status": 200,
+      "bodyBytes": 266715,
+      "estimatedProxyEnvelopeBytes": 268071,
+      "milliseconds": 195
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9&department=25",
+      "status": 200,
+      "bodyBytes": 267305,
+      "estimatedProxyEnvelopeBytes": 268689,
+      "milliseconds": 212
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=01&province=0102",
+      "status": 200,
+      "bodyBytes": 32000,
+      "estimatedProxyEnvelopeBytes": 32248,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=01&province=0103",
+      "status": 200,
+      "bodyBytes": 29435,
+      "estimatedProxyEnvelopeBytes": 29827,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=01&province=0102",
+      "status": 200,
+      "bodyBytes": 34224,
+      "estimatedProxyEnvelopeBytes": 34932,
+      "milliseconds": 113
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=01&province=0103",
+      "status": 200,
+      "bodyBytes": 32185,
+      "estimatedProxyEnvelopeBytes": 33133,
+      "milliseconds": 113
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=01&province=0104",
+      "status": 200,
+      "bodyBytes": 38799,
+      "estimatedProxyEnvelopeBytes": 38975,
+      "milliseconds": 20
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=01&province=0101",
+      "status": 200,
+      "bodyBytes": 49784,
+      "estimatedProxyEnvelopeBytes": 50392,
+      "milliseconds": 26
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=01&province=0104",
+      "status": 200,
+      "bodyBytes": 40608,
+      "estimatedProxyEnvelopeBytes": 41168,
+      "milliseconds": 117
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=01&province=0101",
+      "status": 200,
+      "bodyBytes": 54055,
+      "estimatedProxyEnvelopeBytes": 55475,
+      "milliseconds": 130
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=01&province=0105",
+      "status": 200,
+      "bodyBytes": 54227,
+      "estimatedProxyEnvelopeBytes": 54883,
+      "milliseconds": 21
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=01&province=0106",
+      "status": 200,
+      "bodyBytes": 29789,
+      "estimatedProxyEnvelopeBytes": 30181,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=01&province=0106",
+      "status": 200,
+      "bodyBytes": 32727,
+      "estimatedProxyEnvelopeBytes": 33703,
+      "milliseconds": 114
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=01&province=0105",
+      "status": 200,
+      "bodyBytes": 58558,
+      "estimatedProxyEnvelopeBytes": 60044,
+      "milliseconds": 126
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=01&province=0107",
+      "status": 200,
+      "bodyBytes": 30383,
+      "estimatedProxyEnvelopeBytes": 30655,
+      "milliseconds": 15
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=01&district=010202",
+      "status": 200,
+      "bodyBytes": 5642,
+      "estimatedProxyEnvelopeBytes": 5770,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=01&district=010202",
+      "status": 200,
+      "bodyBytes": 10263,
+      "estimatedProxyEnvelopeBytes": 11393,
+      "milliseconds": 101
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0202",
+      "status": 200,
+      "bodyBytes": 12445,
+      "estimatedProxyEnvelopeBytes": 12669,
+      "milliseconds": 8
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=01&province=0107",
+      "status": 200,
+      "bodyBytes": 32885,
+      "estimatedProxyEnvelopeBytes": 33661,
+      "milliseconds": 115
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0203",
+      "status": 200,
+      "bodyBytes": 14252,
+      "estimatedProxyEnvelopeBytes": 14500,
+      "milliseconds": 10
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0202",
+      "status": 200,
+      "bodyBytes": 14849,
+      "estimatedProxyEnvelopeBytes": 15593,
+      "milliseconds": 109
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0204",
+      "status": 200,
+      "bodyBytes": 5203,
+      "estimatedProxyEnvelopeBytes": 5355,
+      "milliseconds": 7
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0203",
+      "status": 200,
+      "bodyBytes": 16672,
+      "estimatedProxyEnvelopeBytes": 17442,
+      "milliseconds": 114
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0205",
+      "status": 200,
+      "bodyBytes": 43719,
+      "estimatedProxyEnvelopeBytes": 44183,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0204",
+      "status": 200,
+      "bodyBytes": 7273,
+      "estimatedProxyEnvelopeBytes": 7883,
+      "milliseconds": 109
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0206",
+      "status": 200,
+      "bodyBytes": 19398,
+      "estimatedProxyEnvelopeBytes": 19766,
+      "milliseconds": 10
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0205",
+      "status": 200,
+      "bodyBytes": 47283,
+      "estimatedProxyEnvelopeBytes": 48469,
+      "milliseconds": 127
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0207",
+      "status": 200,
+      "bodyBytes": 8658,
+      "estimatedProxyEnvelopeBytes": 8834,
+      "milliseconds": 7
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0206",
+      "status": 200,
+      "bodyBytes": 22836,
+      "estimatedProxyEnvelopeBytes": 23904,
+      "milliseconds": 111
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0208",
+      "status": 200,
+      "bodyBytes": 24269,
+      "estimatedProxyEnvelopeBytes": 24469,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0207",
+      "status": 200,
+      "bodyBytes": 10900,
+      "estimatedProxyEnvelopeBytes": 11564,
+      "milliseconds": 113
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0209",
+      "status": 200,
+      "bodyBytes": 15493,
+      "estimatedProxyEnvelopeBytes": 15765,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0208",
+      "status": 200,
+      "bodyBytes": 26699,
+      "estimatedProxyEnvelopeBytes": 27417,
+      "milliseconds": 125
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0201",
+      "status": 200,
+      "bodyBytes": 34883,
+      "estimatedProxyEnvelopeBytes": 35275,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0209",
+      "status": 200,
+      "bodyBytes": 17977,
+      "estimatedProxyEnvelopeBytes": 18787,
+      "milliseconds": 122
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0210",
+      "status": 200,
+      "bodyBytes": 40636,
+      "estimatedProxyEnvelopeBytes": 41124,
+      "milliseconds": 26
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0201",
+      "status": 200,
+      "bodyBytes": 38334,
+      "estimatedProxyEnvelopeBytes": 39428,
+      "milliseconds": 123
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0211",
+      "status": 200,
+      "bodyBytes": 28014,
+      "estimatedProxyEnvelopeBytes": 28238,
+      "milliseconds": 15
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0210",
+      "status": 200,
+      "bodyBytes": 44430,
+      "estimatedProxyEnvelopeBytes": 45684,
+      "milliseconds": 119
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0212",
+      "status": 200,
+      "bodyBytes": 27749,
+      "estimatedProxyEnvelopeBytes": 28093,
+      "milliseconds": 18
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0211",
+      "status": 200,
+      "bodyBytes": 30509,
+      "estimatedProxyEnvelopeBytes": 31267,
+      "milliseconds": 125
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0213",
+      "status": 200,
+      "bodyBytes": 16214,
+      "estimatedProxyEnvelopeBytes": 16510,
+      "milliseconds": 10
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0212",
+      "status": 200,
+      "bodyBytes": 31117,
+      "estimatedProxyEnvelopeBytes": 32145,
+      "milliseconds": 119
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0214",
+      "status": 200,
+      "bodyBytes": 29311,
+      "estimatedProxyEnvelopeBytes": 29655,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0213",
+      "status": 200,
+      "bodyBytes": 19065,
+      "estimatedProxyEnvelopeBytes": 19957,
+      "milliseconds": 114
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0215",
+      "status": 200,
+      "bodyBytes": 28252,
+      "estimatedProxyEnvelopeBytes": 28620,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0214",
+      "status": 200,
+      "bodyBytes": 32089,
+      "estimatedProxyEnvelopeBytes": 33019,
+      "milliseconds": 115
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0216",
+      "status": 200,
+      "bodyBytes": 11505,
+      "estimatedProxyEnvelopeBytes": 11705,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0215",
+      "status": 200,
+      "bodyBytes": 31352,
+      "estimatedProxyEnvelopeBytes": 32364,
+      "milliseconds": 125
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0217",
+      "status": 200,
+      "bodyBytes": 31671,
+      "estimatedProxyEnvelopeBytes": 32015,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0216",
+      "status": 200,
+      "bodyBytes": 13928,
+      "estimatedProxyEnvelopeBytes": 14646,
+      "milliseconds": 114
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0218",
+      "status": 200,
+      "bodyBytes": 38535,
+      "estimatedProxyEnvelopeBytes": 38855,
+      "milliseconds": 18
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0217",
+      "status": 200,
+      "bodyBytes": 34517,
+      "estimatedProxyEnvelopeBytes": 35461,
+      "milliseconds": 122
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0219",
+      "status": 200,
+      "bodyBytes": 23131,
+      "estimatedProxyEnvelopeBytes": 23475,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0218",
+      "status": 200,
+      "bodyBytes": 41904,
+      "estimatedProxyEnvelopeBytes": 42906,
+      "milliseconds": 120
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&province=0220",
+      "status": 200,
+      "bodyBytes": 23372,
+      "estimatedProxyEnvelopeBytes": 23668,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0219",
+      "status": 200,
+      "bodyBytes": 26327,
+      "estimatedProxyEnvelopeBytes": 27327,
+      "milliseconds": 112
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=02&district=020502",
+      "status": 200,
+      "bodyBytes": 801,
+      "estimatedProxyEnvelopeBytes": 929,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&province=0220",
+      "status": 200,
+      "bodyBytes": 26207,
+      "estimatedProxyEnvelopeBytes": 27099,
+      "milliseconds": 117
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=03&province=0301",
+      "status": 200,
+      "bodyBytes": 36605,
+      "estimatedProxyEnvelopeBytes": 36925,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=02&district=020502",
+      "status": 200,
+      "bodyBytes": 8716,
+      "estimatedProxyEnvelopeBytes": 10592,
+      "milliseconds": 101
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=03&province=0302",
+      "status": 200,
+      "bodyBytes": 58744,
+      "estimatedProxyEnvelopeBytes": 59328,
+      "milliseconds": 19
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=03&province=0301",
+      "status": 200,
+      "bodyBytes": 39453,
+      "estimatedProxyEnvelopeBytes": 40337,
+      "milliseconds": 121
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=03&province=0303",
+      "status": 200,
+      "bodyBytes": 32730,
+      "estimatedProxyEnvelopeBytes": 33002,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=03&province=0302",
+      "status": 200,
+      "bodyBytes": 62958,
+      "estimatedProxyEnvelopeBytes": 64338,
+      "milliseconds": 124
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=03&province=0304",
+      "status": 200,
+      "bodyBytes": 52648,
+      "estimatedProxyEnvelopeBytes": 53160,
+      "milliseconds": 18
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=03&province=0303",
+      "status": 200,
+      "bodyBytes": 35154,
+      "estimatedProxyEnvelopeBytes": 35916,
+      "milliseconds": 112
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=03&province=0306",
+      "status": 200,
+      "bodyBytes": 27633,
+      "estimatedProxyEnvelopeBytes": 28025,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=03&province=0304",
+      "status": 200,
+      "bodyBytes": 56007,
+      "estimatedProxyEnvelopeBytes": 57183,
+      "milliseconds": 119
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=03&province=0305",
+      "status": 200,
+      "bodyBytes": 27520,
+      "estimatedProxyEnvelopeBytes": 27768,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=03&province=0306",
+      "status": 200,
+      "bodyBytes": 30646,
+      "estimatedProxyEnvelopeBytes": 31636,
+      "milliseconds": 115
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=03&province=0307",
+      "status": 200,
+      "bodyBytes": 37144,
+      "estimatedProxyEnvelopeBytes": 37584,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=03&province=0305",
+      "status": 200,
+      "bodyBytes": 29929,
+      "estimatedProxyEnvelopeBytes": 30665,
+      "milliseconds": 110
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=03&district=030101",
+      "status": 200,
+      "bodyBytes": 3313,
+      "estimatedProxyEnvelopeBytes": 3441,
+      "milliseconds": 3
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=03&province=0307",
+      "status": 200,
+      "bodyBytes": 40249,
+      "estimatedProxyEnvelopeBytes": 41305,
+      "milliseconds": 115
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=04&province=0401",
+      "status": 200,
+      "bodyBytes": 86624,
+      "estimatedProxyEnvelopeBytes": 87424,
+      "milliseconds": 29
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=03&district=030101",
+      "status": 200,
+      "bodyBytes": 8030,
+      "estimatedProxyEnvelopeBytes": 9168,
+      "milliseconds": 102
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=04&province=0402",
+      "status": 200,
+      "bodyBytes": 36744,
+      "estimatedProxyEnvelopeBytes": 37040,
+      "milliseconds": 15
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=04&province=0401",
+      "status": 200,
+      "bodyBytes": 92828,
+      "estimatedProxyEnvelopeBytes": 94758,
+      "milliseconds": 133
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=04&province=0403",
+      "status": 200,
+      "bodyBytes": 76771,
+      "estimatedProxyEnvelopeBytes": 77187,
+      "milliseconds": 24
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=04&province=0402",
+      "status": 200,
+      "bodyBytes": 39602,
+      "estimatedProxyEnvelopeBytes": 40454,
+      "milliseconds": 113
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=04&province=0404",
+      "status": 200,
+      "bodyBytes": 67847,
+      "estimatedProxyEnvelopeBytes": 68287,
+      "milliseconds": 26
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=04&province=0403",
+      "status": 200,
+      "bodyBytes": 80197,
+      "estimatedProxyEnvelopeBytes": 81291,
+      "milliseconds": 137
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=04&province=0404",
+      "status": 200,
+      "bodyBytes": 71107,
+      "estimatedProxyEnvelopeBytes": 72199,
+      "milliseconds": 134
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=04&province=0405",
+      "status": 200,
+      "bodyBytes": 105533,
+      "estimatedProxyEnvelopeBytes": 106117,
+      "milliseconds": 32
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=04&province=0406",
+      "status": 200,
+      "bodyBytes": 55094,
+      "estimatedProxyEnvelopeBytes": 55390,
+      "milliseconds": 22
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=04&province=0405",
+      "status": 200,
+      "bodyBytes": 109654,
+      "estimatedProxyEnvelopeBytes": 111042,
+      "milliseconds": 141
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=04&province=0406",
+      "status": 200,
+      "bodyBytes": 57693,
+      "estimatedProxyEnvelopeBytes": 58517,
+      "milliseconds": 125
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=04&province=0407",
+      "status": 200,
+      "bodyBytes": 31704,
+      "estimatedProxyEnvelopeBytes": 31952,
+      "milliseconds": 20
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=04&province=0408",
+      "status": 200,
+      "bodyBytes": 47040,
+      "estimatedProxyEnvelopeBytes": 47408,
+      "milliseconds": 25
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=04&province=0407",
+      "status": 200,
+      "bodyBytes": 34144,
+      "estimatedProxyEnvelopeBytes": 34888,
+      "milliseconds": 120
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=04&district=040302",
+      "status": 200,
+      "bodyBytes": 6854,
+      "estimatedProxyEnvelopeBytes": 6982,
+      "milliseconds": 4
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=04&province=0408",
+      "status": 200,
+      "bodyBytes": 49542,
+      "estimatedProxyEnvelopeBytes": 50430,
+      "milliseconds": 127
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05&province=0502",
+      "status": 200,
+      "bodyBytes": 24040,
+      "estimatedProxyEnvelopeBytes": 24288,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=04&district=040302",
+      "status": 200,
+      "bodyBytes": 12396,
+      "estimatedProxyEnvelopeBytes": 13734,
+      "milliseconds": 109
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05&province=0501",
+      "status": 200,
+      "bodyBytes": 44074,
+      "estimatedProxyEnvelopeBytes": 44562,
+      "milliseconds": 23
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05&province=0502",
+      "status": 200,
+      "bodyBytes": 26356,
+      "estimatedProxyEnvelopeBytes": 27082,
+      "milliseconds": 120
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05&province=0503",
+      "status": 200,
+      "bodyBytes": 21947,
+      "estimatedProxyEnvelopeBytes": 22147,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05&province=0501",
+      "status": 200,
+      "bodyBytes": 48265,
+      "estimatedProxyEnvelopeBytes": 49545,
+      "milliseconds": 129
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05&province=0503",
+      "status": 200,
+      "bodyBytes": 23911,
+      "estimatedProxyEnvelopeBytes": 24529,
+      "milliseconds": 114
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05&province=0504",
+      "status": 200,
+      "bodyBytes": 44153,
+      "estimatedProxyEnvelopeBytes": 44569,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05&province=0505",
+      "status": 200,
+      "bodyBytes": 57706,
+      "estimatedProxyEnvelopeBytes": 58170,
+      "milliseconds": 20
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05&province=0504",
+      "status": 200,
+      "bodyBytes": 47304,
+      "estimatedProxyEnvelopeBytes": 48352,
+      "milliseconds": 138
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05&province=0505",
+      "status": 200,
+      "bodyBytes": 60956,
+      "estimatedProxyEnvelopeBytes": 62070,
+      "milliseconds": 152
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05&province=0506",
+      "status": 200,
+      "bodyBytes": 116284,
+      "estimatedProxyEnvelopeBytes": 116892,
+      "milliseconds": 39
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05&province=0507",
+      "status": 200,
+      "bodyBytes": 47724,
+      "estimatedProxyEnvelopeBytes": 48020,
+      "milliseconds": 22
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05&province=0507",
+      "status": 200,
+      "bodyBytes": 50213,
+      "estimatedProxyEnvelopeBytes": 51019,
+      "milliseconds": 148
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05&province=0508",
+      "status": 200,
+      "bodyBytes": 30808,
+      "estimatedProxyEnvelopeBytes": 31152,
+      "milliseconds": 15
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05&province=0506",
+      "status": 200,
+      "bodyBytes": 120850,
+      "estimatedProxyEnvelopeBytes": 122330,
+      "milliseconds": 182
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05&province=0509",
+      "status": 200,
+      "bodyBytes": 31555,
+      "estimatedProxyEnvelopeBytes": 31923,
+      "milliseconds": 20
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05&province=0508",
+      "status": 200,
+      "bodyBytes": 33641,
+      "estimatedProxyEnvelopeBytes": 34555,
+      "milliseconds": 157
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05&province=0510",
+      "status": 200,
+      "bodyBytes": 36841,
+      "estimatedProxyEnvelopeBytes": 37233,
+      "milliseconds": 18
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05&province=0509",
+      "status": 200,
+      "bodyBytes": 34229,
+      "estimatedProxyEnvelopeBytes": 35141,
+      "milliseconds": 181
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05&province=0511",
+      "status": 200,
+      "bodyBytes": 20910,
+      "estimatedProxyEnvelopeBytes": 21206,
+      "milliseconds": 18
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05&province=0510",
+      "status": 200,
+      "bodyBytes": 39902,
+      "estimatedProxyEnvelopeBytes": 40910,
+      "milliseconds": 163
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=05&district=051102",
+      "status": 200,
+      "bodyBytes": 1580,
+      "estimatedProxyEnvelopeBytes": 1708,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05&province=0511",
+      "status": 200,
+      "bodyBytes": 23487,
+      "estimatedProxyEnvelopeBytes": 24307,
+      "milliseconds": 139
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0602",
+      "status": 200,
+      "bodyBytes": 16147,
+      "estimatedProxyEnvelopeBytes": 16347,
+      "milliseconds": 10
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=05&district=051102",
+      "status": 200,
+      "bodyBytes": 7821,
+      "estimatedProxyEnvelopeBytes": 9289,
+      "milliseconds": 101
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0601",
+      "status": 200,
+      "bodyBytes": 34957,
+      "estimatedProxyEnvelopeBytes": 35349,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0602",
+      "status": 200,
+      "bodyBytes": 18415,
+      "estimatedProxyEnvelopeBytes": 19091,
+      "milliseconds": 117
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0603",
+      "status": 200,
+      "bodyBytes": 34340,
+      "estimatedProxyEnvelopeBytes": 34732,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0601",
+      "status": 200,
+      "bodyBytes": 38180,
+      "estimatedProxyEnvelopeBytes": 39218,
+      "milliseconds": 123
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0604",
+      "status": 200,
+      "bodyBytes": 54228,
+      "estimatedProxyEnvelopeBytes": 54788,
+      "milliseconds": 29
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0603",
+      "status": 200,
+      "bodyBytes": 37394,
+      "estimatedProxyEnvelopeBytes": 38404,
+      "milliseconds": 130
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0605",
+      "status": 200,
+      "bodyBytes": 23400,
+      "estimatedProxyEnvelopeBytes": 23696,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0604",
+      "status": 200,
+      "bodyBytes": 58450,
+      "estimatedProxyEnvelopeBytes": 59838,
+      "milliseconds": 130
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0606",
+      "status": 200,
+      "bodyBytes": 43215,
+      "estimatedProxyEnvelopeBytes": 43679,
+      "milliseconds": 20
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0605",
+      "status": 200,
+      "bodyBytes": 26015,
+      "estimatedProxyEnvelopeBytes": 26851,
+      "milliseconds": 119
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0607",
+      "status": 200,
+      "bodyBytes": 8202,
+      "estimatedProxyEnvelopeBytes": 8378,
+      "milliseconds": 7
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0606",
+      "status": 200,
+      "bodyBytes": 46946,
+      "estimatedProxyEnvelopeBytes": 48132,
+      "milliseconds": 122
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0607",
+      "status": 200,
+      "bodyBytes": 10211,
+      "estimatedProxyEnvelopeBytes": 10819,
+      "milliseconds": 111
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0608",
+      "status": 200,
+      "bodyBytes": 48823,
+      "estimatedProxyEnvelopeBytes": 49215,
+      "milliseconds": 24
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0609",
+      "status": 200,
+      "bodyBytes": 46937,
+      "estimatedProxyEnvelopeBytes": 47209,
+      "milliseconds": 28
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0609",
+      "status": 200,
+      "bodyBytes": 49742,
+      "estimatedProxyEnvelopeBytes": 50580,
+      "milliseconds": 139
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0608",
+      "status": 200,
+      "bodyBytes": 52386,
+      "estimatedProxyEnvelopeBytes": 53480,
+      "milliseconds": 157
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0610",
+      "status": 200,
+      "bodyBytes": 16473,
+      "estimatedProxyEnvelopeBytes": 16745,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0611",
+      "status": 200,
+      "bodyBytes": 36741,
+      "estimatedProxyEnvelopeBytes": 37157,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0610",
+      "status": 200,
+      "bodyBytes": 19213,
+      "estimatedProxyEnvelopeBytes": 20037,
+      "milliseconds": 116
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0612",
+      "status": 200,
+      "bodyBytes": 9908,
+      "estimatedProxyEnvelopeBytes": 10108,
+      "milliseconds": 7
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0611",
+      "status": 200,
+      "bodyBytes": 40216,
+      "estimatedProxyEnvelopeBytes": 41322,
+      "milliseconds": 120
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&province=0613",
+      "status": 200,
+      "bodyBytes": 24870,
+      "estimatedProxyEnvelopeBytes": 25238,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0612",
+      "status": 200,
+      "bodyBytes": 12012,
+      "estimatedProxyEnvelopeBytes": 12660,
+      "milliseconds": 148
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=06&district=061302",
+      "status": 200,
+      "bodyBytes": 607,
+      "estimatedProxyEnvelopeBytes": 735,
+      "milliseconds": 4
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&province=0613",
+      "status": 200,
+      "bodyBytes": 27738,
+      "estimatedProxyEnvelopeBytes": 28694,
+      "milliseconds": 168
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=07&province=0701",
+      "status": 200,
+      "bodyBytes": 10116,
+      "estimatedProxyEnvelopeBytes": 10388,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=06&district=061302",
+      "status": 200,
+      "bodyBytes": 7090,
+      "estimatedProxyEnvelopeBytes": 8612,
+      "milliseconds": 133
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=07&district=070102",
+      "status": 200,
+      "bodyBytes": 439,
+      "estimatedProxyEnvelopeBytes": 567,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=07&province=0701",
+      "status": 200,
+      "bodyBytes": 12525,
+      "estimatedProxyEnvelopeBytes": 13267,
+      "milliseconds": 156
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=09&province=0902",
+      "status": 200,
+      "bodyBytes": 20181,
+      "estimatedProxyEnvelopeBytes": 20477,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=07&district=070102",
+      "status": 200,
+      "bodyBytes": 2011,
+      "estimatedProxyEnvelopeBytes": 2477,
+      "milliseconds": 151
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=09&province=0903",
+      "status": 200,
+      "bodyBytes": 30859,
+      "estimatedProxyEnvelopeBytes": 31251,
+      "milliseconds": 19
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=09&province=0902",
+      "status": 200,
+      "bodyBytes": 22576,
+      "estimatedProxyEnvelopeBytes": 23364,
+      "milliseconds": 180
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=09&province=0904",
+      "status": 200,
+      "bodyBytes": 47363,
+      "estimatedProxyEnvelopeBytes": 47779,
+      "milliseconds": 23
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=09&province=0903",
+      "status": 200,
+      "bodyBytes": 33653,
+      "estimatedProxyEnvelopeBytes": 34601,
+      "milliseconds": 160
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=09&province=0905",
+      "status": 200,
+      "bodyBytes": 25382,
+      "estimatedProxyEnvelopeBytes": 25750,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=09&province=0904",
+      "status": 200,
+      "bodyBytes": 50119,
+      "estimatedProxyEnvelopeBytes": 51093,
+      "milliseconds": 182
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=09&province=0901",
+      "status": 200,
+      "bodyBytes": 63434,
+      "estimatedProxyEnvelopeBytes": 63994,
+      "milliseconds": 26
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=09&province=0905",
+      "status": 200,
+      "bodyBytes": 28069,
+      "estimatedProxyEnvelopeBytes": 28977,
+      "milliseconds": 160
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=09&province=0906",
+      "status": 200,
+      "bodyBytes": 70805,
+      "estimatedProxyEnvelopeBytes": 71293,
+      "milliseconds": 27
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=09&province=0901",
+      "status": 200,
+      "bodyBytes": 67126,
+      "estimatedProxyEnvelopeBytes": 68410,
+      "milliseconds": 148
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=09&province=0907",
+      "status": 200,
+      "bodyBytes": 65886,
+      "estimatedProxyEnvelopeBytes": 66542,
+      "milliseconds": 27
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=09&province=0906",
+      "status": 200,
+      "bodyBytes": 73908,
+      "estimatedProxyEnvelopeBytes": 75002,
+      "milliseconds": 170
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=09&district=090201",
+      "status": 200,
+      "bodyBytes": 3025,
+      "estimatedProxyEnvelopeBytes": 3153,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=09&province=0907",
+      "status": 200,
+      "bodyBytes": 70240,
+      "estimatedProxyEnvelopeBytes": 71726,
+      "milliseconds": 163
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=09&district=090201",
+      "status": 200,
+      "bodyBytes": 8403,
+      "estimatedProxyEnvelopeBytes": 9677,
+      "milliseconds": 123
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0802",
+      "status": 200,
+      "bodyBytes": 15924,
+      "estimatedProxyEnvelopeBytes": 16196,
+      "milliseconds": 15
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0803",
+      "status": 200,
+      "bodyBytes": 24629,
+      "estimatedProxyEnvelopeBytes": 24949,
+      "milliseconds": 15
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0802",
+      "status": 200,
+      "bodyBytes": 18429,
+      "estimatedProxyEnvelopeBytes": 19225,
+      "milliseconds": 142
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0804",
+      "status": 200,
+      "bodyBytes": 30544,
+      "estimatedProxyEnvelopeBytes": 30840,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0803",
+      "status": 200,
+      "bodyBytes": 27746,
+      "estimatedProxyEnvelopeBytes": 28692,
+      "milliseconds": 144
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0805",
+      "status": 200,
+      "bodyBytes": 28346,
+      "estimatedProxyEnvelopeBytes": 28642,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0804",
+      "status": 200,
+      "bodyBytes": 33207,
+      "estimatedProxyEnvelopeBytes": 34057,
+      "milliseconds": 151
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0806",
+      "status": 200,
+      "bodyBytes": 46075,
+      "estimatedProxyEnvelopeBytes": 46371,
+      "milliseconds": 22
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0805",
+      "status": 200,
+      "bodyBytes": 31018,
+      "estimatedProxyEnvelopeBytes": 31868,
+      "milliseconds": 162
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0807",
+      "status": 200,
+      "bodyBytes": 50500,
+      "estimatedProxyEnvelopeBytes": 50796,
+      "milliseconds": 35
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0806",
+      "status": 200,
+      "bodyBytes": 48933,
+      "estimatedProxyEnvelopeBytes": 49811,
+      "milliseconds": 162
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0801",
+      "status": 200,
+      "bodyBytes": 13844,
+      "estimatedProxyEnvelopeBytes": 14140,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0807",
+      "status": 200,
+      "bodyBytes": 53358,
+      "estimatedProxyEnvelopeBytes": 54236,
+      "milliseconds": 159
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0808",
+      "status": 200,
+      "bodyBytes": 50605,
+      "estimatedProxyEnvelopeBytes": 50901,
+      "milliseconds": 27
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0801",
+      "status": 200,
+      "bodyBytes": 16706,
+      "estimatedProxyEnvelopeBytes": 17584,
+      "milliseconds": 156
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0809",
+      "status": 200,
+      "bodyBytes": 159502,
+      "estimatedProxyEnvelopeBytes": 160038,
+      "milliseconds": 59
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0808",
+      "status": 200,
+      "bodyBytes": 53124,
+      "estimatedProxyEnvelopeBytes": 53946,
+      "milliseconds": 176
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0810",
+      "status": 200,
+      "bodyBytes": 28540,
+      "estimatedProxyEnvelopeBytes": 28860,
+      "milliseconds": 20
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0810",
+      "status": 200,
+      "bodyBytes": 31381,
+      "estimatedProxyEnvelopeBytes": 32285,
+      "milliseconds": 163
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0809",
+      "status": 200,
+      "bodyBytes": 163694,
+      "estimatedProxyEnvelopeBytes": 165042,
+      "milliseconds": 214
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0811",
+      "status": 200,
+      "bodyBytes": 42022,
+      "estimatedProxyEnvelopeBytes": 42270,
+      "milliseconds": 21
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0812",
+      "status": 200,
+      "bodyBytes": 53849,
+      "estimatedProxyEnvelopeBytes": 54241,
+      "milliseconds": 22
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0811",
+      "status": 200,
+      "bodyBytes": 44635,
+      "estimatedProxyEnvelopeBytes": 45419,
+      "milliseconds": 161
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&province=0813",
+      "status": 200,
+      "bodyBytes": 20322,
+      "estimatedProxyEnvelopeBytes": 20594,
+      "milliseconds": 15
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0812",
+      "status": 200,
+      "bodyBytes": 57382,
+      "estimatedProxyEnvelopeBytes": 58476,
+      "milliseconds": 161
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=08&district=081002",
+      "status": 200,
+      "bodyBytes": 3558,
+      "estimatedProxyEnvelopeBytes": 3686,
+      "milliseconds": 6
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&district=081002",
+      "status": 200,
+      "bodyBytes": 9476,
+      "estimatedProxyEnvelopeBytes": 10910,
+      "milliseconds": 139
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10&province=1002",
+      "status": 200,
+      "bodyBytes": 25340,
+      "estimatedProxyEnvelopeBytes": 25636,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=08&province=0813",
+      "status": 200,
+      "bodyBytes": 23024,
+      "estimatedProxyEnvelopeBytes": 23848,
+      "milliseconds": 166
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10&province=1003",
+      "status": 200,
+      "bodyBytes": 23436,
+      "estimatedProxyEnvelopeBytes": 23756,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10&province=1002",
+      "status": 200,
+      "bodyBytes": 28056,
+      "estimatedProxyEnvelopeBytes": 28904,
+      "milliseconds": 140
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10&province=1004",
+      "status": 200,
+      "bodyBytes": 18329,
+      "estimatedProxyEnvelopeBytes": 18529,
+      "milliseconds": 15
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10&province=1003",
+      "status": 200,
+      "bodyBytes": 26050,
+      "estimatedProxyEnvelopeBytes": 26910,
+      "milliseconds": 144
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10&province=1005",
+      "status": 200,
+      "bodyBytes": 36813,
+      "estimatedProxyEnvelopeBytes": 37181,
+      "milliseconds": 26
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10&province=1004",
+      "status": 200,
+      "bodyBytes": 20279,
+      "estimatedProxyEnvelopeBytes": 20897,
+      "milliseconds": 133
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10&province=1001",
+      "status": 200,
+      "bodyBytes": 43887,
+      "estimatedProxyEnvelopeBytes": 44303,
+      "milliseconds": 19
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10&province=1005",
+      "status": 200,
+      "bodyBytes": 39620,
+      "estimatedProxyEnvelopeBytes": 40560,
+      "milliseconds": 136
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10&province=1010",
+      "status": 200,
+      "bodyBytes": 28497,
+      "estimatedProxyEnvelopeBytes": 28769,
+      "milliseconds": 22
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10&province=1001",
+      "status": 200,
+      "bodyBytes": 47487,
+      "estimatedProxyEnvelopeBytes": 48591,
+      "milliseconds": 127
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10&province=1006",
+      "status": 200,
+      "bodyBytes": 71104,
+      "estimatedProxyEnvelopeBytes": 71448,
+      "milliseconds": 29
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10&province=1010",
+      "status": 200,
+      "bodyBytes": 30959,
+      "estimatedProxyEnvelopeBytes": 31739,
+      "milliseconds": 120
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10&province=1007",
+      "status": 200,
+      "bodyBytes": 36790,
+      "estimatedProxyEnvelopeBytes": 37014,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10&province=1006",
+      "status": 200,
+      "bodyBytes": 74110,
+      "estimatedProxyEnvelopeBytes": 75038,
+      "milliseconds": 137
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10&province=1008",
+      "status": 200,
+      "bodyBytes": 26599,
+      "estimatedProxyEnvelopeBytes": 26799,
+      "milliseconds": 15
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10&province=1007",
+      "status": 200,
+      "bodyBytes": 38935,
+      "estimatedProxyEnvelopeBytes": 39607,
+      "milliseconds": 139
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10&province=1009",
+      "status": 200,
+      "bodyBytes": 42194,
+      "estimatedProxyEnvelopeBytes": 42418,
+      "milliseconds": 26
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10&province=1008",
+      "status": 200,
+      "bodyBytes": 28780,
+      "estimatedProxyEnvelopeBytes": 29440,
+      "milliseconds": 141
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10&province=1011",
+      "status": 200,
+      "bodyBytes": 16480,
+      "estimatedProxyEnvelopeBytes": 16776,
+      "milliseconds": 9
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10&province=1009",
+      "status": 200,
+      "bodyBytes": 44594,
+      "estimatedProxyEnvelopeBytes": 45308,
+      "milliseconds": 140
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=10&district=100102",
+      "status": 200,
+      "bodyBytes": 2130,
+      "estimatedProxyEnvelopeBytes": 2258,
+      "milliseconds": 3
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10&province=1011",
+      "status": 200,
+      "bodyBytes": 18952,
+      "estimatedProxyEnvelopeBytes": 19758,
+      "milliseconds": 115
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=10&district=100102",
+      "status": 200,
+      "bodyBytes": 6999,
+      "estimatedProxyEnvelopeBytes": 8161,
+      "milliseconds": 105
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=11&province=1102",
+      "status": 200,
+      "bodyBytes": 37100,
+      "estimatedProxyEnvelopeBytes": 37468,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=11&province=1101",
+      "status": 200,
+      "bodyBytes": 50448,
+      "estimatedProxyEnvelopeBytes": 50888,
+      "milliseconds": 19
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=11&province=1102",
+      "status": 200,
+      "bodyBytes": 40087,
+      "estimatedProxyEnvelopeBytes": 41035,
+      "milliseconds": 124
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=11&province=1103",
+      "status": 200,
+      "bodyBytes": 30398,
+      "estimatedProxyEnvelopeBytes": 30622,
+      "milliseconds": 19
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=11&province=1101",
+      "status": 200,
+      "bodyBytes": 54128,
+      "estimatedProxyEnvelopeBytes": 55266,
+      "milliseconds": 135
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=11&province=1104",
+      "status": 200,
+      "bodyBytes": 16377,
+      "estimatedProxyEnvelopeBytes": 16601,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=11&province=1103",
+      "status": 200,
+      "bodyBytes": 32547,
+      "estimatedProxyEnvelopeBytes": 33213,
+      "milliseconds": 128
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=11&province=1105",
+      "status": 200,
+      "bodyBytes": 30666,
+      "estimatedProxyEnvelopeBytes": 30962,
+      "milliseconds": 22
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=11&province=1104",
+      "status": 200,
+      "bodyBytes": 18429,
+      "estimatedProxyEnvelopeBytes": 19081,
+      "milliseconds": 134
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=11&district=110202",
+      "status": 200,
+      "bodyBytes": 4519,
+      "estimatedProxyEnvelopeBytes": 4647,
+      "milliseconds": 4
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=11&district=110202",
+      "status": 200,
+      "bodyBytes": 7584,
+      "estimatedProxyEnvelopeBytes": 8370,
+      "milliseconds": 111
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&province=1302",
+      "status": 200,
+      "bodyBytes": 21077,
+      "estimatedProxyEnvelopeBytes": 21373,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=11&province=1105",
+      "status": 200,
+      "bodyBytes": 33263,
+      "estimatedProxyEnvelopeBytes": 34077,
+      "milliseconds": 133
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&province=1303",
+      "status": 200,
+      "bodyBytes": 19348,
+      "estimatedProxyEnvelopeBytes": 19596,
+      "milliseconds": 15
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&province=1302",
+      "status": 200,
+      "bodyBytes": 24009,
+      "estimatedProxyEnvelopeBytes": 24893,
+      "milliseconds": 126
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&province=1304",
+      "status": 200,
+      "bodyBytes": 9580,
+      "estimatedProxyEnvelopeBytes": 9756,
+      "milliseconds": 8
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&province=1303",
+      "status": 200,
+      "bodyBytes": 21744,
+      "estimatedProxyEnvelopeBytes": 22492,
+      "milliseconds": 121
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&province=1311",
+      "status": 200,
+      "bodyBytes": 14614,
+      "estimatedProxyEnvelopeBytes": 14814,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&province=1304",
+      "status": 200,
+      "bodyBytes": 11638,
+      "estimatedProxyEnvelopeBytes": 12252,
+      "milliseconds": 142
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&province=1305",
+      "status": 200,
+      "bodyBytes": 11949,
+      "estimatedProxyEnvelopeBytes": 12149,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&province=1311",
+      "status": 200,
+      "bodyBytes": 16825,
+      "estimatedProxyEnvelopeBytes": 17493,
+      "milliseconds": 153
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&province=1306",
+      "status": 200,
+      "bodyBytes": 25519,
+      "estimatedProxyEnvelopeBytes": 25863,
+      "milliseconds": 20
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&province=1305",
+      "status": 200,
+      "bodyBytes": 13998,
+      "estimatedProxyEnvelopeBytes": 14638,
+      "milliseconds": 134
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&province=1307",
+      "status": 200,
+      "bodyBytes": 12107,
+      "estimatedProxyEnvelopeBytes": 12331,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&province=1306",
+      "status": 200,
+      "bodyBytes": 28500,
+      "estimatedProxyEnvelopeBytes": 29450,
+      "milliseconds": 136
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&province=1308",
+      "status": 200,
+      "bodyBytes": 41893,
+      "estimatedProxyEnvelopeBytes": 42309,
+      "milliseconds": 21
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&province=1307",
+      "status": 200,
+      "bodyBytes": 14535,
+      "estimatedProxyEnvelopeBytes": 15257,
+      "milliseconds": 135
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&province=1309",
+      "status": 200,
+      "bodyBytes": 31573,
+      "estimatedProxyEnvelopeBytes": 31869,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&province=1308",
+      "status": 200,
+      "bodyBytes": 45141,
+      "estimatedProxyEnvelopeBytes": 46211,
+      "milliseconds": 138
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&province=1310",
+      "status": 200,
+      "bodyBytes": 27489,
+      "estimatedProxyEnvelopeBytes": 27785,
+      "milliseconds": 20
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&province=1309",
+      "status": 200,
+      "bodyBytes": 34138,
+      "estimatedProxyEnvelopeBytes": 34966,
+      "milliseconds": 124
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&province=1301",
+      "status": 200,
+      "bodyBytes": 22927,
+      "estimatedProxyEnvelopeBytes": 23295,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&province=1310",
+      "status": 200,
+      "bodyBytes": 30272,
+      "estimatedProxyEnvelopeBytes": 31128,
+      "milliseconds": 117
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&province=1312",
+      "status": 200,
+      "bodyBytes": 16508,
+      "estimatedProxyEnvelopeBytes": 16684,
+      "milliseconds": 10
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&province=1301",
+      "status": 200,
+      "bodyBytes": 26407,
+      "estimatedProxyEnvelopeBytes": 27453,
+      "milliseconds": 120
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=13&district=130602",
+      "status": 200,
+      "bodyBytes": 3326,
+      "estimatedProxyEnvelopeBytes": 3454,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&province=1312",
+      "status": 200,
+      "bodyBytes": 18554,
+      "estimatedProxyEnvelopeBytes": 19168,
+      "milliseconds": 122
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=12&province=1203",
+      "status": 200,
+      "bodyBytes": 49948,
+      "estimatedProxyEnvelopeBytes": 50196,
+      "milliseconds": 21
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=13&district=130602",
+      "status": 200,
+      "bodyBytes": 8047,
+      "estimatedProxyEnvelopeBytes": 9209,
+      "milliseconds": 106
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=12&province=1209",
+      "status": 200,
+      "bodyBytes": 18507,
+      "estimatedProxyEnvelopeBytes": 18827,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=12&province=1203",
+      "status": 200,
+      "bodyBytes": 52425,
+      "estimatedProxyEnvelopeBytes": 53177,
+      "milliseconds": 141
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=12&province=1202",
+      "status": 200,
+      "bodyBytes": 34736,
+      "estimatedProxyEnvelopeBytes": 35200,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=12&province=1209",
+      "status": 200,
+      "bodyBytes": 21453,
+      "estimatedProxyEnvelopeBytes": 22353,
+      "milliseconds": 129
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=12&province=1201",
+      "status": 200,
+      "bodyBytes": 58917,
+      "estimatedProxyEnvelopeBytes": 59693,
+      "milliseconds": 28
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=12&province=1202",
+      "status": 200,
+      "bodyBytes": 38272,
+      "estimatedProxyEnvelopeBytes": 39426,
+      "milliseconds": 128
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=12&province=1204",
+      "status": 200,
+      "bodyBytes": 70679,
+      "estimatedProxyEnvelopeBytes": 71599,
+      "milliseconds": 26
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=12&province=1201",
+      "status": 200,
+      "bodyBytes": 64621,
+      "estimatedProxyEnvelopeBytes": 66463,
+      "milliseconds": 127
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=12&province=1205",
+      "status": 200,
+      "bodyBytes": 25086,
+      "estimatedProxyEnvelopeBytes": 25286,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=12&province=1204",
+      "status": 200,
+      "bodyBytes": 76729,
+      "estimatedProxyEnvelopeBytes": 78797,
+      "milliseconds": 132
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=12&province=1206",
+      "status": 200,
+      "bodyBytes": 85362,
+      "estimatedProxyEnvelopeBytes": 85682,
+      "milliseconds": 28
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=12&province=1205",
+      "status": 200,
+      "bodyBytes": 27190,
+      "estimatedProxyEnvelopeBytes": 27834,
+      "milliseconds": 120
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=12&province=1207",
+      "status": 200,
+      "bodyBytes": 33427,
+      "estimatedProxyEnvelopeBytes": 33747,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=12&province=1206",
+      "status": 200,
+      "bodyBytes": 88171,
+      "estimatedProxyEnvelopeBytes": 89057,
+      "milliseconds": 129
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=12&province=1207",
+      "status": 200,
+      "bodyBytes": 35967,
+      "estimatedProxyEnvelopeBytes": 36811,
+      "milliseconds": 113
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=12&district=120202",
+      "status": 200,
+      "bodyBytes": 1693,
+      "estimatedProxyEnvelopeBytes": 1821,
+      "milliseconds": 3
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=12&province=1208",
+      "status": 200,
+      "bodyBytes": 38355,
+      "estimatedProxyEnvelopeBytes": 38699,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=12&district=120202",
+      "status": 200,
+      "bodyBytes": 7805,
+      "estimatedProxyEnvelopeBytes": 9257,
+      "milliseconds": 100
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=14&province=1401",
+      "status": 200,
+      "bodyBytes": 45683,
+      "estimatedProxyEnvelopeBytes": 46267,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=12&province=1208",
+      "status": 200,
+      "bodyBytes": 41028,
+      "estimatedProxyEnvelopeBytes": 41912,
+      "milliseconds": 119
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=14&province=1402",
+      "status": 200,
+      "bodyBytes": 18826,
+      "estimatedProxyEnvelopeBytes": 19074,
+      "milliseconds": 9
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=14&province=1401",
+      "status": 200,
+      "bodyBytes": 50357,
+      "estimatedProxyEnvelopeBytes": 51817,
+      "milliseconds": 118
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=14&province=1402",
+      "status": 200,
+      "bodyBytes": 21053,
+      "estimatedProxyEnvelopeBytes": 21743,
+      "milliseconds": 109
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=14&district=140202",
+      "status": 200,
+      "bodyBytes": 3871,
+      "estimatedProxyEnvelopeBytes": 3999,
+      "milliseconds": 5
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=14&province=1403",
+      "status": 200,
+      "bodyBytes": 38804,
+      "estimatedProxyEnvelopeBytes": 39196,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=14&district=140202",
+      "status": 200,
+      "bodyBytes": 6531,
+      "estimatedProxyEnvelopeBytes": 7247,
+      "milliseconds": 101
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=15&province=1502",
+      "status": 200,
+      "bodyBytes": 17031,
+      "estimatedProxyEnvelopeBytes": 17255,
+      "milliseconds": 8
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=14&province=1403",
+      "status": 200,
+      "bodyBytes": 42071,
+      "estimatedProxyEnvelopeBytes": 43099,
+      "milliseconds": 118
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=15&province=1503",
+      "status": 200,
+      "bodyBytes": 18248,
+      "estimatedProxyEnvelopeBytes": 18472,
+      "milliseconds": 10
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=15&province=1502",
+      "status": 200,
+      "bodyBytes": 19347,
+      "estimatedProxyEnvelopeBytes": 20053,
+      "milliseconds": 112
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=15&province=1505",
+      "status": 200,
+      "bodyBytes": 49708,
+      "estimatedProxyEnvelopeBytes": 50196,
+      "milliseconds": 18
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=15&province=1503",
+      "status": 200,
+      "bodyBytes": 20208,
+      "estimatedProxyEnvelopeBytes": 20858,
+      "milliseconds": 114
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=15&province=1504",
+      "status": 200,
+      "bodyBytes": 23121,
+      "estimatedProxyEnvelopeBytes": 23393,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=15&province=1505",
+      "status": 200,
+      "bodyBytes": 53780,
+      "estimatedProxyEnvelopeBytes": 55052,
+      "milliseconds": 127
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=15&province=1504",
+      "status": 200,
+      "bodyBytes": 25373,
+      "estimatedProxyEnvelopeBytes": 26117,
+      "milliseconds": 121
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=15&province=1506",
+      "status": 200,
+      "bodyBytes": 40293,
+      "estimatedProxyEnvelopeBytes": 40685,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=15&province=1507",
+      "status": 200,
+      "bodyBytes": 87210,
+      "estimatedProxyEnvelopeBytes": 88082,
+      "milliseconds": 28
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=15&province=1506",
+      "status": 200,
+      "bodyBytes": 43167,
+      "estimatedProxyEnvelopeBytes": 44139,
+      "milliseconds": 126
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=15&province=1508",
+      "status": 200,
+      "bodyBytes": 42749,
+      "estimatedProxyEnvelopeBytes": 43141,
+      "milliseconds": 15
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=15&province=1507",
+      "status": 200,
+      "bodyBytes": 92931,
+      "estimatedProxyEnvelopeBytes": 94857,
+      "milliseconds": 133
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=15&province=1501",
+      "status": 200,
+      "bodyBytes": 71208,
+      "estimatedProxyEnvelopeBytes": 72344,
+      "milliseconds": 40
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=15&province=1508",
+      "status": 200,
+      "bodyBytes": 46102,
+      "estimatedProxyEnvelopeBytes": 47158,
+      "milliseconds": 118
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=15&province=1509",
+      "status": 200,
+      "bodyBytes": 20975,
+      "estimatedProxyEnvelopeBytes": 21223,
+      "milliseconds": 10
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=15&province=1501",
+      "status": 200,
+      "bodyBytes": 80361,
+      "estimatedProxyEnvelopeBytes": 83119,
+      "milliseconds": 147
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=15&province=1510",
+      "status": 200,
+      "bodyBytes": 101766,
+      "estimatedProxyEnvelopeBytes": 102662,
+      "milliseconds": 30
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=15&province=1509",
+      "status": 200,
+      "bodyBytes": 23191,
+      "estimatedProxyEnvelopeBytes": 23909,
+      "milliseconds": 117
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=15&district=151002",
+      "status": 200,
+      "bodyBytes": 3355,
+      "estimatedProxyEnvelopeBytes": 3483,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=15&district=151002",
+      "status": 200,
+      "bodyBytes": 11365,
+      "estimatedProxyEnvelopeBytes": 13201,
+      "milliseconds": 108
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=15&province=1510",
+      "status": 200,
+      "bodyBytes": 106699,
+      "estimatedProxyEnvelopeBytes": 108567,
+      "milliseconds": 131
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=16&province=1607",
+      "status": 200,
+      "bodyBytes": 65603,
+      "estimatedProxyEnvelopeBytes": 65851,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=16&province=1602",
+      "status": 200,
+      "bodyBytes": 45869,
+      "estimatedProxyEnvelopeBytes": 46117,
+      "milliseconds": 20
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=16&province=1607",
+      "status": 200,
+      "bodyBytes": 67625,
+      "estimatedProxyEnvelopeBytes": 68299,
+      "milliseconds": 115
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=16&province=1602",
+      "status": 200,
+      "bodyBytes": 48008,
+      "estimatedProxyEnvelopeBytes": 48696,
+      "milliseconds": 114
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=16&province=1603",
+      "status": 200,
+      "bodyBytes": 56525,
+      "estimatedProxyEnvelopeBytes": 56749,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=16&province=1604",
+      "status": 200,
+      "bodyBytes": 64199,
+      "estimatedProxyEnvelopeBytes": 64399,
+      "milliseconds": 20
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=16&province=1603",
+      "status": 200,
+      "bodyBytes": 58458,
+      "estimatedProxyEnvelopeBytes": 59092,
+      "milliseconds": 116
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=16&province=1604",
+      "status": 200,
+      "bodyBytes": 66228,
+      "estimatedProxyEnvelopeBytes": 66850,
+      "milliseconds": 126
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=16&province=1601",
+      "status": 200,
+      "bodyBytes": 106148,
+      "estimatedProxyEnvelopeBytes": 106516,
+      "milliseconds": 28
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=16&province=1608",
+      "status": 200,
+      "bodyBytes": 75815,
+      "estimatedProxyEnvelopeBytes": 76015,
+      "milliseconds": 24
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=16&province=1601",
+      "status": 200,
+      "bodyBytes": 109314,
+      "estimatedProxyEnvelopeBytes": 110300,
+      "milliseconds": 127
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=16&province=1608",
+      "status": 200,
+      "bodyBytes": 77683,
+      "estimatedProxyEnvelopeBytes": 78277,
+      "milliseconds": 124
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=16&province=1606",
+      "status": 200,
+      "bodyBytes": 72395,
+      "estimatedProxyEnvelopeBytes": 72643,
+      "milliseconds": 25
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=16&province=1605",
+      "status": 200,
+      "bodyBytes": 103720,
+      "estimatedProxyEnvelopeBytes": 104088,
+      "milliseconds": 33
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=16&province=1606",
+      "status": 200,
+      "bodyBytes": 74527,
+      "estimatedProxyEnvelopeBytes": 75215,
+      "milliseconds": 129
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=16&province=1605",
+      "status": 200,
+      "bodyBytes": 106276,
+      "estimatedProxyEnvelopeBytes": 107164,
+      "milliseconds": 131
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=16&district=160102",
+      "status": 200,
+      "bodyBytes": 14431,
+      "estimatedProxyEnvelopeBytes": 14559,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=18&province=1802",
+      "status": 200,
+      "bodyBytes": 51447,
+      "estimatedProxyEnvelopeBytes": 51815,
+      "milliseconds": 18
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=16&district=160102",
+      "status": 200,
+      "bodyBytes": 17894,
+      "estimatedProxyEnvelopeBytes": 18770,
+      "milliseconds": 103
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=18&province=1803",
+      "status": 200,
+      "bodyBytes": 14384,
+      "estimatedProxyEnvelopeBytes": 14560,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=18&province=1802",
+      "status": 200,
+      "bodyBytes": 53966,
+      "estimatedProxyEnvelopeBytes": 54842,
+      "milliseconds": 123
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=18&province=1801",
+      "status": 200,
+      "bodyBytes": 50077,
+      "estimatedProxyEnvelopeBytes": 50349,
+      "milliseconds": 20
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=18&province=1803",
+      "status": 200,
+      "bodyBytes": 16142,
+      "estimatedProxyEnvelopeBytes": 16684,
+      "milliseconds": 108
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=18&district=180102",
+      "status": 200,
+      "bodyBytes": 12148,
+      "estimatedProxyEnvelopeBytes": 12276,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=18&province=1801",
+      "status": 200,
+      "bodyBytes": 52267,
+      "estimatedProxyEnvelopeBytes": 52983,
+      "milliseconds": 117
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=17&province=1702",
+      "status": 200,
+      "bodyBytes": 134277,
+      "estimatedProxyEnvelopeBytes": 134477,
+      "milliseconds": 46
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=18&district=180102",
+      "status": 200,
+      "bodyBytes": 14284,
+      "estimatedProxyEnvelopeBytes": 14878,
+      "milliseconds": 102
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=17&province=1703",
+      "status": 200,
+      "bodyBytes": 70340,
+      "estimatedProxyEnvelopeBytes": 70516,
+      "milliseconds": 26
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=17&province=1702",
+      "status": 200,
+      "bodyBytes": 136110,
+      "estimatedProxyEnvelopeBytes": 136692,
+      "milliseconds": 147
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=17&province=1703",
+      "status": 200,
+      "bodyBytes": 72079,
+      "estimatedProxyEnvelopeBytes": 72621,
+      "milliseconds": 127
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=17&district=170202",
+      "status": 200,
+      "bodyBytes": 55384,
+      "estimatedProxyEnvelopeBytes": 55512,
+      "milliseconds": 23
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=17&province=1701",
+      "status": 200,
+      "bodyBytes": 150182,
+      "estimatedProxyEnvelopeBytes": 150382,
+      "milliseconds": 54
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=17&district=170202",
+      "status": 200,
+      "bodyBytes": 57068,
+      "estimatedProxyEnvelopeBytes": 57568,
+      "milliseconds": 119
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=19&province=1902",
+      "status": 200,
+      "bodyBytes": 24397,
+      "estimatedProxyEnvelopeBytes": 24693,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=17&province=1701",
+      "status": 200,
+      "bodyBytes": 152108,
+      "estimatedProxyEnvelopeBytes": 152704,
+      "milliseconds": 157
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=19&province=1903",
+      "status": 200,
+      "bodyBytes": 78657,
+      "estimatedProxyEnvelopeBytes": 78953,
+      "milliseconds": 26
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=19&province=1902",
+      "status": 200,
+      "bodyBytes": 26699,
+      "estimatedProxyEnvelopeBytes": 27455,
+      "milliseconds": 113
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=19&province=1901",
+      "status": 200,
+      "bodyBytes": 69223,
+      "estimatedProxyEnvelopeBytes": 69639,
+      "milliseconds": 31
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=19&province=1903",
+      "status": 200,
+      "bodyBytes": 81303,
+      "estimatedProxyEnvelopeBytes": 82115,
+      "milliseconds": 142
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=19&district=190202",
+      "status": 200,
+      "bodyBytes": 4779,
+      "estimatedProxyEnvelopeBytes": 4907,
+      "milliseconds": 15
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=19&province=1901",
+      "status": 200,
+      "bodyBytes": 72527,
+      "estimatedProxyEnvelopeBytes": 73567,
+      "milliseconds": 154
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=20&province=2002",
+      "status": 200,
+      "bodyBytes": 48363,
+      "estimatedProxyEnvelopeBytes": 48707,
+      "milliseconds": 23
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=19&district=190202",
+      "status": 200,
+      "bodyBytes": 7286,
+      "estimatedProxyEnvelopeBytes": 7944,
+      "milliseconds": 113
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=20&province=2003",
+      "status": 200,
+      "bodyBytes": 36949,
+      "estimatedProxyEnvelopeBytes": 37245,
+      "milliseconds": 19
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=20&province=2002",
+      "status": 200,
+      "bodyBytes": 51357,
+      "estimatedProxyEnvelopeBytes": 52303,
+      "milliseconds": 124
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=20&province=2004",
+      "status": 200,
+      "bodyBytes": 35757,
+      "estimatedProxyEnvelopeBytes": 36101,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=20&province=2003",
+      "status": 200,
+      "bodyBytes": 39694,
+      "estimatedProxyEnvelopeBytes": 40532,
+      "milliseconds": 122
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=20&province=2005",
+      "status": 200,
+      "bodyBytes": 14873,
+      "estimatedProxyEnvelopeBytes": 15145,
+      "milliseconds": 10
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=20&province=2004",
+      "status": 200,
+      "bodyBytes": 38844,
+      "estimatedProxyEnvelopeBytes": 39790,
+      "milliseconds": 120
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=20&province=2001",
+      "status": 200,
+      "bodyBytes": 31497,
+      "estimatedProxyEnvelopeBytes": 31841,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=20&province=2005",
+      "status": 200,
+      "bodyBytes": 17281,
+      "estimatedProxyEnvelopeBytes": 18051,
+      "milliseconds": 114
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=20&province=2008",
+      "status": 200,
+      "bodyBytes": 12002,
+      "estimatedProxyEnvelopeBytes": 12250,
+      "milliseconds": 10
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=20&province=2001",
+      "status": 200,
+      "bodyBytes": 34646,
+      "estimatedProxyEnvelopeBytes": 35606,
+      "milliseconds": 117
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=20&province=2008",
+      "status": 200,
+      "bodyBytes": 14469,
+      "estimatedProxyEnvelopeBytes": 15213,
+      "milliseconds": 109
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=20&province=2007",
+      "status": 200,
+      "bodyBytes": 14700,
+      "estimatedProxyEnvelopeBytes": 14948,
+      "milliseconds": 9
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=20&province=2006",
+      "status": 200,
+      "bodyBytes": 40602,
+      "estimatedProxyEnvelopeBytes": 40898,
+      "milliseconds": 18
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=20&province=2007",
+      "status": 200,
+      "bodyBytes": 16953,
+      "estimatedProxyEnvelopeBytes": 17669,
+      "milliseconds": 111
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=20&province=2006",
+      "status": 200,
+      "bodyBytes": 43317,
+      "estimatedProxyEnvelopeBytes": 44155,
+      "milliseconds": 116
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=20&district=200502",
+      "status": 200,
+      "bodyBytes": 2025,
+      "estimatedProxyEnvelopeBytes": 2153,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=22&province=2202",
+      "status": 200,
+      "bodyBytes": 39602,
+      "estimatedProxyEnvelopeBytes": 39850,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=20&district=200502",
+      "status": 200,
+      "bodyBytes": 5919,
+      "estimatedProxyEnvelopeBytes": 6891,
+      "milliseconds": 97
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=22&province=2203",
+      "status": 200,
+      "bodyBytes": 15361,
+      "estimatedProxyEnvelopeBytes": 15585,
+      "milliseconds": 9
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=22&province=2202",
+      "status": 200,
+      "bodyBytes": 42119,
+      "estimatedProxyEnvelopeBytes": 42879,
+      "milliseconds": 126
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=22&province=2204",
+      "status": 200,
+      "bodyBytes": 20217,
+      "estimatedProxyEnvelopeBytes": 20465,
+      "milliseconds": 10
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=22&province=2203",
+      "status": 200,
+      "bodyBytes": 17545,
+      "estimatedProxyEnvelopeBytes": 18223,
+      "milliseconds": 113
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=22&province=2205",
+      "status": 200,
+      "bodyBytes": 38365,
+      "estimatedProxyEnvelopeBytes": 38733,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=22&province=2204",
+      "status": 200,
+      "bodyBytes": 22651,
+      "estimatedProxyEnvelopeBytes": 23397,
+      "milliseconds": 109
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=22&province=2206",
+      "status": 200,
+      "bodyBytes": 55925,
+      "estimatedProxyEnvelopeBytes": 56149,
+      "milliseconds": 21
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=22&province=2205",
+      "status": 200,
+      "bodyBytes": 41435,
+      "estimatedProxyEnvelopeBytes": 42409,
+      "milliseconds": 122
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=22&province=2201",
+      "status": 200,
+      "bodyBytes": 43351,
+      "estimatedProxyEnvelopeBytes": 43599,
+      "milliseconds": 18
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=22&province=2206",
+      "status": 200,
+      "bodyBytes": 58172,
+      "estimatedProxyEnvelopeBytes": 58864,
+      "milliseconds": 127
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=22&province=2207",
+      "status": 200,
+      "bodyBytes": 23525,
+      "estimatedProxyEnvelopeBytes": 23869,
+      "milliseconds": 11
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=22&province=2201",
+      "status": 200,
+      "bodyBytes": 45848,
+      "estimatedProxyEnvelopeBytes": 46608,
+      "milliseconds": 140
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=22&province=2208",
+      "status": 200,
+      "bodyBytes": 39671,
+      "estimatedProxyEnvelopeBytes": 39991,
+      "milliseconds": 18
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=22&province=2207",
+      "status": 200,
+      "bodyBytes": 26668,
+      "estimatedProxyEnvelopeBytes": 27630,
+      "milliseconds": 131
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=22&province=2209",
+      "status": 200,
+      "bodyBytes": 53511,
+      "estimatedProxyEnvelopeBytes": 53951,
+      "milliseconds": 21
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=22&province=2208",
+      "status": 200,
+      "bodyBytes": 42639,
+      "estimatedProxyEnvelopeBytes": 43547,
+      "milliseconds": 128
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=22&province=2210",
+      "status": 200,
+      "bodyBytes": 46713,
+      "estimatedProxyEnvelopeBytes": 46961,
+      "milliseconds": 22
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=22&province=2209",
+      "status": 200,
+      "bodyBytes": 57085,
+      "estimatedProxyEnvelopeBytes": 58221,
+      "milliseconds": 128
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=22&district=220302",
+      "status": 200,
+      "bodyBytes": 2647,
+      "estimatedProxyEnvelopeBytes": 2775,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=22&province=2210",
+      "status": 200,
+      "bodyBytes": 49050,
+      "estimatedProxyEnvelopeBytes": 49782,
+      "milliseconds": 115
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=22&district=220302",
+      "status": 200,
+      "bodyBytes": 7115,
+      "estimatedProxyEnvelopeBytes": 8207,
+      "milliseconds": 100
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2102",
+      "status": 200,
+      "bodyBytes": 62467,
+      "estimatedProxyEnvelopeBytes": 62931,
+      "milliseconds": 23
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2103",
+      "status": 200,
+      "bodyBytes": 80634,
+      "estimatedProxyEnvelopeBytes": 80978,
+      "milliseconds": 29
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2102",
+      "status": 200,
+      "bodyBytes": 65977,
+      "estimatedProxyEnvelopeBytes": 67135,
+      "milliseconds": 124
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2104",
+      "status": 200,
+      "bodyBytes": 33492,
+      "estimatedProxyEnvelopeBytes": 33764,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2103",
+      "status": 200,
+      "bodyBytes": 83560,
+      "estimatedProxyEnvelopeBytes": 84504,
+      "milliseconds": 131
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2105",
+      "status": 200,
+      "bodyBytes": 39977,
+      "estimatedProxyEnvelopeBytes": 40201,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2104",
+      "status": 200,
+      "bodyBytes": 36166,
+      "estimatedProxyEnvelopeBytes": 36990,
+      "milliseconds": 113
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2106",
+      "status": 200,
+      "bodyBytes": 52092,
+      "estimatedProxyEnvelopeBytes": 52388,
+      "milliseconds": 21
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2105",
+      "status": 200,
+      "bodyBytes": 42312,
+      "estimatedProxyEnvelopeBytes": 43028,
+      "milliseconds": 121
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2107",
+      "status": 200,
+      "bodyBytes": 48763,
+      "estimatedProxyEnvelopeBytes": 49107,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2106",
+      "status": 200,
+      "bodyBytes": 54605,
+      "estimatedProxyEnvelopeBytes": 55427,
+      "milliseconds": 119
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2108",
+      "status": 200,
+      "bodyBytes": 53592,
+      "estimatedProxyEnvelopeBytes": 53912,
+      "milliseconds": 18
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2107",
+      "status": 200,
+      "bodyBytes": 51439,
+      "estimatedProxyEnvelopeBytes": 52341,
+      "milliseconds": 116
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2109",
+      "status": 200,
+      "bodyBytes": 14390,
+      "estimatedProxyEnvelopeBytes": 14590,
+      "milliseconds": 9
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2108",
+      "status": 200,
+      "bodyBytes": 56348,
+      "estimatedProxyEnvelopeBytes": 57238,
+      "milliseconds": 119
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2109",
+      "status": 200,
+      "bodyBytes": 16459,
+      "estimatedProxyEnvelopeBytes": 17107,
+      "milliseconds": 108
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2110",
+      "status": 200,
+      "bodyBytes": 30950,
+      "estimatedProxyEnvelopeBytes": 31174,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2101",
+      "status": 200,
+      "bodyBytes": 78373,
+      "estimatedProxyEnvelopeBytes": 78837,
+      "milliseconds": 29
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2110",
+      "status": 200,
+      "bodyBytes": 33119,
+      "estimatedProxyEnvelopeBytes": 33807,
+      "milliseconds": 113
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2101",
+      "status": 200,
+      "bodyBytes": 82164,
+      "estimatedProxyEnvelopeBytes": 83378,
+      "milliseconds": 131
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2112",
+      "status": 200,
+      "bodyBytes": 81930,
+      "estimatedProxyEnvelopeBytes": 82274,
+      "milliseconds": 29
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2111",
+      "status": 200,
+      "bodyBytes": 22606,
+      "estimatedProxyEnvelopeBytes": 22830,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2111",
+      "status": 200,
+      "bodyBytes": 25035,
+      "estimatedProxyEnvelopeBytes": 25765,
+      "milliseconds": 115
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&province=2113",
+      "status": 200,
+      "bodyBytes": 10840,
+      "estimatedProxyEnvelopeBytes": 11112,
+      "milliseconds": 7
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2112",
+      "status": 200,
+      "bodyBytes": 84919,
+      "estimatedProxyEnvelopeBytes": 85863,
+      "milliseconds": 130
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=21&district=210202",
+      "status": 200,
+      "bodyBytes": 1940,
+      "estimatedProxyEnvelopeBytes": 2068,
+      "milliseconds": 3
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&district=210202",
+      "status": 200,
+      "bodyBytes": 7524,
+      "estimatedProxyEnvelopeBytes": 8896,
+      "milliseconds": 101
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=21&province=2113",
+      "status": 200,
+      "bodyBytes": 13259,
+      "estimatedProxyEnvelopeBytes": 14041,
+      "milliseconds": 108
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=23&province=2303",
+      "status": 200,
+      "bodyBytes": 14420,
+      "estimatedProxyEnvelopeBytes": 14596,
+      "milliseconds": 8
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=23&province=2302",
+      "status": 200,
+      "bodyBytes": 21430,
+      "estimatedProxyEnvelopeBytes": 21678,
+      "milliseconds": 9
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=23&province=2302",
+      "status": 200,
+      "bodyBytes": 23295,
+      "estimatedProxyEnvelopeBytes": 23937,
+      "milliseconds": 104
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=23&province=2303",
+      "status": 200,
+      "bodyBytes": 16098,
+      "estimatedProxyEnvelopeBytes": 16634,
+      "milliseconds": 107
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=23&province=2304",
+      "status": 200,
+      "bodyBytes": 35879,
+      "estimatedProxyEnvelopeBytes": 36175,
+      "milliseconds": 13
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=23&province=2301",
+      "status": 200,
+      "bodyBytes": 40570,
+      "estimatedProxyEnvelopeBytes": 40938,
+      "milliseconds": 17
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=23&province=2304",
+      "status": 200,
+      "bodyBytes": 38096,
+      "estimatedProxyEnvelopeBytes": 38846,
+      "milliseconds": 122
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=23&province=2301",
+      "status": 200,
+      "bodyBytes": 43801,
+      "estimatedProxyEnvelopeBytes": 44783,
+      "milliseconds": 123
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=23&district=230102",
+      "status": 200,
+      "bodyBytes": 3806,
+      "estimatedProxyEnvelopeBytes": 3934,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=24&province=2402",
+      "status": 200,
+      "bodyBytes": 15467,
+      "estimatedProxyEnvelopeBytes": 15643,
+      "milliseconds": 10
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=23&district=230102",
+      "status": 200,
+      "bodyBytes": 6268,
+      "estimatedProxyEnvelopeBytes": 6926,
+      "milliseconds": 104
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=24&province=2402",
+      "status": 200,
+      "bodyBytes": 17242,
+      "estimatedProxyEnvelopeBytes": 17784,
+      "milliseconds": 113
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=24&province=2401",
+      "status": 200,
+      "bodyBytes": 28114,
+      "estimatedProxyEnvelopeBytes": 28362,
+      "milliseconds": 14
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=24&province=2403",
+      "status": 200,
+      "bodyBytes": 11839,
+      "estimatedProxyEnvelopeBytes": 12039,
+      "milliseconds": 10
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=24&province=2401",
+      "status": 200,
+      "bodyBytes": 30433,
+      "estimatedProxyEnvelopeBytes": 31137,
+      "milliseconds": 121
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=24&province=2403",
+      "status": 200,
+      "bodyBytes": 13776,
+      "estimatedProxyEnvelopeBytes": 14372,
+      "milliseconds": 117
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=24&district=240302",
+      "status": 200,
+      "bodyBytes": 2841,
+      "estimatedProxyEnvelopeBytes": 2969,
+      "milliseconds": 12
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=25&province=2502",
+      "status": 200,
+      "bodyBytes": 82669,
+      "estimatedProxyEnvelopeBytes": 82869,
+      "milliseconds": 31
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=24&district=240302",
+      "status": 200,
+      "bodyBytes": 4729,
+      "estimatedProxyEnvelopeBytes": 5259,
+      "milliseconds": 101
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=25&province=2501",
+      "status": 200,
+      "bodyBytes": 66451,
+      "estimatedProxyEnvelopeBytes": 66723,
+      "milliseconds": 28
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=25&province=2502",
+      "status": 200,
+      "bodyBytes": 84533,
+      "estimatedProxyEnvelopeBytes": 85123,
+      "milliseconds": 134
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=25&province=2503",
+      "status": 200,
+      "bodyBytes": 79793,
+      "estimatedProxyEnvelopeBytes": 80065,
+      "milliseconds": 32
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=25&province=2501",
+      "status": 200,
+      "bodyBytes": 68854,
+      "estimatedProxyEnvelopeBytes": 69606,
+      "milliseconds": 133
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=25&province=2504",
+      "status": 200,
+      "bodyBytes": 33708,
+      "estimatedProxyEnvelopeBytes": 33836,
+      "milliseconds": 16
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=25&province=2503",
+      "status": 200,
+      "bodyBytes": 82117,
+      "estimatedProxyEnvelopeBytes": 82855,
+      "milliseconds": 141
+    },
+    {
+      "path": "/api/map?year=2026&month=9&department=25&district=250305",
+      "status": 200,
+      "bodyBytes": 2896,
+      "estimatedProxyEnvelopeBytes": 3024,
+      "milliseconds": 4
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=25&province=2504",
+      "status": 200,
+      "bodyBytes": 35141,
+      "estimatedProxyEnvelopeBytes": 35583,
+      "milliseconds": 116
+    },
+    {
+      "path": "/api/explorer?year=2026&month=9&department=25&district=250305",
+      "status": 200,
+      "bodyBytes": 5012,
+      "estimatedProxyEnvelopeBytes": 5598,
+      "milliseconds": 99
+    },
+    {
+      "path": "/api/explorer/rates?year=2026&month=9",
+      "status": 200,
+      "bodyBytes": 1468689,
+      "estimatedProxyEnvelopeBytes": 1470219,
+      "milliseconds": 617
+    }
+  ],
+  "failures": [],
+  "limits": [
+    "Local API, official imported data; read-only measurement",
+    "Raised rate permits only in temporary benchmark container",
+    "Estimated proxy envelope is not an actual AWS invocation",
+    "Single timing samples are not production latency benchmarks"
+  ],
+  "scope": "Scoped /api/map compatibility fix; explorer already uses territorial geometry.",
+  "contract": {
+    "required": "department",
+    "optional": [
+      "province",
+      "district",
+      "category"
+    ],
+    "unscoped": "400 ProblemDetails",
+    "empty": "200 empty FeatureCollection",
+    "geometry": "display-only ST_SimplifyPreserveTopology(geom,0.0005), six decimal places",
+    "storedBoundariesChanged": false,
+    "statisticsChanged": false
+  },
+  "coverage": {
+    "departments": 25,
+    "provinces": 196,
+    "representativeDistricts": 25,
+    "mapAndExplorerComparisons": 246,
+    "rateMaps": 26,
+    "successfulRequests": 520
+  },
+  "verification": {
+    "regressionBeforeFix": {
+      "failed": 8,
+      "reason": "Unscoped and mismatched map requests incorrectly succeeded"
+    },
+    "backend": {
+      "configuration": "Release",
+      "passed": 223,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 0,
+      "postgis": "Disposable synthetic schemas in local PostGIS; imported dataset not changed",
+      "trx": "/tmp/ctc-map-container/results/scoped-map.trx"
+    },
+    "frontend": {
+      "testsPassed": 153,
+      "typecheck": true,
+      "lint": true,
+      "format": true,
+      "build": true,
+      "existingBuildWarning": "MapLibre chunk exceeds Vite 500 kB advisory"
+    },
+    "browser": {
+      "passed": 6,
+      "projects": [
+        "desktop",
+        "mobile"
+      ],
+      "tests": [
+        "all optional layers can be off without losing the map; statistics restore",
+        "geographic focus, country return and source failure preserve context",
+        "historical comparison limits peers and rate map retains geometry"
+      ],
+      "fixtures": true
+    },
+    "tests": [
+      "MapRejectsUnboundedOrInvalidScopesBeforePersistence",
+      "MapPassesExactScopeCategoryAndCancellationToSingleRead",
+      "ScopedMapBindsTerritoryAndPreservesGeoJsonContract",
+      "ScopedMapPreservesCountsAndStoredGeometryWhileReducingPayload",
+      "EveryApplicationEndpointDocumentsSuccessAndProblemDetailsSchemas"
+    ],
+    "commands": [
+      "docker run [local SDK/read-only sources] dotnet test backend/ChapaTuChoro.slnx --artifacts-path /artifacts --configuration Release --no-build --no-restore --logger trx",
+      "npm --prefix frontend run typecheck",
+      "npm --prefix frontend run lint",
+      "npm --prefix frontend run format:check",
+      "npm --prefix frontend run build",
+      "npm --prefix frontend test",
+      "npm --prefix frontend run test:e2e:built -- --grep 'all optional layers|geographic focus|historical comparison limits peers'"
+    ],
+    "cloudDeployment": false,
+    "remoteDatabaseChanges": false,
+    "migrationsAdded": false,
+    "localCompose": {
+      "apiAndWebRebuilt": true,
+      "postgisRestarted": false,
+      "migrationsRun": false,
+      "temporaryBenchmarkContainerRemoved": true,
+      "smoke": [
+        {
+          "path": "/api/ready",
+          "status": 200,
+          "bodyBytes": 18,
+          "contentType": "application/json; charset=utf-8"
+        },
+        {
+          "path": "/api/map?year=2026&month=9",
+          "status": 400,
+          "bodyBytes": 164,
+          "contentType": "application/problem+json"
+        },
+        {
+          "path": "/api/map?year=2026&month=9&department=21",
+          "status": 200,
+          "bodyBytes": 609614,
+          "contentType": "application/json; charset=utf-8"
+        },
+        {
+          "path": "/api/explorer?year=2026&month=9",
+          "status": 200,
+          "bodyBytes": 1467939,
+          "contentType": "application/json; charset=utf-8"
+        }
+      ]
+    }
+  }
+}
