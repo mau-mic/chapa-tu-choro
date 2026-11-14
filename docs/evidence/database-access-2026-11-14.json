@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-14",
+  "scope": "Migration 004: API/ingestion groups, least-privilege grants, RLS and manual Supabase credential setup",
+  "migration": "db/004_database_access.sql",
+  "runtimePermissionGroups": ["ctc_api_reader", "ctc_ingestion_writer"],
+  "manualLoginAccounts": ["ctc_api", "ctc_ingestion"],
+  "verification": {
+    "environment": "Disposable local PostGIS 17 / 3.5 container; external networking disabled; synthetic fixtures; no application database volume mounted",
+    "supabaseStyleConfiguration": "PostGIS installed in extensions",
+    "testCommand": "uv run --offline --no-project --no-managed-python --python /usr/local/bin/python python -m unittest discover -s ingestion/tests -v",
+    "sourceRun": {"tests": 125, "result": "OK", "exitCode": 0},
+    "builtImageRun": {"image": "ctc-database-access:local", "tests": 125, "result": "OK", "exitCode": 0},
+    "dockerBuild": "Succeeded with --network none",
+    "earlierSqlChecksums": "Matched docs/evidence/migration-numbering-2026-11-14.json",
+    "runbookBashSyntax": "Verified with bash -n; commands not executed against Supabase"
+  },
+  "behaviorEvidence": {
+    "apiReadOnly": "test_api_reads_real_rows_but_cannot_write_or_read_operations",
+    "statisticsAndTracking": "test_statistics_etl_and_tracking_work_under_writer",
+    "populationRlsCopy": "test_population_copy_import_and_revision_work_under_writer",
+    "nestedAtomicity": "test_population_releases_share_outer_transaction_and_roll_back_together",
+    "concentrationReplacement": "test_concentration_replacement_uses_only_scoped_series_delete",
+    "browserAndServiceDenial": "test_browser_and_service_roles_have_no_application_access",
+    "rlsDefaultDenial": "test_rls_denies_rows_to_unlisted_role_even_if_table_grant_is_added",
+    "futureDefaults": "test_future_objects_get_no_automatic_runtime_or_data_api_privileges",
+    "legacyColumnAcl": "test_security_upgrade_revokes_existing_column_level_access",
+    "nonSuperuserProvisioning": "test_non_superuser_schema_owner_can_provision_access",
+    "unsafeOwnership": "test_permission_group_with_object_ownership_is_rejected_atomically",
+    "unsafeBrowserMembership": "test_permission_group_inherited_by_browser_is_rejected_atomically",
+    "legacyMigrationCompatibility": "test_legacy_complete_ledger_renames_and_adds_access_preserving_data_hashes_and_dates"
+  },
+  "review": "Independent read-only security review; ownership guard, non-superuser provisioning and nested staging findings covered by regression tests",
+  "notPerformed": [
+    "Hosted Supabase migration or login creation",
+    "Hosted Security/Performance Advisors or actual pooler authentication checks",
+    "Official data ingestion",
+    "AWS secrets, deployment, scheduling or runtime CA packaging"
+  ]
+}
