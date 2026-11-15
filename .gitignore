@@ -1,0 +1,83 @@
+# .NET
+**/bin/
+**/obj/
+**/.vs/
+# JavaScript
+**/node_modules/
+frontend/dist/
+# Python
+**/__pycache__/
+**/.pytest_cache/
+.venv/
+**/.venv/
+**/.ruff_cache/
+**/.mypy_cache/
+**/.coverage*
+**/htmlcov/
+# Environment and credentials
+.env
+.env.*
+!**/.env.example
+**/appsettings.Local.json
+*.pem
+*.pfx
+*.p12
+*.key
+*.jks
+*.keystore
+**/.aws/
+**/.ssh/
+**/id_rsa
+**/id_ed25519
+**/credentials
+**/secrets.json
+**/appsettings.*.local.json
+.codex/
+.agents/
+.worktrees/
+.envrc
+# Terraform
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+**/terraform.tfvars
+**/*.tfvars
+**/*.tfvars.json
+**/*.tfplan
+**/crash.log
+**/crash.*.log
+# Generated build artifacts
+/dist/
+# Government dataset files (do not distribute by default)
+/data/*
+!/data/README.md
+*.csv
+*.csv.gz
+*.tsv
+*.xlsx
+*.xls
+*.geojson
+*.geojson.gz
+*.gpkg
+*.parquet
+*.shp
+*.shx
+*.dbf
+*.prj
+*.dump
+*.backup
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.log
+
+# TypeScript incremental compilation
+**/*.tsbuildinfo
+
+# Playwright browser-test artifacts
+**/test-results/
+**/playwright-report/
+**/blob-report/
+
+# Consistent aggregate snapshots used by static publishing (regenerate locally).
+frontend/.generated/
