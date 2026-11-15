@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-13",
+  "scope": "Frontend UX/UI adaptation. No Carbon, Datawrapper or ONS adoption; no new package, API contract, database or deployment change.",
+  "checks": {
+    "frontend_unit": {
+      "files": 20,
+      "passed": 119,
+      "failed": 0
+    },
+    "browser": {
+      "passed": 28,
+      "failed": 0,
+      "projects": [
+        "desktop",
+        "mobile"
+      ],
+      "external_data": "Synthetic labeled fixtures; not official observations"
+    },
+    "other": [
+      "ESLint including exhaustive hook dependencies",
+      "Prettier source check",
+      "TypeScript production build",
+      "Playwright fixture typecheck",
+      "README/docs local file links",
+      "git diff --check"
+    ],
+    "visual_review": [
+      "Map, trends and reporting desktop/mobile screenshots",
+      "Fully opened mobile filter sheet; results button visible",
+      "Reporting directory natural document scrolling"
+    ]
+  },
+  "behavior_to_test": [
+    {
+      "behavior": "Remove and reset filters while retaining reporting period",
+      "test": "removes geographic filters and resets category while retaining the reporting period",
+      "suite": "App.test.tsx"
+    },
+    {
+      "behavior": "Mobile modal dismissal, focus restoration, results visibility and desktop resize",
+      "test": "active selections reset without changing period and mobile filters restore keyboard focus",
+      "suite": "e2e/app.spec.ts"
+    },
+    {
+      "behavior": "Official reporting actions and selected-situation recommendations",
+      "test": "reporting groups preserve official actions and situation-specific recommendations",
+      "suite": "e2e/app.spec.ts"
+    },
+    {
+      "behavior": "Responsive layout, no horizontal overflow and screenshots",
+      "test": "responsive views keep clear layout and review screenshots",
+      "suite": "e2e/app.spec.ts"
+    },
+    {
+      "behavior": "Map preservation and independent source counts",
+      "test": "all optional layers can be off without losing the map; statistics restore; trend sources use independent controls/units and recover without stale charts",
+      "suite": "e2e/app.spec.ts"
+    },
+    {
+      "behavior": "Static resources without JavaScript and correct 404s",
+      "test": "methodology and statistical resources work without loading map JavaScript; unknown pages are real 404s rather than successful map responses",
+      "suite": "e2e/seo.spec.ts"
+    }
+  ],
+  "limits": [
+    "No remote CI, live government-service or production deployment verification in this UI-only change.",
+    "Existing MapLibre chunk-size warning remains; map is still loaded on demand.",
+    "A definitive external visual-system choice remains open."
+  ]
+}

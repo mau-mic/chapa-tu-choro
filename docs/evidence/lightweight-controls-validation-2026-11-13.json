@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-13",
+  "scope": "Frontend controls, icons and on-demand territorial search. No backend, database, deployment, or source-data changes.",
+  "dependencies": {
+    "added": "lucide-react@1.72.0",
+    "reused": "@base-ui/react@1.9.0",
+    "notAdded": [
+      "Motion",
+      "coss UI runtime",
+      "another icon catalogue or chart engine"
+    ]
+  },
+  "build": {
+    "beforeEntryJsGzipKB": 139.549,
+    "afterEntryJsGzipKB": 145.826,
+    "entryJsDeltaGzipKB": 6.276999999999987,
+    "beforeCssGzipKB": 9.86,
+    "afterCssGzipKB": 10.365,
+    "optionalSearchGzipKB": 28.281,
+    "mapJsGzipKB": 303.967,
+    "mapWorkerGzipKB": 147.5,
+    "notes": [
+      "Compressed file sizes; transport compression depends on deployment.",
+      "Optional search file downloads only on explicit long-list search intent. No prefetch on page/sheet open.",
+      "MapLibre JavaScript and worker sizes remain essentially unchanged."
+    ]
+  },
+  "verification": {
+    "unit": {
+      "passed": 122,
+      "files": 21,
+      "failed": 0
+    },
+    "browser": {
+      "passed": 32,
+      "failed": 0,
+      "projects": [
+        "desktop",
+        "mobile"
+      ]
+    },
+    "checks": [
+      "Production build and TypeScript",
+      "ESLint",
+      "Prettier source check",
+      "browser fixture typecheck",
+      "npm audit:0 reported vulnerabilities",
+      "README/docs local links",
+      "git diff --check"
+    ],
+    "screenshots": "Reviewed desktop/mobile search controls and the existing map/trends/reporting layouts."
+  },
+  "behaviorEvidence": [
+    {
+      "behavior": "Short native lists, local name/UBIGEO search, accent matching, no-match value preservation, bounded results, disabled fields and return to native mode",
+      "tests": [
+        "retains native selection for short lists",
+        "opens search only on intent, matches accents and UBIGEO, and keeps the native alternative",
+        "bounds rendered matches and disables both modes with their field"
+      ],
+      "file": "frontend/src/features/explorer/TerritoryField.test.tsx"
+    },
+    {
+      "behavior": "No initial search download, no API per keystroke, keyboard selection, nested Escape, preserved complete native options and parent reset",
+      "test": "long territorial search loads on intent, filters locally and preserves native selection",
+      "file": "frontend/e2e/app.spec.ts"
+    },
+    {
+      "behavior": "Optional chunk failure keeps original filter usable",
+      "test": "failed optional search download retains the complete native filter",
+      "file": "frontend/e2e/app.spec.ts"
+    }
+  ],
+  "mobileLab": {
+    "environment": "Headless Chromium, Pixel7 viewport with touch taps,4x CPU slowdown, local production build; synthetic API fixtures and software WebGL; times include designed CSS transitions and requestAnimationFrame polling, not INP or physical phone measurements.",
+    "medians": {
+      "open": {
+        "samples": 5,
+        "beforeFirstVisualMedianMs": 102.29999999888241,
+        "afterFirstVisualMedianMs": 88.5,
+        "beforeSettledMedianMs": 275.80000000074506,
+        "afterSettledMedianMs": 286.5999999977648
+      },
+      "close": {
+        "samples": 5,
+        "beforeFirstVisualMedianMs": 35.70000000111759,
+        "afterFirstVisualMedianMs": 37.80000000074506,
+        "beforeSettledMedianMs": 247.5,
+        "afterSettledMedianMs": 251.5
+      }
+    },
+    "limits": [
+      "Five samples per open/close action, emulated Pixel7 touch viewport,4x CPU slowdown and software WebGL.",
+      "Synthetic API fixtures; does not measure real data-query or geometry performance.",
+      "DOM/requestAnimationFrame response proxy, not INP or physical-phone Core Web Vitals.",
+      "Small changes in medians are not proof of improved real-device performance."
+    ]
+  },
+  "remaining": [
+    "Physical iOS/Android soft-keyboard and scrolling verification",
+    "Remote CI/deployment verification",
+    "Existing large MapLibre chunk warning"
+  ]
+}

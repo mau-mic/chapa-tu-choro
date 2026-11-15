@@ -1,0 +1,12 @@
+# Maintainability implementation plan
+
+Scope: implement the accepted repository review locally. Preserve statistical meanings, HTTP contracts, existing map interactions and public routes. Do not connect to Supabase or deploy cloud resources. Keep the existing stack; no replacement UI framework.
+
+1. Frontend: compose shell, filters, ranking, map view and trends view into focused modules. Lazy-load the map on first use and retain it for later visits. Extract charts, use semantic design tokens/Base UI controls, preserve accessible states, add hooks linting and formatting. Verify existing component/browser regressions plus direct reporting navigation without a map download.
+2. Database/ingestion: introduce a checksummed, serialized, transactional migration ledger with safe existing-schema adoption and upgrade tests. Freeze the legacy baseline. Add leased execution tracking/reconciliation with fencing so an expired worker cannot commit success. Make source date policy deterministic in tests, retain explicit reviewed source registrations. Keep CSV incremental semantics explicit, with tests for omitted keys/revised data.
+3. Backend: declare OpenAPI response/error contracts, isolate category projection from persistence, standardize C# formatting where touched, and configure safe client identity behind the local proxy with integration tests. Keep four-layer dependencies and Result/ProblemDetails/Serilog.
+4. CI/Docker: remove the duplicate Vite build, use lockfile caches, cancel superseded PR runs, harden action references/checkout and improve restore caching. Preserve independent PostGIS/browser checks and runtime image permissions.
+5. Docs: provide one current index and concise operational guides, archive development-history narratives while preserving links/evidence and ADRs, replace obsolete claims with explicit historical scope.
+6. Validate: fresh/adopted/failed migration paths and checksums; ingestion, backend, frontend and desktop/mobile browser suites; actual local nginx routing/client identity. Review remaining limits and record evidence. No production data or hosted grants are changed.
+
+Execution: focused parallel lanes under the dispatching-parallel-agents skill; root integrates and validates. Existing workspace is the shared uncommitted project; no commits, reset, clean or worktree relocation will discard it. The prior review and current request authorize this scope; implementation choices above are defaults within that scope.
