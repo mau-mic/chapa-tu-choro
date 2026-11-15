@@ -1,0 +1,98 @@
+services:
+  postgis:
+    image: postgis/postgis:17-3.5
+    environment:
+      POSTGRES_DB: chapatuchoro
+      POSTGRES_USER: ctc
+      POSTGRES_PASSWORD: local_only_replace_me
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgis_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ctc -d chapatuchoro"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  migrate:
+    profiles: [app, etl]
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.ingestion
+    entrypoint: [python, -m, ingestion.migrate]
+    environment:
+      DATABASE_URL: postgresql://ctc:local_only_replace_me@postgis:5432/chapatuchoro
+    depends_on:
+      postgis:
+        condition: service_healthy
+    restart: "no"
+  api:
+    profiles: [app]
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    environment:
+      ConnectionStrings__Default: "Host=postgis;Database=chapatuchoro;Username=ctc;Password=local_only_replace_me;Search Path=public,extensions"
+      ReverseProxy__KnownProxies__0: ${CTC_WEB_ADDRESS:-172.29.84.10}
+    networks: [default, proxy]
+    # The browser reaches /api through web; no API port is published on the host.
+    expose:
+      - "8080"
+    depends_on:
+      postgis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+  web:
+    profiles: [app]
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.web
+      args:
+        VITE_SITE_URL: ${VITE_SITE_URL:-}
+        VITE_SEO_NOINDEX: ${VITE_SEO_NOINDEX:-false}
+    ports:
+      - "127.0.0.1:5173:8080"
+    depends_on:
+      - api
+    networks:
+      proxy:
+        ipv4_address: ${CTC_WEB_ADDRESS:-172.29.84.10}
+  etl:
+    profiles: [etl]
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.ingestion
+    environment:
+      DATABASE_URL: postgresql://ctc:local_only_replace_me@postgis:5432/chapatuchoro
+      INGESTION_DATASET: ${INGESTION_DATASET:-statistics}
+      SIDPOL_SOURCE_URL: ${SIDPOL_SOURCE_URL:-}
+    depends_on:
+      postgis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    restart: "no"
+  population:
+    profiles: [etl]
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.ingestion
+    entrypoint: [python, -m, ingestion.population]
+    command: [/input/population.xlsx]
+    environment:
+      DATABASE_URL: postgresql://ctc:local_only_replace_me@postgis:5432/chapatuchoro
+    volumes:
+      - ${POPULATION_DATA_DIR:-./data}:/input:ro
+    depends_on:
+      postgis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+volumes:
+  postgis_data:
+networks:
+  proxy:
+    ipam:
+      config:
+        - subnet: ${CTC_PROXY_SUBNET:-172.29.84.0/24}

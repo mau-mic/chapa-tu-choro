@@ -1,0 +1,11 @@
+# OPTIONAL: container-image Lambda rather than the default ZIP artifact.
+# The supplied Terraform deploys ZIPs to minimize ECR complexity/cost.
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /workspace
+COPY backend/ ./backend/
+RUN dotnet restore backend/src/ChapaTuChoro.Api/ChapaTuChoro.Api.csproj
+RUN dotnet publish backend/src/ChapaTuChoro.Api/ChapaTuChoro.Api.csproj -c Release -o /out --no-restore
+
+FROM public.ecr.aws/lambda/dotnet:10
+COPY --from=build /out/ ${LAMBDA_TASK_ROOT}
+CMD ["ChapaTuChoro.Api"]
