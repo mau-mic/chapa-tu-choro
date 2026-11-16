@@ -316,3 +316,8 @@ output "site_bucket" { value = aws_s3_bucket.site.id }
 output "raw_data_bucket" { value = aws_s3_bucket.data.id }
 output "api_lambda" { value = aws_lambda_function.api.function_name }
 output "ingestion_lambda" { value = aws_lambda_function.ingestion.function_name }
+
+# Consumed by the publication job only after a successful HCP run.
+output "cloudfront_distribution_id" {
+  value = aws_cloudfront_distribution.site.id
+}

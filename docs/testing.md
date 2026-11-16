@@ -80,3 +80,17 @@ Read the [evidence directory](evidence/) for dated commands/results, not a cumul
 Population tests use synthetic workbooks; the government Excel is not required in CI. Application/API/PostGIS/frontend/browser suites check null versus zero, same-year population, source alignment, bounded queries, cancellation, errors and retry. Formula/availability rules live in the [population contract](ingestion/population.md), not duplicated here.
 
 For older checks, use the [historical ledger](archive/mvp-validation.md). The earlier SDK environment needed `-p:AllowMissingPrunePackageData=true` for `NETSDK1226`; restricted environments may also need writable .NET/NuGet/temp directories. These are environment workarounds, not standard project requirements.
+
+HCP deployment orchestration can be checked without credentials or network calls:
+
+```bash
+node --test scripts/tests/deploy-hcp.test.cjs
+bash -n scripts/deploy-hcp.sh
+terraform -chdir=infra/terraform fmt -check
+terraform -chdir=infra/terraform validate
+```
+
+The four mocked cases cover applied/no-change runs, a failed remote run and
+rejection of Local execution. They also inspect the upload allowlist and ensure
+that the HCP bearer token is not sent to the signed artifact URL. These tests do
+not establish that hosted credentials, AWS permissions or a live deployment work.

@@ -9,7 +9,7 @@ permissions:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   backend:
@@ -62,6 +62,8 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - run: npm run lint
       - run: npm test
+      - name: Test HCP deployment orchestration (mocked API)
+        run: node --test ../scripts/tests/deploy-hcp.test.cjs
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # v4.3.1
@@ -125,3 +127,72 @@ jobs:
       - run: python -m unittest discover -s ingestion/tests -v
       - run: bash scripts/package-ingestion.sh
       - run: docker compose --profile etl config --quiet
+
+  deploy:
+    # Environment protections and this condition prevent PRs from using deployment credentials.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [backend, frontend, ingestion]
+    runs-on: ubuntu-latest
+    timeout-minutes: 85
+    environment: production
+    concurrency:
+      group: production-deployment
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      AWS_REGION: us-east-1
+      HCP_ORGANIZATION: ${{ vars.HCP_ORGANIZATION }}
+      HCP_WORKSPACE: ${{ vars.HCP_WORKSPACE }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # v4.3.1
+        with:
+          dotnet-version: '10.0.x'
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Build Lambda artifacts
+        run: bash scripts/package-lambdas.sh
+      - name: Build production frontend
+        working-directory: frontend
+        env:
+          VITE_SITE_URL: ${{ vars.SITE_URL }}
+          VITE_API_BASE_URL: ''
+          VITE_SEO_NOINDEX: ${{ vars.SEO_NOINDEX || 'true' }}
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+      - name: Execute Terraform in HCP Cloud
+        id: infrastructure
+        env:
+          HCP_TOKEN: ${{ secrets.HCP_TOKEN }}
+        run: bash scripts/deploy-hcp.sh
+      - name: Obtain temporary AWS publishing credentials
+        # aws-actions/configure-aws-credentials v4.2.1
+        uses: aws-actions/configure-aws-credentials@b47578312673ae6fa5b5096b330d9fbac3d116df
+        with:
+          role-to-assume: ${{ vars.AWS_PUBLISH_ROLE_ARN }}
+          aws-region: us-east-1
+      - name: Publish static files and refresh CloudFront
+        env:
+          SITE_BUCKET: ${{ steps.infrastructure.outputs.site_bucket }}
+          DISTRIBUTION: ${{ steps.infrastructure.outputs.cloudfront_distribution_id }}
+          SITE_URL: ${{ steps.infrastructure.outputs.cloudfront_url }}
+        run: |
+          # Upload assets before HTML; retain older hashed assets for open browser sessions.
+          aws s3 sync frontend/dist/ "s3://$SITE_BUCKET/" --exclude '*.html' --exclude 'assets/*' --exclude 'cloudfront-router.js' --cache-control 'public,max-age=300'
+          aws s3 sync frontend/dist/assets/ "s3://$SITE_BUCKET/assets/" --cache-control 'public,max-age=31536000,immutable'
+          aws s3 sync frontend/dist/ "s3://$SITE_BUCKET/" --exclude '*' --include '*.html' --cache-control 'no-cache' --metadata-directive REPLACE
+          INVALIDATION=$(aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION" --paths '/*' --query 'Invalidation.Id' --output text)
+          aws cloudfront wait invalidation-completed --distribution-id "$DISTRIBUTION" --id "$INVALIDATION"
+          curl --fail --silent --show-error --retry 5 --retry-all-errors "$SITE_URL/api/health"
+          curl --fail --silent --show-error --retry 5 --retry-all-errors --output /dev/null "$SITE_URL/"
