@@ -87,3 +87,46 @@ See [tracking](ingestion/tracking.md) for outcomes and abandoned-run reconciliat
 ## Deployment boundaries
 
 [AWS deployment](deployment.md) is the release checklist; [the prelaunch review](aws-review.md) records costs and blockers. [Data ingestion](data-ingestion.md) defines Lambda ingestion settings, and [static publishing](seo/publishing.md) defines exports/canonical origins. Local startup does not enable cloud scheduling, remote migrations or public indexing.
+
+## Diagnose metadata timeouts in Lambda
+
+`StatisticsReadRepository.GetMetadataAsync` emits structured stage-start and
+stage-completion events with `MetadataStage`, `ElapsedMs` and a per-call
+`MetadataOperationId` scope. Stages are `periods.read` (including EF connection
+acquisition/result materialization), `reports.count`, `imports.acquire_connection`,
+`imports.execute` and `imports.read`. The final operation-completed event is emitted
+after reader/connection disposal and includes aggregate counts, not source values.
+Failure events identify the stage and exception type, then rethrow unchanged to
+the central exception handler. No connection strings, source names/hashes or SQL
+are added by these diagnostic events. Existing EF SQL logging is unchanged.
+
+After separately authorizing deployment of the diagnostics:
+
+1. Make one request to `/api/metadata`; avoid repeated retries while investigating.
+2. In the API Lambda log group, select the matching request/log stream and time.
+3. Filter for metadata events in CloudWatch Logs Insights:
+
+   ```text
+   fields @timestamp, @logStream, @message
+   | filter @message like /Metadata (stage|operation|imports reader)/
+   | sort @timestamp asc
+   | limit 100
+   ```
+
+4. Correlate `MetadataOperationId` and the existing request/trace identifiers.
+   The last started stage without a completion identifies the interrupted span.
+   For example, `periods.read` without completion includes client-side reading;
+   an EF CommandExecuted event alone does not prove materialization completed.
+5. If `imports.read` completed but the reader-disposed message is absent, inspect
+   reader disposal; if reader-disposed appears but final completion does not,
+   inspect connection disposal. A Lambda hard timeout may prevent catch/finally
+   events from being emitted. Partial logs are expected in that case.
+6. Compare timestamps with PostgreSQL activity, backend_type/leader_pid and
+   CloudWatch REPORT duration/memory. Do not infer a six-minute active query from
+   query_start on an idle connection. Do not treat PostgREST missing-schema logs
+   from a disabled Data API as proof of an Npgsql failure.
+
+Instrumentation does not fix or increase the Lambda timeout, change queries,
+connection-pool limits, CORS, data or API response contracts. Use the observed
+stage to choose the next correction. Do not expose diagnostic logs through a
+public API endpoint or enable sensitive-data logging to inspect passwords.

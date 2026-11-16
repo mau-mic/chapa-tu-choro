@@ -1,28 +1,70 @@
 using System.Text.Json;
+using System.Diagnostics;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using ChapaTuChoro.Application.Statistics;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 
 namespace ChapaTuChoro.Infrastructure.Persistence;
 
-public sealed class StatisticsReadRepository(CrimeWatchDbContext context, NpgsqlDataSource dataSource)
+public sealed class StatisticsReadRepository(CrimeWatchDbContext context, NpgsqlDataSource dataSource,
+    ILogger<StatisticsReadRepository>? logger = null)
     : IStatisticsReadRepository
 {
     public async Task<MetadataDto> GetMetadataAsync(CancellationToken ct)
     {
-        var periods = await ReportsInScope()
+        var log = logger ?? NullLogger<StatisticsReadRepository>.Instance;
+        var operation = Guid.NewGuid().ToString("N");
+        using var scope = log.BeginScope(new Dictionary<string, object> { ["MetadataOperationId"] = operation });
+        var totalStart = Stopwatch.GetTimestamp();
+        log.LogInformation("Metadata operation started");
+
+        async Task<T> Stage<T>(string name, Func<Task<T>> action)
+        {
+            var start = Stopwatch.GetTimestamp();
+            log.LogInformation("Metadata stage {MetadataStage} started", name);
+            try
+            {
+                var value = await action();
+                log.LogInformation("Metadata stage {MetadataStage} completed in {ElapsedMs} ms",
+                    name, Stopwatch.GetElapsedTime(start).TotalMilliseconds);
+                return value;
+            }
+            catch (Exception error)
+            {
+                // Do not duplicate exception messages/SQL/connection details here.
+                // Unexpected errors still reach the central exception handler.
+                log.LogWarning("Metadata stage {MetadataStage} failed after {ElapsedMs} ms ({FailureType})",
+                    name, Stopwatch.GetElapsedTime(start).TotalMilliseconds, error.GetType().Name);
+                throw;
+            }
+        }
+
+        var periods = await Stage("periods.read", () => ReportsInScope()
             .Select(x => new { x.Year, x.Month }).Distinct()
             .OrderByDescending(x => x.Year).ThenByDescending(x => x.Month)
-            .Select(x => new PeriodDto(x.Year, x.Month)).ToListAsync(ct);
-        var count = await ReportsInScope().LongCountAsync(ct);
+            .Select(x => new PeriodDto(x.Year, x.Month)).ToListAsync(ct));
+        var count = await Stage("reports.count", () => ReportsInScope().LongCountAsync(ct));
         var imports = new List<SourceDto>();
-        await using var connection = await dataSource.OpenConnectionAsync(ct);
-        await using var command = new NpgsqlCommand(
-            "SELECT source_kind, source_name, sha256, imported_at FROM import_runs ORDER BY imported_at DESC, id DESC", connection);
-        await using var reader = await command.ExecuteReaderAsync(ct);
-        while (await reader.ReadAsync(ct))
-            imports.Add(new SourceDto(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                reader.GetFieldValue<DateTimeOffset>(3)));
+        await using (var connection = await Stage("imports.acquire_connection", async () => await dataSource.OpenConnectionAsync(ct)))
+        {
+            await using var command = new NpgsqlCommand(
+                "SELECT source_kind, source_name, sha256, imported_at FROM import_runs ORDER BY imported_at DESC, id DESC", connection);
+            await using (var reader = await Stage("imports.execute", () => command.ExecuteReaderAsync(ct)))
+            {
+                await Stage("imports.read", async () =>
+                {
+                    while (await reader.ReadAsync(ct))
+                        imports.Add(new SourceDto(reader.GetString(0), reader.GetString(1), reader.GetString(2),
+                            reader.GetFieldValue<DateTimeOffset>(3)));
+                    return imports.Count;
+                });
+            }
+            log.LogInformation("Metadata imports reader disposed; releasing connection");
+        }
+        log.LogInformation("Metadata operation completed in {ElapsedMs} ms; {PeriodCount} periods, {ReportRows} rows, {ImportCount} imports",
+            Stopwatch.GetElapsedTime(totalStart).TotalMilliseconds, periods.Count, count, imports.Count);
         return new MetadataDto(periods.FirstOrDefault(), count, periods, imports,
             "https://www.datosabiertos.gob.pe/dataset/denuncias-policiales-registradas-nivel-nacional-mininter",
             "https://ide.inei.gob.pe/");
