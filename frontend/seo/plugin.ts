@@ -17,7 +17,7 @@ export function seoPlugin(): Plugin {
     if (!existsSync(path) && !explicit) return null;
     return validateSnapshot(JSON.parse(readFileSync(path, 'utf8')));
   };
-  const notFound = '<!doctype html><html lang="es"><head><meta name="robots" content="noindex"><title>Página no encontrada</title></head><body><h1>Página no encontrada</h1><a href="/">Volver al mapa</a></body></html>';
+  const notFound = '<!doctype html><html lang="es"><head><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="robots" content="noindex"><title>Página no encontrada</title></head><body><h1>Página no encontrada</h1><a href="/">Volver al mapa</a></body></html>';
   return {
     name: 'chapa-static-seo',
     configResolved(value) {
@@ -59,7 +59,7 @@ export function seoPlugin(): Plugin {
         const url = new URL(request.url || '/', 'http://localhost');
         const path = url.pathname;
         // Avoid Vite's SPA fallback treating nonexistent HTML URLs as successful map pages.
-        if (path.startsWith('/api/') || path.startsWith('/assets/') || path === '/robots.txt' || path === '/sitemap.xml') return next();
+        if (path.startsWith('/api/') || path.startsWith('/assets/') || path === '/robots.txt' || path === '/sitemap.xml' || ['/favicon.svg', '/favicon.ico', '/apple-touch-icon.png'].includes(path)) return next();
         if (path === '/index.html') return next();
         const valid = path === '/' || /^\/(?:denunciar|tendencias|metodologia)\/?$/.test(path) || /^\/estadisticas\/(?:peru|departamentos\/[a-z0-9-]+)\/?$/.test(path);
         const file = resolve(config.root, config.build.outDir, path === '/' ? 'index.html' : `${path.slice(1).replace(/\/$/, '')}/index.html`);

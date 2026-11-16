@@ -27,8 +27,8 @@ export function cloudFrontRouter(files: Iterable<string>) {
     request.uri = routes[uri];
     return request;
   }
-  if (uri.indexOf('/assets/') === 0 || uri === '/robots.txt' || uri === '/sitemap.xml') return request;
-  return {statusCode: 404, headers: {'content-type': {value: 'text/html; charset=utf-8'}, 'x-robots-tag': {value: 'noindex'}}, body: '<!doctype html><html lang="es"><head><title>Página no encontrada</title><meta name="robots" content="noindex"></head><body><h1>Página no encontrada</h1><a href="/">Volver al mapa</a></body></html>'};
+  if (uri.indexOf('/assets/') === 0 || uri === '/robots.txt' || uri === '/sitemap.xml' || ['/favicon.svg', '/favicon.ico', '/apple-touch-icon.png'].indexOf(uri) !== -1) return request;
+  return {statusCode: 404, headers: {'content-type': {value: 'text/html; charset=utf-8'}, 'x-robots-tag': {value: 'noindex'}}, body: '<!doctype html><html lang="es"><head><link rel="icon" href="/favicon.svg" type="image/svg+xml"><title>Página no encontrada</title><meta name="robots" content="noindex"></head><body><h1>Página no encontrada</h1><a href="/">Volver al mapa</a></body></html>'};
 }
 `;
 }

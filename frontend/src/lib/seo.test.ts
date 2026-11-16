@@ -224,6 +224,9 @@ describe("static statistical publication", () => {
     );
     expect(request("/unknown").statusCode).toBe(404);
     expect(request("/assets/app.mjs").uri).toBe("/assets/app.mjs");
+    for (const icon of ["/favicon.svg", "/favicon.ico", "/apple-touch-icon.png"]) {
+      expect(request(icon).uri).toBe(icon);
+    }
     expect(
       request("/tendencias/", { department: { value: "15" } }).headers?.location
         .value,
