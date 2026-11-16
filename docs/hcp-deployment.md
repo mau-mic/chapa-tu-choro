@@ -1,5 +1,7 @@
 # GitHub → HCP Terraform Cloud → AWS
 
+For the ordered end-to-end procedure, start with the [setup roadmap](setup-roadmap.md). This document describes the pipeline configuration and operational contracts.
+
 The `deploy` job in `.github/workflows/ci.yml` runs only after all three CI jobs
 succeed on a push to `main` with repository variable `ENABLE_AUTO_DEPLOY=true`.
 Manual dispatch on `main` performs a plan-only review instead. GitHub builds both Lambda ZIPs and the production
@@ -86,10 +88,11 @@ HTML last, but publication of multiple HTML files is not atomic. Existing static
 routes removed in later releases require explicit cleanup. A failed health check
 fails the job but does not automatically undo AWS changes.
 
-Domain aliases/certificate, additional security headers, origin protection and
-cost alerts are separate prelaunch work; this pipeline does not claim to add them.
-Until configured, use the CloudFront URL and keep indexing disabled. No live HCP
-run or AWS apply was performed while implementing this workflow.
+Domain aliases, the existing certificate reference, security headers and optional
+Cloudflare origin protection are implemented. Validate them on the deployed path;
+with protection enabled use SITE_URL, not the direct CloudFront hostname. Alerts
+and automated budgets are deferred outside MVP scope. No deployment success is
+implied by these configuration instructions.
 
 ### Deployment permissions JSON
 
@@ -113,17 +116,17 @@ Add these HCP **Terraform variables**, with HCL and Sensitive disabled:
 
 Set both or neither. CloudFront accepts apex/www with TLS 1.2 minimum, and the
 viewer-request function redirects www to the apex while preserving path and
-query parameters, including API requests. The CloudFront hostname remains usable
-for pre-DNS health checks. The existing certificate is referenced, not recreated.
+query parameters, including API requests. The CloudFront hostname is usable for pre-DNS health checks only when proxy
+protection is disabled; protected production checks use SITE_URL. The existing certificate is referenced, not recreated.
 
 Set GitHub `SITE_URL=https://chapatuchoro.com` before the production build and keep
 `SEO_NOINDEX=true` until validation is complete. After the reviewed infrastructure
 is deployed, replace web DNS records for `@` and `www` with CNAMEs targeting the
 CloudFront distribution hostname (not a URL). Leave mail and ACM validation
-records intact. Start DNS-only to verify CloudFront HTTPS directly; enabling the
-Cloudflare proxy requires Full (strict) TLS and the separate origin-protection
-review. Publishing this version on main is safe while repository variable ENABLE_AUTO_DEPLOY is absent or false; manual dispatch is plan-only.
-The separate plan-only workflow, security headers and alerts remain prelaunch work.
+records intact. For the protected production rollout, use Proxied and Full (strict); see the
+proxy section below. DNS-only requests lack the private proof and are rejected. Publishing this version on main is safe while repository variable ENABLE_AUTO_DEPLOY is absent or false; manual dispatch is plan-only.
+Manual plan-only runs and security headers are implemented. Alerts remain deferred;
+check the roadmap for release verification.
 
 
 ## Manual plan-only review

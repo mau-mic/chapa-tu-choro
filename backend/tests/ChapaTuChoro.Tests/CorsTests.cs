@@ -1,12 +1,14 @@
 using System.Net;
 using System.Text.Json;
 using ChapaTuChoro.Application.Statistics;
+using ChapaTuChoro.Api.Http;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Hosting;
 using Xunit;
 
 namespace ChapaTuChoro.Tests;
@@ -134,7 +136,41 @@ public sealed class CorsTests
     [InlineData("http://localhost:5173")]
     public async Task UnsafeProductionConfigurationFailsAtStartup(string origin)
     {
-        await using var factory = new Factory(origin);
-        await Assert.ThrowsAsync<OptionsValidationException>(() => Task.Run(() => factory.CreateClient()));
+        // DeferredHostBuilder can dispose its provider while propagating a startup
+        // failure. Exercise the same ValidateOnStart registration directly so the
+        // assertion observes validation, not WebApplicationFactory's failure race.
+        using var host = CreateCorsValidationHost(origin);
+        var error = await Assert.ThrowsAsync<OptionsValidationException>(() => host.StartAsync());
+        Assert.Equal(typeof(FrontendCorsOptions), error.OptionsType);
+        Assert.Contains(error.Failures, failure => failure.Contains("Cors:AllowedOrigins"));
     }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData(Frontend)]
+    public async Task SafeProductionConfigurationPassesStartupValidation(string? origin)
+    {
+        using var host = CreateCorsValidationHost(origin);
+        await host.StartAsync();
+        var options = host.Services.GetRequiredService<IOptions<FrontendCorsOptions>>().Value;
+        Assert.Equal(origin is null ? Array.Empty<string>() : [origin], options.AllowedOrigins);
+        await host.StopAsync();
+    }
+
+    private static IHost CreateCorsValidationHost(string? origin)
+    {
+        var builder = Host.CreateApplicationBuilder(new HostApplicationBuilderSettings
+        {
+            EnvironmentName = Environments.Production,
+            DisableDefaults = true
+        });
+        if (origin is not null)
+            builder.Configuration.AddInMemoryCollection(new Dictionary<string, string?>
+            {
+                ["Cors:AllowedOrigins:0"] = origin
+            });
+        builder.Services.AddFrontendCors(builder.Configuration, builder.Environment);
+        return builder.Build();
+    }
+
 }

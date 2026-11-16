@@ -1,5 +1,7 @@
 # Supabase/PostgreSQL setup and initial ingestion
 
+For the complete hosted release sequence, see the [Supabase/AWS/HCP/Cloudflare roadmap](setup-roadmap.md). This guide owns the database provisioning and ingestion procedures.
+
 This is the complete operator procedure for project creation, TLS, migrations, runtime accounts, initial ingestion, local API verification and the AWS handoff. Commands that write data are separated from validation. Run migrations as the schema owner and imports as the ingestion account. Credentials never belong in migrations, source control, Terraform values or frontend variables. The guide itself does not execute remote changes.
 
 Run Bash commands from the repository root with Docker/Compose available. Steps 1–5 prepare access; steps 6–9 load and validate data; step 10 connects the local application; step 11 describes pending AWS work. For recorded outcomes rather than instructions, see the [November 14–15 setup record](evidence/supabase-setup-session-2026-11-15.md).
