@@ -8,7 +8,7 @@ For a new engineer, read these guides in order:
 4. [Testing](testing.md): deterministic tests, PostGIS and browser checks.
 5. [Methodology](methodology.md): what the statistics mean and what they cannot establish.
 
-For release work, use [AWS deployment](deployment.md) and the [AWS architecture/cost review](aws-review.md). Their checklists distinguish implemented configuration from unverified deployment requirements.
+For release work, follow the **[complete setup roadmap](setup-roadmap.md)** from Supabase through HCP/AWS and Cloudflare. [Deployment](deployment.md) gives release boundaries; [HCP configuration](hcp-deployment.md) details the pipeline. The [AWS architecture/cost review](aws-review.md) is dated historical analysis, not a statement that all of its pending items remain unresolved.
 
 ## Reference guides
 
