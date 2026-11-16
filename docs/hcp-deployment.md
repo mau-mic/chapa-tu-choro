@@ -147,3 +147,37 @@ promoted to an apply by this workflow. After separate deployment authorization
 and completion of prelaunch work, set repository variable `ENABLE_AUTO_DEPLOY=true`.
 The next reviewed push/merge to main will produce a fresh plan and auto-apply it.
 Manual runs remain plan-only. Changing the variable alone does not deploy.
+
+## Browser security headers
+
+CloudFront now attaches one custom response-headers policy to the frontend and
+API behaviors. It overrides upstream values for `nosniff`, `X-Frame-Options: DENY`,
+`strict-origin-when-cross-origin`, and a one-day HSTS max-age without preload or
+includeSubDomains. Permissions-Policy disables unused camera, microphone,
+geolocation, payment and USB access. API CORS remains owned by the backend.
+
+An enforced CSP blocks embedding, plugins and base-URL changes. A separate
+**Content-Security-Policy-Report-Only** observes script/style/worker/image/font and
+connection restrictions. It permits same-origin API/worker requests, MapLibre
+inline positioning/blob workers and the reviewed OpenFreeMap and MININTER hosts.
+This observational policy does not block resource loads and does not provide
+complete XSS protection. No reporting collector is provisioned; inspect violations
+in browser developer tools. Do not promote it to enforced resource restrictions
+until map labels, comisarías, filters, charts, popups, reporting links and SEO pages
+have been exercised on the deployed build. Review any violation before broadening
+allowed sources. Do not use COEP/COOP isolation here without checking map providers.
+
+Before the next HCP plan, replace the existing inline deployment policy with the
+updated `infra/iam/hcp-deployment-policy.json`. It adds CloudFront response-policy
+creation and scoped read/update/delete actions. The publishing role is unchanged.
+CloudFront policy IDs are generated, so the policy ARN scope covers that resource
+type in this account. A new plan should propose one additional resource relative
+to the earlier 29-resource plan, plus policy associations in CloudFront.
+
+After an authorized deployment, inspect actual response headers on `/`,
+`/tendencias`, `/metodologia/`, `/favicon.svg`, and `/api/health` using `curl -I`.
+Also check redirects and unknown paths: responses synthesized by edge functions
+or CloudFront errors must be checked separately from origin responses. This
+change does not claim those edge-generated responses receive the same headers.
+Do not remove ACM validation DNS records. Cloudflare origin protection, alerts and
+budget configuration remain separate prelaunch tasks.

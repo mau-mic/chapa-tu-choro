@@ -95,3 +95,16 @@ rejection of Local execution, successful plan-only runs and invalid mode input.
 Plan-only checks assert that no state outputs are requested. They also inspect the upload allowlist and ensure
 that the HCP bearer token is not sent to the signed artifact URL. These tests do
 not establish that hosted credentials, AWS permissions or a live deployment work.
+
+Security headers can be tested with Terraform 1.17.2 and the pinned AWS provider:
+
+```bash
+bash scripts/tests/security-headers.sh
+```
+
+The harness creates an isolated temporary configuration with mock AWS and
+synthetic ZIP/router fixtures, without using credentials, real Lambda builds or
+cloud resources. It checks both CloudFront behavior associations, HSTS scope,
+framing/nosniff protections, report-only map compatibility and unchanged CORS.
+The fixtures cannot be used by the deployment pipeline. Real browser CSP checks
+and live response headers still require an authorized deployment.
