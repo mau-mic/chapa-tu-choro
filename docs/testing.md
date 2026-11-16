@@ -90,7 +90,8 @@ terraform -chdir=infra/terraform fmt -check
 terraform -chdir=infra/terraform validate
 ```
 
-The four mocked cases cover applied/no-change runs, a failed remote run and
-rejection of Local execution. They also inspect the upload allowlist and ensure
+The seven mocked cases cover applied/no-change runs, failed remote runs,
+rejection of Local execution, successful plan-only runs and invalid mode input.
+Plan-only checks assert that no state outputs are requested. They also inspect the upload allowlist and ensure
 that the HCP bearer token is not sent to the signed artifact URL. These tests do
 not establish that hosted credentials, AWS permissions or a live deployment work.

@@ -3,6 +3,14 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Review infrastructure without applying changes
+        required: true
+        type: choice
+        default: plan
+        options: [plan]
 
 permissions:
   contents: read
@@ -130,7 +138,7 @@ jobs:
 
   deploy:
     # Environment protections and this condition prevent PRs from using deployment credentials.
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && vars.ENABLE_AUTO_DEPLOY == 'true'))
     needs: [backend, frontend, ingestion]
     runs-on: ubuntu-latest
     timeout-minutes: 85
@@ -143,6 +151,7 @@ jobs:
       id-token: write
     env:
       AWS_REGION: us-east-1
+      HCP_PLAN_ONLY: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
       HCP_ORGANIZATION: ${{ vars.HCP_ORGANIZATION }}
       HCP_WORKSPACE: ${{ vars.HCP_WORKSPACE }}
     steps:
@@ -177,12 +186,14 @@ jobs:
           HCP_TOKEN: ${{ secrets.HCP_TOKEN }}
         run: bash scripts/deploy-hcp.sh
       - name: Obtain temporary AWS publishing credentials
+        if: github.event_name == 'push'
         # aws-actions/configure-aws-credentials v4.2.1
         uses: aws-actions/configure-aws-credentials@b47578312673ae6fa5b5096b330d9fbac3d116df
         with:
           role-to-assume: ${{ vars.AWS_PUBLISH_ROLE_ARN }}
           aws-region: us-east-1
       - name: Publish static files and refresh CloudFront
+        if: github.event_name == 'push'
         env:
           SITE_BUCKET: ${{ steps.infrastructure.outputs.site_bucket }}
           DISTRIBUTION: ${{ steps.infrastructure.outputs.cloudfront_distribution_id }}

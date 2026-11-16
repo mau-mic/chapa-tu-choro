@@ -1,7 +1,8 @@
 # GitHub → HCP Terraform Cloud → AWS
 
 The `deploy` job in `.github/workflows/ci.yml` runs only after all three CI jobs
-succeed on a push to `main`. GitHub builds both Lambda ZIPs and the production
+succeed on a push to `main` with repository variable `ENABLE_AUTO_DEPLOY=true`.
+Manual dispatch on `main` performs a plan-only review instead. GitHub builds both Lambda ZIPs and the production
 frontend. `scripts/deploy-hcp.sh` sends an allowlisted archive to HCP, requests a
 remote apply and waits for success. Terraform runs on HCP, never on a developer's
 machine. GitHub then uploads static files, refreshes CloudFront and checks health.
@@ -36,7 +37,7 @@ No migrations or data imports run as part of deployment.
    Do not store long-lived AWS keys in HCP or GitHub.
 4. Create a GitHub **environment** named `production`, restrict deployments to
    `main`, and protect `main` with required CI checks. While enabling the first
-   release, use a required reviewer if supported by your GitHub plan. Approval of
+   release, use a required reviewer if supported by your GitHub plan. For enabled push deployments, approval of
    this job authorizes its remote auto-apply; the script does not pause at plan.
 5. Add these GitHub environment variables:
 
@@ -121,5 +122,28 @@ is deployed, replace web DNS records for `@` and `www` with CNAMEs targeting the
 CloudFront distribution hostname (not a URL). Leave mail and ACM validation
 records intact. Start DNS-only to verify CloudFront HTTPS directly; enabling the
 Cloudflare proxy requires Full (strict) TLS and the separate origin-protection
-review. Do not merge just to obtain a plan: the current deploy job auto-applies.
+review. Publishing this version on main is safe while repository variable ENABLE_AUTO_DEPLOY is absent or false; manual dispatch is plan-only.
 The separate plan-only workflow, security headers and alerts remain prelaunch work.
+
+
+## Manual plan-only review
+
+1. Keep **repository** Actions variable `ENABLE_AUTO_DEPLOY` absent or `false`.
+   It must be repository-level, not environment-level, because the job condition
+   is evaluated before environment variables are available.
+2. Publish the workflow to the default branch `main`; merging with that variable
+   disabled runs tests but skips cloud execution. This documentation does not
+   authorize a merge or push. Configure `main` as the GitHub default branch.
+3. Open Actions → CI → Run workflow, select `main`, mode `plan`.
+4. All CI checks and packaging run first. Approve the `production` environment
+   if requested, then open the HCP run URL printed in the job log.
+5. HCP receives `plan-only=true` and `auto-apply=false`. No state outputs, AWS
+   publication credentials, S3 uploads or CloudFront invalidations are requested.
+   HCP performs read/refresh operations; this does not create application resources.
+   The API upload creates HCP configuration/run records, not AWS infrastructure.
+
+Review the resources, errors and permissions in HCP. This review plan cannot be
+promoted to an apply by this workflow. After separate deployment authorization
+and completion of prelaunch work, set repository variable `ENABLE_AUTO_DEPLOY=true`.
+The next reviewed push/merge to main will produce a fresh plan and auto-apply it.
+Manual runs remain plan-only. Changing the variable alone does not deploy.

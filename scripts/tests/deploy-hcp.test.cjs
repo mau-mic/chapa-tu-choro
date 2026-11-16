@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const {spawnSync} = require('node:child_process');
-for (const scenario of ['applied', 'planned_and_finished', 'errored', 'local']) {
+for (const scenario of ['applied', 'planned_and_finished', 'errored', 'local', 'plan', 'plan_failed', 'invalid_mode']) {
   test(`remote deployment: ${scenario}`, () => {
     const root = fs.mkdtempSync(path.join(os.tmpdir(), 'hcp-test-'));
     try {
@@ -26,19 +26,20 @@ else if(url.includes('upload.example')) {
  process.exit(0);
 }
 else if(url.endsWith('/configuration-versions/cv-test')) data={attributes:{status:'uploaded'}};
-else if(url.endsWith('/runs')) {const body=JSON.parse(args[args.indexOf('--data')+1]);if(!body.data.attributes['auto-apply'])process.exit(5);data={id:'run-test'};}
-else if(url.endsWith('/runs/run-test')) data={attributes:{status:process.env.SCENARIO}};
+else if(url.endsWith('/runs')) {const body=JSON.parse(args[args.indexOf('--data')+1]);const plan=['plan','plan_failed'].includes(process.env.SCENARIO);if(body.data.attributes['auto-apply']===plan || body.data.attributes['plan-only']!==plan)process.exit(5);data={id:'run-test'};}
+else if(url.endsWith('/runs/run-test')) data={attributes:{status:process.env.SCENARIO==='plan'?'planned_and_finished':process.env.SCENARIO==='plan_failed'?'errored':process.env.SCENARIO}};
+else if(url.endsWith('/current-state-version') && ['plan','plan_failed'].includes(process.env.SCENARIO)) process.exit(7);
 else if(url.endsWith('/current-state-version')) data={id:'sv-test'};
 else if(url.endsWith('/outputs')) data=['site_bucket','cloudfront_distribution_id','cloudfront_url'].map(name=>({attributes:{name,value:'fixture-'+name,sensitive:false}}));
 else process.exit(6);
 console.log(JSON.stringify({data}));
 `, {mode:0o755});
       const output=path.join(root,'out');
-      const run=spawnSync('bash',[path.join(root,'scripts/deploy-hcp.sh')],{encoding:'utf8',env:{...process.env,PATH:path.join(root,'bin')+':'+process.env.PATH,HCP_TOKEN:'test-token',HCP_ORGANIZATION:'test',HCP_WORKSPACE:'test',SCENARIO:scenario,GITHUB_OUTPUT:output}});
+      const run=spawnSync('bash',[path.join(root,'scripts/deploy-hcp.sh')],{encoding:'utf8',env:{...process.env,PATH:path.join(root,'bin')+':'+process.env.PATH,HCP_TOKEN:'test-token',HCP_ORGANIZATION:'test',HCP_WORKSPACE:'test',SCENARIO:scenario,HCP_PLAN_ONLY:['plan','plan_failed'].includes(scenario)?'true':scenario==='invalid_mode'?'typo':'false',GITHUB_OUTPUT:output}});
       if(['applied','planned_and_finished'].includes(scenario)) {
         assert.equal(run.status,0,run.stderr);
         assert.match(fs.readFileSync(output,'utf8'),/cloudfront_distribution_id=fixture/);
-      } else {assert.notEqual(run.status,0);assert.equal(fs.existsSync(output),false);}
+      } else if(scenario==='plan') {assert.equal(run.status,0,run.stderr);assert.equal(fs.existsSync(output),false);} else {assert.notEqual(run.status,0);assert.equal(fs.existsSync(output),false);}
       assert.equal(run.stdout.includes('test-token'),false);
     } finally {fs.rmSync(root,{recursive:true,force:true});}
   });

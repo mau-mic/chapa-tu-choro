@@ -4,6 +4,8 @@ set -euo pipefail
 : "${HCP_TOKEN:?Missing HCP_TOKEN}"
 : "${HCP_ORGANIZATION:?Missing HCP_ORGANIZATION}"
 : "${HCP_WORKSPACE:?Missing HCP_WORKSPACE}"
+PLAN_ONLY="${HCP_PLAN_ONLY:-false}"
+[[ "$PLAN_ONLY" == true || "$PLAN_ONLY" == false ]] || { echo 'HCP_PLAN_ONLY must be true or false' >&2; exit 1; }
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 BUILD="$(mktemp -d)"
 trap 'rm -rf "$BUILD"' EXIT
@@ -39,8 +41,8 @@ for ((attempt=0; attempt<60; attempt++)); do
   sleep 2
 done
 [[ "$STATUS" == uploaded ]] || { echo 'Configuration upload timed out' >&2; exit 1; }
-BODY=$(jq -n --arg ws "$WS_ID" --arg cv "$CV_ID" --arg sha "${GITHUB_SHA:-manual}" \
-  '{data:{type:"runs",attributes:{message:("GitHub commit " + $sha),"auto-apply":true},relationships:{workspace:{data:{type:"workspaces",id:$ws}},"configuration-version":{data:{type:"configuration-versions",id:$cv}}}}}')
+BODY=$(jq -n --arg ws "$WS_ID" --arg cv "$CV_ID" --arg sha "${GITHUB_SHA:-manual}" --argjson plan_only "$PLAN_ONLY" \
+  '{data:{type:"runs",attributes:{message:("GitHub commit " + $sha),"auto-apply":($plan_only | not),"plan-only":$plan_only},relationships:{workspace:{data:{type:"workspaces",id:$ws}},"configuration-version":{data:{type:"configuration-versions",id:$cv}}}}}')
 RUN=$(api -X POST "$API/runs" --data "$BODY")
 RUN_ID=$(jq -er '.data.id' <<< "$RUN")
 echo "HCP run: https://app.terraform.io/app/$HCP_ORGANIZATION/workspaces/$HCP_WORKSPACE/runs/$RUN_ID"
@@ -57,6 +59,11 @@ done
 [[ "$STATUS" == applied || "$STATUS" == planned_and_finished ]] || {
   echo "Timed out: inspect $RUN_ID before retrying; the remote run may still be active" >&2; exit 1;
 }
+if [[ "$PLAN_ONLY" == true ]]; then
+  [[ "$STATUS" == planned_and_finished ]] || { echo 'Unexpected applied status in plan-only mode' >&2; exit 1; }
+  echo 'Plan-only review complete. No apply or frontend publication was requested.'
+  exit 0
+fi
 STATE=$(api "$API/workspaces/$WS_ID/current-state-version" | jq -er '.data.id')
 api "$API/state-versions/$STATE/outputs" > "$BUILD/outputs.json"
 # Export only reviewed, non-sensitive deployment outputs; never dump full state.
