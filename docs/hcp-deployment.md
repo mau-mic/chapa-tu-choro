@@ -96,3 +96,30 @@ The [reviewed inline policy](../infra/iam/hcp-deployment-policy.json) targets AW
 account `467173180594` and the current production resources with log archival off.
 See its [scope and validation notes](../infra/iam/README.md) before attaching it.
 It belongs on the HCP deployment role, not the GitHub publishing role.
+
+### Existing domain certificate
+
+The public ACM certificate for `chapatuchoro.com` and `www.chapatuchoro.com`
+was checked as `ISSUED` in `us-east-1`. It is managed outside this Terraform
+configuration; retain its Cloudflare validation CNAMEs for renewal.
+
+Add these HCP **Terraform variables**, with HCL and Sensitive disabled:
+
+| Name | Value |
+| --- | --- |
+| `site_domain` | `chapatuchoro.com` |
+| `site_certificate_arn` | `arn:aws:acm:us-east-1:467173180594:certificate/9078a652-e611-4ba0-8c44-b0fb0596f9a9` |
+
+Set both or neither. CloudFront accepts apex/www with TLS 1.2 minimum, and the
+viewer-request function redirects www to the apex while preserving path and
+query parameters, including API requests. The CloudFront hostname remains usable
+for pre-DNS health checks. The existing certificate is referenced, not recreated.
+
+Set GitHub `SITE_URL=https://chapatuchoro.com` before the production build and keep
+`SEO_NOINDEX=true` until validation is complete. After the reviewed infrastructure
+is deployed, replace web DNS records for `@` and `www` with CNAMEs targeting the
+CloudFront distribution hostname (not a URL). Leave mail and ACM validation
+records intact. Start DNS-only to verify CloudFront HTTPS directly; enabling the
+Cloudflare proxy requires Full (strict) TLS and the separate origin-protection
+review. Do not merge just to obtain a plan: the current deploy job auto-applies.
+The separate plan-only workflow, security headers and alerts remain prelaunch work.

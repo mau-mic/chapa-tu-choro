@@ -70,7 +70,7 @@ Set cost alerts and a basic failed-job/API-error notification before unattended 
 
 Keep a previous frontend/API artifact and its source snapshot for rollback. Roll back application artifacts without rewriting migration history or deleting imported records. A database restore is a separate operation with its own backup and approval.
 
-When a domain is available, add DNS, CloudFront aliases and an ACM certificate in `us-east-1`; those custom-domain resources are not currently declared. Set the final `VITE_SITE_URL`, rebuild SEO output, configure redirects and then enable indexing. See [publishing](seo/publishing.md) and [AWS domain setup](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CreatingCNAME.html).
+When a domain is available, add DNS, CloudFront aliases and an ACM certificate in `us-east-1`; the optional CloudFront domain/certificate configuration now references an existing ACM certificate; see [HCP domain settings](hcp-deployment.md#existing-domain-certificate). Set the final `VITE_SITE_URL`, rebuild SEO output, configure redirects and then enable indexing. See [publishing](seo/publishing.md) and [AWS domain setup](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CreatingCNAME.html).
 
 ## Automated deployment with HCP Terraform
 

@@ -8,3 +8,6 @@ sidpol_source_url                     = ""
 enable_ingestion_schedule             = false
 ingestion_schedule_expression         = "rate(7 days)"
 enable_log_archive                    = false
+# Optional existing certificate, validated externally through Cloudflare DNS.
+site_domain          = ""
+site_certificate_arn = ""

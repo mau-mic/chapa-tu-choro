@@ -51,3 +51,23 @@ variable "enable_log_archive" {
   default     = false
   description = "Enables CloudWatch Logs -> Firehose -> S3. Adds usage-based charges."
 }
+
+variable "site_domain" {
+  type        = string
+  default     = ""
+  description = "Canonical apex domain, without scheme or path. Empty uses the CloudFront hostname."
+  validation {
+    condition     = var.site_domain == "" || can(regex("^[a-z0-9]([a-z0-9-]*[a-z0-9])?(\\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+$", var.site_domain))
+    error_message = "Use a lowercase DNS name without scheme, path or trailing dot."
+  }
+}
+
+variable "site_certificate_arn" {
+  type        = string
+  default     = ""
+  description = "Existing issued ACM certificate in us-east-1 covering the apex and www. Terraform does not create or own this certificate."
+  validation {
+    condition     = var.site_certificate_arn == "" || can(regex("^arn:aws:acm:us-east-1:[0-9]{12}:certificate/[a-f0-9-]+$", var.site_certificate_arn))
+    error_message = "CloudFront requires an ACM certificate ARN in us-east-1."
+  }
+}

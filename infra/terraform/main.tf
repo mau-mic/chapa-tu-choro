@@ -214,6 +214,7 @@ resource "aws_cloudfront_origin_access_control" "api" {
 }
 
 resource "aws_cloudfront_distribution" "site" {
+  aliases             = var.site_domain == "" ? [] : [var.site_domain, "www.${var.site_domain}"]
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
@@ -260,6 +261,10 @@ resource "aws_cloudfront_distribution" "site" {
     cache_policy_id          = data.aws_cloudfront_cache_policy.disabled.id
     origin_request_policy_id = data.aws_cloudfront_origin_request_policy.forward_without_host.id
     compress                 = true
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.site_routes.arn
+    }
   }
 
   restrictions {
@@ -267,7 +272,18 @@ resource "aws_cloudfront_distribution" "site" {
       restriction_type = "none"
     }
   }
-  viewer_certificate { cloudfront_default_certificate = true }
+  viewer_certificate {
+    cloudfront_default_certificate = var.site_domain == ""
+    acm_certificate_arn            = var.site_certificate_arn == "" ? null : var.site_certificate_arn
+    ssl_support_method             = var.site_domain == "" ? null : "sni-only"
+    minimum_protocol_version       = var.site_domain == "" ? "TLSv1" : "TLSv1.2_2021"
+  }
+  lifecycle {
+    precondition {
+      condition     = (var.site_domain == "") == (var.site_certificate_arn == "")
+      error_message = "Configure site_domain and site_certificate_arn together, or leave both empty for preview."
+    }
+  }
 }
 
 data "aws_iam_policy_document" "s3_cloudfront" {
