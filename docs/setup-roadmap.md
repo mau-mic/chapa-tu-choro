@@ -75,9 +75,9 @@ Migraciones activas: `001_baseline.sql`, `002_ingestion_leases.sql`,
 ni vuelvas a ejecutar manualmente la baseline sobre una base existente.
 
 **Conexiones:** operadores/migraciones usan una conexión directa o session pooler
-adecuada; API e ingesta serverless usan transaction pooler. Copia host, usuario y
-puerto del panel real. El puerto de este setup es 6543 para transacciones y 5432
-para sesión. No uses la cuenta `postgres` como identidad de la aplicación.
+adecuada. La API de producción usa **Session pooler (5432)**; la ingesta Python
+mantiene **Transaction pooler (6543)**. Copia host, usuario y puerto del panel real.
+El formato Npgsql o libpq no determina el modo de conexión. No uses la cuenta `postgres` como identidad de la aplicación.
 
 La API requiere formato Npgsql; Python requiere URI PostgreSQL o DSN libpq. El
 formato del texto no cambia el tipo de pooler. Las contraseñas de una URI requieren

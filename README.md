@@ -87,7 +87,7 @@ No hay datasets privados ni el Excel de población incluidos en Git. Concentraci
 se importa por separado; consulta [su guía](docs/concentration.md). El ETL programado
 no actualiza todas las fuentes automáticamente.
 
-Para conectar la aplicación a una base alojada, usa la [guía de Supabase](docs/supabase-setup.md).
+Para conectar la aplicación a una base alojada, usa la [guía de Supabase](docs/supabase-setup.md). La API de producción utiliza **Session pooler (5432)**; la ingesta Python mantiene **Transaction pooler (6543)**.
 Para desarrollo con recarga y comandos nativos, consulta [operaciones](docs/operations.md).
 
 ## Cómo está organizado

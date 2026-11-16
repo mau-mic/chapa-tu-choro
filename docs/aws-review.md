@@ -64,7 +64,7 @@ The local database measured **356 MB**: concentration locations 163 MB, monthly 
 
 Supabase Free advertises 500 MB database space, 5 GB egress and pausing after one week of inactivity. The current local dataset may fit initially, but headroom is limited; retaining more data/versions increases it. API response compression does not eliminate database-to-Lambda traffic. Measure the target's storage and query egress, especially map geometry. Supabase Pro starts at USD 25/month and is not paid by AWS credits. See [Supabase pricing](https://supabase.com/pricing).
 
-For Lambda's IPv4/serverless connections, evaluate the Supabase transaction pooler on port 6543 with prepared statements disabled; migration sessions need a suitable direct/session connection. The API disables auto-prepare and Python disables server-side preparation already. See [connection guidance](https://supabase.com/docs/guides/database/connecting-to-postgres).
+Production decision updated 2026-11-16: the API uses Supabase Session pooler on port 5432 following the timeout investigation; Python ingestion retains transaction pooler on port 6543. Migration sessions need a suitable direct/session connection. Monitor session backend capacity as API concurrency grows. The API disables auto-prepare and Python disables server-side preparation already. See [connection guidance](https://supabase.com/docs/guides/database/connecting-to-postgres).
 
 ## Evidence and limits
 
