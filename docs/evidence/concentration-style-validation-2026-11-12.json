@@ -1,0 +1,17 @@
+{
+  "checkedDateLocal": "2026-11-12",
+  "scope": "Frontend presentation only; existing official aggregates and geographic positions unchanged. No database or source-import changes.",
+  "frontendTests": 74,
+  "buildAndTypeScript": "passed",
+  "browser": {
+    "real2026MappedRows": 38414,
+    "realHoverCount": 3973,
+    "correctPopupPeriod": true,
+    "statisticsControlHidden": true,
+    "stationControlAvailable": true,
+    "statisticsRestored": true,
+    "zoomAwareLegend": true,
+    "mobileOverflow": false,
+    "pageErrors": []
+  }
+}

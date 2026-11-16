@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-13",
+  "feature": "Searchable HTML and source-backed statistical publishing",
+  "official_data_validation": {
+    "source": "Existing local MININTER / SIDPOL national CSV aggregates",
+    "database_read_only": true,
+    "aggregate_rows": 376714,
+    "all_period_report_sum": 7509690,
+    "latest_period": {
+      "year": 2026,
+      "month": 9
+    },
+    "latest_period_reports": 63043,
+    "department_pages": 25,
+    "fake_production_statistics": false,
+    "snapshot_in_git": false,
+    "geographic_snapshots_after": 91
+  },
+  "checks": {
+    "frontend_build_and_types": "passed",
+    "frontend_tests": {
+      "passed": 116,
+      "failed": 0
+    },
+    "python_3_13_with_isolated_postgis": {
+      "passed": 74,
+      "skipped": 0,
+      "failed": 0
+    },
+    "browser_desktop_mobile_and_real_proxy_cors": {
+      "passed": 17,
+      "failed": 0
+    },
+    "additional_empty_directory_404_browser_checks": {
+      "passed": 2,
+      "failed": 0
+    },
+    "public_artifact": {
+      "canonical_origin": "https://example.test (test configuration only, not deployed)",
+      "sitemap_urls": 30,
+      "actual_department_pages": 25,
+      "generated_router_bytes": 5920,
+      "indexable_metadata_verified": true
+    },
+    "missing_explicit_snapshot_build": "correctly fails",
+    "final_local_artifact": "noindex; no canonical host; empty sitemap",
+    "terraform_fmt": "passed",
+    "terraform_validate": "passed; no plan or apply",
+    "compose_web_image_build": "passed",
+    "final_nginx_empty_directory_404s": "passed",
+    "final_mobile_table_readability": "visually reviewed; internally scrollable; no page overflow"
+  },
+  "browser_coverage": [
+    "initial HTML without JavaScript on map/trends/reporting routes",
+    "readable methodology and statistics without map scripts",
+    "real national/department data pages on desktop/mobile",
+    "unknown HTML and empty-directory URLs return 404",
+    "existing map/layer/focus/concentration/trends regressions",
+    "real nginx/API CORS isolation"
+  ],
+  "nginx_coverage": [
+    "distinct root/trends/reporting titles",
+    "direct static methodology/national/department HTML",
+    "unknown pages and missing module worker return 404",
+    "API health stays 200 with noindex response header"
+  ],
+  "limitations": [
+    "No AWS/Supabase deployment or application database migration/import.",
+    "No Search Console submission, ownership verification or live indexing assessment.",
+    "Static pages need export/build/release after new imports and can lag the live map.",
+    "A real public HTTPS origin must be configured before enabling indexing.",
+    "The existing interactive MapLibre bundle-size warning remains; static resource pages do not load that JavaScript.",
+    "No district-level landing pages or news/article generation."
+  ]
+}

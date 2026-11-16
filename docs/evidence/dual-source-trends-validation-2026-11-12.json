@@ -1,0 +1,43 @@
+{
+  "sourceSwitch": true,
+  "defaultSource": "CSV complaints",
+  "geographic2026Total": 412129,
+  "october2026TerritorialRows": 38449,
+  "geographic2025RobberyTotal": 42235,
+  "september2025RobberyRows": 4332,
+  "allChartsReconciled": true,
+  "departmentProvinceDistrictFilters": true,
+  "geographicChangesMadeNoCsvRequests": true,
+  "archiveCombinedTotalDisabled": true,
+  "tooltipUsesRecordUnits": true,
+  "sourceFailureClearsCharts": true,
+  "retryRecovered": true,
+  "csvYearRangeRestored": true,
+  "mobileOverflow": false,
+  "pageErrors": [],
+  "date": "2026-11-12",
+  "backendReleaseBuild": true,
+  "backendTests": {
+    "passed": 143,
+    "failed": 0,
+    "skipped": 0,
+    "database": "isolated PostGIS"
+  },
+  "frontendBuildAndTypeScript": true,
+  "frontendTests": {
+    "passed": 97,
+    "failed": 0
+  },
+  "existingDataUnchanged": {
+    "monthlyAggregateRows": 376714,
+    "statisticalReports": 7509690,
+    "concentrationSnapshots": 91
+  },
+  "geographicCountScope": "valid-ubigeo-including-unmappable",
+  "countingUnit": "source-classification-rows",
+  "geographic2026CategoryAndTerritoryTotals": 412129,
+  "deployment": "local Docker Compose only",
+  "schemaChanges": false,
+  "ingestionRerun": false,
+  "productionChanges": false
+}

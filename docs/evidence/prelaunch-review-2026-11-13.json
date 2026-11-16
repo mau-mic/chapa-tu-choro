@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-13",
+  "scope": "Documentation simplification and read-only AWS architecture/cost/readiness review",
+  "terraform": {
+    "version": "1.15.9",
+    "provider": "hashicorp/aws 6.72.0",
+    "formatCheck": {
+      "exitCode": 0
+    },
+    "validation": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0
+    },
+    "staticPolicy": {
+      "check": "policy",
+      "policy_status": "POLICY_OK",
+      "violations": []
+    },
+    "accountAwarePlanRun": false,
+    "applyRun": false
+  },
+  "otherChecks": {
+    "composeAppAndEtlConfigExitCode": 0,
+    "packagingShellSyntaxExitCode": 0
+  },
+  "localMeasurements": {
+    "database": {
+      "bytes": 373755027,
+      "postgresDisplay": "356 MB",
+      "relations": [
+        [
+          "concentration_locations",
+          "163 MB"
+        ],
+        [
+          "monthly_reports",
+          "71 MB"
+        ],
+        [
+          "concentration_cells",
+          "41 MB"
+        ],
+        [
+          "district_boundaries",
+          "29 MB"
+        ],
+        [
+          "concentration_areas",
+          "14 MB"
+        ],
+        [
+          "population_observations",
+          "5904 kB"
+        ]
+      ]
+    },
+    "apiDecodedBodySamples": [
+      {
+        "path": "/api/explorer?year=2026&month=9",
+        "status": 200,
+        "bodyBytes": 1467939,
+        "seconds": 0.731
+      },
+      {
+        "path": "/api/explorer?year=2026&month=9&department=15",
+        "status": 200,
+        "bodyBytes": 497714,
+        "seconds": 0.275
+      },
+      {
+        "path": "/api/map?year=2026&month=9",
+        "status": 200,
+        "bodyBytes": 36694177,
+        "seconds": 1.013
+      },
+      {
+        "path": "/api/trends?fromYear=2018&fromMonth=1&toYear=2026&toMonth=9",
+        "status": 200,
+        "bodyBytes": 46356,
+        "seconds": 0.229
+      },
+      {
+        "path": "/api/population/insights?fromYear=2018&fromMonth=1&toYear=2026&toMonth=9&department=15",
+        "status": 200,
+        "bodyBytes": 158268,
+        "seconds": 0.455
+      }
+    ],
+    "timingLimit": "Single local samples; not cloud latency benchmarks"
+  },
+  "costModel": {
+    "currency": "USD",
+    "region": "us-east-1",
+    "apiGb": 0.5,
+    "apiMeanSeconds": 1,
+    "etlRuns": 4.35,
+    "etlGb": 1.5,
+    "etlSeconds": 300,
+    "cloudwatchRetentionDays": 7,
+    "low": {
+      "api": 0.0853335,
+      "etl": 0.03262593525,
+      "s3": 0.05499999999999999,
+      "cloudwatch": 0.2535,
+      "totalBeforeComponentAllowancesAndCloudFront": 0.42645943525
+    },
+    "growth": {
+      "api": 0.8533350000000001,
+      "etl": 0.03262593525,
+      "s3": 0.13999999999999999,
+      "cloudwatch": 1.014,
+      "totalBeforeComponentAllowancesAndCloudFront": 2.03996093525
+    },
+    "planningEnvelopes": {
+      "initial": [
+        0,
+        2
+      ],
+      "growth": [
+        0,
+        5
+      ]
+    },
+    "limits": [
+      "CloudFront charges assumed within available pay-as-you-go allowance",
+      "Excludes paid Supabase, domain, taxes, other account workloads and abuse",
+      "Current credit expiry/account eligibility unverified",
+      "Published rates, not measured production use"
+    ]
+  },
+  "changes": {
+    "applicationCode": false,
+    "terraformSource": false,
+    "productionData": false,
+    "remoteResources": false,
+    "gitStagingOrCommits": false
+  },
+  "applicationTestsRerun": false,
+  "releaseBlocker": "Buffered /api/map response exceeds Lambda 6 MB limit",
+  "references": [
+    "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html",
+    "https://aws.amazon.com/lambda/pricing/",
+    "https://aws.amazon.com/cloudfront/faqs/",
+    "https://supabase.com/pricing"
+  ],
+  "documentationLinkCheck": {
+    "status": "passed",
+    "markdownFiles": 50,
+    "localLinks": 383,
+    "changedGuideAnchorsChecked": 19,
+    "missing": [],
+    "missingAnchors": []
+  }
+}

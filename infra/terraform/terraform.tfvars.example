@@ -1,0 +1,13 @@
+# Parameter paths only. Create both SecureStrings separately; never put secret values here.
+# API value: Npgsql connection string. Ingestion value: PostgreSQL URI or libpq DSN.
+aws_region                            = "us-east-1"
+environment                           = "dev"
+database_ssm_parameter_name           = "/chapa-tu-choro/dev/database-url"
+ingestion_database_ssm_parameter_name = "/chapa-tu-choro/dev/ingestion-database-url"
+sidpol_source_url                     = ""
+enable_ingestion_schedule             = false
+ingestion_schedule_expression         = "rate(7 days)"
+enable_log_archive                    = false
+# Optional existing certificate, validated externally through Cloudflare DNS.
+site_domain          = ""
+site_certificate_arn = ""

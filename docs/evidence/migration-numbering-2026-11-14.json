@@ -1,0 +1,159 @@
+{
+  "date": "2026-11-14",
+  "scope": "Renumber active migrations and retain transactional compatibility with existing receipts",
+  "activeManifest": [
+    "001_baseline.sql",
+    "002_ingestion_leases.sql",
+    "003_population.sql"
+  ],
+  "artifacts": {
+    "sqlFiles": [
+      {
+        "previous": "001_schema.sql",
+        "current": "db/001_baseline.sql",
+        "sha256": "d4ddcb2fda9352cb590c0e043d09aa1130400bdd0ff1952816178bd923c6b32b",
+        "unchanged": true
+      },
+      {
+        "previous": "002_national_geography.sql",
+        "current": "db/archive/002_national_geography.sql",
+        "sha256": "cb34b6a39315dd643786033a7b72381604c56168161781390ff51db7d5a8e2a7",
+        "unchanged": true
+      },
+      {
+        "previous": "003_concentration.sql",
+        "current": "db/archive/003_concentration.sql",
+        "sha256": "f6ca5606fe91c036ceac2501fd94b053a7766c7c6748eb17c2bd8dc9706dc823",
+        "unchanged": true
+      },
+      {
+        "previous": "004_concentration_locations.sql",
+        "current": "db/archive/004_concentration_locations.sql",
+        "sha256": "45a8b9ab4edbe3e287afde879f1878519b1ae3e08b31bc9b5eee61a9ebdeac03",
+        "unchanged": true
+      },
+      {
+        "previous": "005_source_catalog_tracking.sql",
+        "current": "db/archive/005_source_catalog_tracking.sql",
+        "sha256": "995df97092307816f3779a97d9df67d3e3ce427ab243d12a8b442d5162f461f1",
+        "unchanged": true
+      },
+      {
+        "previous": "006_ingestion_leases.sql",
+        "current": "db/002_ingestion_leases.sql",
+        "sha256": "61e57c42109453d27f9e8d126a95ffda16d05a520285b5a4e306339f84a8128e",
+        "unchanged": true
+      },
+      {
+        "previous": "007_population.sql",
+        "current": "db/003_population.sql",
+        "sha256": "4464acc2f993d3eea4c1caed60c341b858eccc6a319960bc4975a58ad7db8c65",
+        "unchanged": true
+      }
+    ],
+    "lambdaZipBytes": 23003266,
+    "lambdaManifest": [
+      "001_baseline.sql",
+      "002_ingestion_leases.sql",
+      "003_population.sql"
+    ],
+    "noLegacyActivePathsInZip": true
+  },
+  "existingLocalLedger": {
+    "oldNames": [
+      "001_schema.sql",
+      "006_ingestion_leases.sql",
+      "007_population.sql"
+    ],
+    "canonicalNames": [
+      "001_baseline.sql",
+      "002_ingestion_leases.sql",
+      "003_population.sql"
+    ],
+    "pendingNameTranslations": [
+      [
+        "001_baseline.sql",
+        "001_schema.sql"
+      ],
+      [
+        "002_ingestion_leases.sql",
+        "006_ingestion_leases.sql"
+      ],
+      [
+        "003_population.sql",
+        "007_population.sql"
+      ]
+    ],
+    "allChecksumsMatch": true,
+    "readOnly": "on"
+  },
+  "verification": {
+    "python": {
+      "focused": 18,
+      "fullSuite": 110,
+      "failed": 0,
+      "skipped": 0,
+      "command": "uv run --with-requirements ingestion/requirements.txt python -m unittest discover -s ingestion/tests -v",
+      "log": "/tmp/ctc-renumber-python-final.log"
+    },
+    "backend": {
+      "configuration": "Release",
+      "passed": 223,
+      "failed": 0,
+      "skipped": 0,
+      "buildWarnings": 0,
+      "command": "docker run [local SDK/read-only source mounts] dotnet test backend/ChapaTuChoro.slnx --artifacts-path /artifacts --configuration Release",
+      "trx": "/tmp/ctc-map-container/results/migration-numbering.trx"
+    },
+    "ruff": {
+      "passed": true,
+      "scope": "Modified Python files",
+      "rules": [
+        "E4",
+        "E7",
+        "E9",
+        "F"
+      ],
+      "isolated": true
+    },
+    "docker": {
+      "image": "ctc-migration-numbering:local",
+      "build": true,
+      "manifestLoad": true,
+      "validationNetwork": "none"
+    },
+    "ingestionLambda": {
+      "zipBuilt": true,
+      "manifestAndSqlHashesVerified": true,
+      "deployed": false
+    }
+  },
+  "behaviorTests": [
+    "test_active_manifest_is_a_clear_contiguous_sequence",
+    "test_legacy_names_translate_without_mutating_input",
+    "test_legacy_checksum_collision_unknown_and_gaps_fail_closed",
+    "test_invalid_manifest_shapes_and_unsafe_paths_are_rejected",
+    "test_legacy_complete_ledger_renames_only_preserving_data_hashes_and_dates",
+    "test_legacy_baseline_prefix_applies_only_new_pending_migrations",
+    "test_legacy_lease_prefix_applies_only_population",
+    "test_invalid_legacy_receipts_leave_names_and_data_untouched",
+    "test_collision_between_legacy_and_current_receipts_is_rejected",
+    "test_failure_after_legacy_rename_rolls_back_names_and_pending_ddl",
+    "test_concurrent_legacy_runners_rename_once_and_keep_receipt_dates"
+  ],
+  "boundaries": {
+    "applicationLedgerModified": false,
+    "applicationDataModified": false,
+    "remoteDatabaseAccess": false,
+    "cloudDeployment": false,
+    "gitCommits": false,
+    "sqlContentsChanged": false,
+    "frontendChanged": false
+  },
+  "limits": [
+    "Tests used disposable schemas on local PostGIS",
+    "Existing application ledger checked with transaction_read_only=on; migrate was not run against public",
+    "Lambda ZIP verified locally; no AWS invocation performed",
+    "Dated historical evidence and plans retain their original numbering"
+  ]
+}

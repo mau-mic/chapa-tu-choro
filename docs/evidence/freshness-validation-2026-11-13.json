@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-13",
+  "scope": "Private read-only source recency validator",
+  "precision": "month",
+  "basis": [
+    "SIDPOL reporting year/month",
+    "independent nonempty geographic source occurrence year/month"
+  ],
+  "unknown_sources": [
+    "INEI boundaries",
+    "basic stations",
+    "street context"
+  ],
+  "frontend_changed": false,
+  "schema_changes": false,
+  "application_database_modified": false,
+  "external_source_requests": false,
+  "states": [
+    "dated",
+    "unknown",
+    "invalid_future_period"
+  ],
+  "checks": {
+    "python_compileall": "passed",
+    "postgis_suite": {
+      "tests": 79,
+      "skipped": 0,
+      "result": "passed"
+    }
+  },
+  "limitations": [
+    "No validated day-level event date retained by current importers.",
+    "No cadence-based overdue thresholds or remote source availability polling.",
+    "Private CLI only; no UI or public API added."
+  ]
+}

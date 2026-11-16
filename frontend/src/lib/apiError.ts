@@ -1,0 +1,11 @@
+/** HTTP status and application code allow expected empty data to stay distinct from failures. */
+export class ApiRequestError extends Error {
+  constructor(
+    message: string,
+    public readonly status: number,
+    public readonly code?: string,
+  ) {
+    super(message);
+    this.name = "ApiRequestError";
+  }
+}

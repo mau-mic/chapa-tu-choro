@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-13",
+  "scope": "Shared reports/population period and simple unavailable-data states; frontend only",
+  "behavior": {
+    "year_control": "One sidebar slider controls report charts, normalized history and the complete monthly population table",
+    "month_control": "One shared closing month; all 12 options selectable; explicit choices never silently replaced",
+    "missing_data": "No hay datos disponibles; gaps remain null and imported zeroes remain zero",
+    "errors": "population.unavailable is empty data; unknown territories and actual API failures remain errors",
+    "labels": [
+      "Denuncias",
+      "Delitos"
+    ],
+    "provenance": "Source links, methodology and counting-unit distinctions retained"
+  },
+  "checks": {
+    "unit_tests": 145,
+    "browser_tests": 44,
+    "browser_projects": [
+      "desktop",
+      "mobile"
+    ],
+    "build_and_types": "npm run build passed",
+    "browser_types": "npm run typecheck:e2e passed",
+    "lint": "npm run lint passed",
+    "format": "npm run format:check passed",
+    "compose": "Local web rebuilt and running against existing PostGIS data"
+  },
+  "requirement_evidence": [
+    {
+      "requirement": "Same selected dates for reports and population, including unavailable months",
+      "test": "one sidebar period controls reports and population without replacing unavailable dates",
+      "command": "npm run test:e2e:built"
+    },
+    {
+      "requirement": "Population table covers every selected year",
+      "test": "shows all selected years in the monthly table with explicit unavailable values",
+      "command": "npm test"
+    },
+    {
+      "requirement": "Missing values do not fabricate zeroes or hide real API failures",
+      "tests": [
+        "shows an empty message for all missing months while retaining explicit zeroes",
+        "treats absent population as unavailable data rather than an API failure",
+        "retains actual API failures and unknown territories as errors"
+      ],
+      "command": "npm test"
+    }
+  ],
+  "real_local_browser": [
+    {
+      "name": "desktop",
+      "initialRows": 105,
+      "explicitMissingDecemberRows": 108,
+      "slider2025Rows": 96,
+      "unavailableValuesVisible": true,
+      "sharedYearAndMonth": true,
+      "errors": [],
+      "overflow": false
+    },
+    {
+      "name": "mobile",
+      "initialRows": 105,
+      "explicitMissingDecemberRows": 108,
+      "slider2025Rows": 96,
+      "unavailableValuesVisible": true,
+      "sharedYearAndMonth": true,
+      "errors": [],
+      "overflow": false
+    }
+  ],
+  "unchanged": [
+    "Backend contracts and database schema",
+    "Imported official records",
+    "Remote infrastructure and production"
+  ],
+  "limit": "Existing MapLibre chunk-size build warning remains; no new dependency added"
+}

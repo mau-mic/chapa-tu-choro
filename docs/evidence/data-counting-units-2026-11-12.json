@@ -1,0 +1,220 @@
+{
+  "checked_on": "2026-11-12",
+  "mode": "read-only aggregate/schema/source-document validation",
+  "csv": {
+    "source": {
+      "source_url": "https://www.datosabiertos.gob.pe/sites/default/files/DATASET_Denuncias%20Policiales%20-%20Enero%202018%20a%20Septiembre%202026.csv",
+      "resolved_url": "https://www.datosabiertos.gob.pe/sites/default/files/DATASET_Denuncias%20Policiales%20-%20Enero%202018%20a%20Septiembre%202026.csv",
+      "downloaded_at": "2026-11-11T16:36:26.356017+00:00",
+      "sha256": "e67a1edcd84483df5c471f0d6b9e13c2eeaa34c680af30eb1ec86c443d02ec76",
+      "validation": {
+        "scanned_rows": 376715,
+        "selected_rows": 376715,
+        "out_of_scope_rows": 0,
+        "rejected_rows": 0,
+        "errors": []
+      }
+    },
+    "dictionary_url": "https://www.datosabiertos.gob.pe/sites/default/files/DICCIONARIO_DATOS_Denuncias_Policiales_0.xlsx",
+    "metadata_url": "https://www.datosabiertos.gob.pe/sites/default/files/METADATO_Denuncias_Policiales_1.docx",
+    "quantity_semantics": "Published complaint-count measure, aggregated by fact period, territory and modality. Unique reports cannot be linked between sources with this CSV.",
+    "period_semantics": "year/month of the reported fact",
+    "individual_identifier_field": null,
+    "sha256_verified": true,
+    "september_2026_total": 63043,
+    "september_2026_modalities": {
+      "Estafa": 2421,
+      "Extorsión": 1578,
+      "Hurto": 13972,
+      "Otros": 26108,
+      "Robo": 3521,
+      "Secuestro": 80,
+      "Violencia contra la mujer e integrantes": 15363
+    }
+  },
+  "geographic": {
+    "source_url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25",
+    "metadata_sha256": "447a38d852822b683d60d22e55dd19cefbbb6907004d31cc4890e2973605d5aa",
+    "editingInfo": {
+      "lastEditDate": 1794326061303,
+      "schemaLastEditDate": 1794326061303,
+      "dataLastEditDate": 1794281280140
+    },
+    "counting_unit": "source rows; not verified unique complaints or crimes",
+    "has_solo_denuncia_field": false,
+    "has_es_delito_x_field": false,
+    "estado_domain": null,
+    "matter_query": {
+      "query_url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25/query?f=json&where=a%C3%B1o_hecho%3D2026+AND+mes_hecho+IN+%289%2C10%29&groupByFieldsForStatistics=a%C3%B1o_hecho%2Cmes_hecho%2Cid_materia_hecho%2Cmateria_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22rows%22%7D%5D&returnGeometry=false",
+      "groups": [
+        {
+          "rows": 23118,
+          "año_hecho": 2026,
+          "mes_hecho": 9,
+          "id_materia_hecho": 1,
+          "materia_hecho": "FUERO COMUN"
+        },
+        {
+          "rows": 50,
+          "año_hecho": 2026,
+          "mes_hecho": 9,
+          "id_materia_hecho": 4,
+          "materia_hecho": "NIÑOS Y ADOLESCENTES"
+        },
+        {
+          "rows": 22390,
+          "año_hecho": 2026,
+          "mes_hecho": 9,
+          "id_materia_hecho": 5,
+          "materia_hecho": "LEYES ESPECIALES"
+        },
+        {
+          "rows": 22723,
+          "año_hecho": 2026,
+          "mes_hecho": 10,
+          "id_materia_hecho": 1,
+          "materia_hecho": "FUERO COMUN"
+        },
+        {
+          "rows": 29,
+          "año_hecho": 2026,
+          "mes_hecho": 10,
+          "id_materia_hecho": 4,
+          "materia_hecho": "NIÑOS Y ADOLESCENTES"
+        },
+        {
+          "rows": 21310,
+          "año_hecho": 2026,
+          "mes_hecho": 10,
+          "id_materia_hecho": 5,
+          "materia_hecho": "LEYES ESPECIALES"
+        }
+      ]
+    },
+    "type_query": {
+      "query_url": "https://services6.arcgis.com/lMIZrqiJkpM748BR/arcgis/rest/services/SIDPOL_DELITOS_TOTAL/FeatureServer/25/query?f=json&where=a%C3%B1o_hecho%3D2026+AND+mes_hecho+IN+%289%2C10%29&groupByFieldsForStatistics=mes_hecho%2Cid_tipo_hecho%2Ctipo_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22rows%22%7D%5D&returnGeometry=false",
+      "groups": [
+        {
+          "rows": 205,
+          "mes_hecho": 9,
+          "id_tipo_hecho": 101,
+          "tipo_hecho": "VIDA, EL CUERPO Y LA SALUD (DELITO)"
+        },
+        {
+          "rows": 72,
+          "mes_hecho": 9,
+          "id_tipo_hecho": 104,
+          "tipo_hecho": "LIBERTAD (DELITO)"
+        },
+        {
+          "rows": 22598,
+          "mes_hecho": 9,
+          "id_tipo_hecho": 105,
+          "tipo_hecho": "PATRIMONIO (DELITO)"
+        },
+        {
+          "rows": 243,
+          "mes_hecho": 9,
+          "id_tipo_hecho": 112,
+          "tipo_hecho": "SEGURIDAD PUBLICA (DELITO)"
+        },
+        {
+          "rows": 50,
+          "mes_hecho": 9,
+          "id_tipo_hecho": 401,
+          "tipo_hecho": "ADOLESCENTE INFRACTOR DE LA LEY PENAL"
+        },
+        {
+          "rows": 22300,
+          "mes_hecho": 9,
+          "id_tipo_hecho": 504,
+          "tipo_hecho": "LEY DE VIOLENCIA CONTRA LA MUJER Y GRUPOS VULNERABLES"
+        },
+        {
+          "rows": 90,
+          "mes_hecho": 9,
+          "id_tipo_hecho": 507,
+          "tipo_hecho": "TRAFICO ILICITO DE DROGAS"
+        },
+        {
+          "rows": 216,
+          "mes_hecho": 10,
+          "id_tipo_hecho": 101,
+          "tipo_hecho": "VIDA, EL CUERPO Y LA SALUD (DELITO)"
+        },
+        {
+          "rows": 82,
+          "mes_hecho": 10,
+          "id_tipo_hecho": 104,
+          "tipo_hecho": "LIBERTAD (DELITO)"
+        },
+        {
+          "rows": 22256,
+          "mes_hecho": 10,
+          "id_tipo_hecho": 105,
+          "tipo_hecho": "PATRIMONIO (DELITO)"
+        },
+        {
+          "rows": 169,
+          "mes_hecho": 10,
+          "id_tipo_hecho": 112,
+          "tipo_hecho": "SEGURIDAD PUBLICA (DELITO)"
+        },
+        {
+          "rows": 29,
+          "mes_hecho": 10,
+          "id_tipo_hecho": 401,
+          "tipo_hecho": "ADOLESCENTE INFRACTOR DE LA LEY PENAL"
+        },
+        {
+          "rows": 21255,
+          "mes_hecho": 10,
+          "id_tipo_hecho": 504,
+          "tipo_hecho": "LEY DE VIOLENCIA CONTRA LA MUJER Y GRUPOS VULNERABLES"
+        },
+        {
+          "rows": 55,
+          "mes_hecho": 10,
+          "id_tipo_hecho": 507,
+          "tipo_hecho": "TRAFICO ILICITO DE DROGAS"
+        }
+      ]
+    },
+    "local_imports": [
+      {
+        "year": 2026,
+        "month": 9,
+        "source_rows": 45558,
+        "distinct_id_dgc": 39416,
+        "territorially_valid": 39705,
+        "mapped_rows": 39660
+      },
+      {
+        "year": 2026,
+        "month": 10,
+        "source_rows": 44062,
+        "distinct_id_dgc": 38145,
+        "territorially_valid": 38449,
+        "mapped_rows": 38414
+      }
+    ],
+    "january_2025_extortion_business_identifier_available": false,
+    "current_named_category_modality_predicates_overlap": false
+  },
+  "checks": {
+    "csv_hash_matches_provenance": true,
+    "csv_september_sum_matches_database": true,
+    "live_type_and_matter_sums_match_local_source_counts": true,
+    "aggregate_queries_truncated": false,
+    "database_writes": false,
+    "case_samples_requested": false,
+    "case_addresses_or_identifiers_stored": false
+  },
+  "cross_source_decision": {
+    "territory_period_context": "supported and already implemented",
+    "category_comparison": "requires documented classification reconciliation",
+    "individual_matching": "not supported by aggregated CSV",
+    "summed_combined_total": "not valid",
+    "unreported_crime_estimate_from_difference": "not valid"
+  }
+}

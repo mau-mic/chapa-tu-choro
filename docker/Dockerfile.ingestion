@@ -1,0 +1,11 @@
+FROM python:3.13-slim
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
+WORKDIR /app
+COPY ingestion/requirements.txt ingestion/requirements.lock ./
+RUN pip install --no-cache-dir -r requirements.txt
+COPY ingestion/ ./ingestion/
+COPY db/ ./db/
+RUN useradd --create-home --uid 10001 etl && mkdir -p /work && chown etl:etl /work
+USER etl
+ENV ETL_WORK_DIR=/work
+ENTRYPOINT ["python", "-m", "ingestion.etl"]

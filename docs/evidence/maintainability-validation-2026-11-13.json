@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-13",
+  "scope": "Local maintainability refactor; no application database, Supabase, AWS or production changes",
+  "checks": {
+    "backend": {
+      "passed": 165,
+      "failed": 0,
+      "skipped": 0,
+      "environment": "Docker .NET 10 SDK + disposable PostGIS"
+    },
+    "ingestion": {
+      "passed": 91,
+      "failed": 0,
+      "environment": "Python 3.13 Docker + disposable PostGIS"
+    },
+    "frontend": {
+      "passed": 118,
+      "files": 20,
+      "failed": 0
+    },
+    "browser": {
+      "passed": 23,
+      "failed": 0,
+      "coverage": [
+        "desktop",
+        "mobile",
+        "real local API CORS",
+        "deferred map bundle and retained canvas",
+        "deferred module failure recovery",
+        "neutral map with all optional layers off",
+        "concentration geography without CSV",
+        "static SEO HTML and real 404s"
+      ]
+    },
+    "tooling": [
+      "TypeScript build",
+      "ESLint including exhaustive hook dependencies",
+      "Prettier source check",
+      "API, web and ingestion Docker image builds",
+      "Compose configuration validation",
+      "nginx configuration validation",
+      "nginx public routes and /api/health 200; unknown resource 404",
+      "packaged migration fresh apply and empty repeat",
+      "documentation links verified"
+    ],
+    "npm_audit_reported_vulnerabilities": 0
+  },
+  "behavior_evidence": {
+    "migration_safety": [
+      "test_fresh_apply_repeat_and_changed_checksum_rejected",
+      "test_adopt_old_partial_schema_preserves_rows",
+      "test_incompatible_adoption_rolls_back_all_ddl",
+      "test_failed_new_migration_rolls_back_baseline_and_ledger",
+      "test_concurrent_runners_serialize_one_application"
+    ],
+    "ingestion_fencing": [
+      "test_expired_worker_cannot_commit_data_or_renew",
+      "test_reconcile_only_expired_leases_and_never_success_or_legacy",
+      "test_background_heartbeat_renews_during_work_and_stops_on_exit"
+    ],
+    "api_contracts": [
+      "EveryApplicationEndpointDocumentsSuccessAndProblemDetailsSchemas",
+      "TrustedPeerForwardingSeparatesClientRateLimitBuckets",
+      "UntrustedPeerCannotRotateForwardedHeadersToEvadeClientLimit"
+    ],
+    "frontend": [
+      "defers the map until first visit and retains its canvas subtree across views",
+      "changes the selected source and prevents clearing the current selection",
+      "concentration geographic filters work without a SIDPOL CSV import"
+    ]
+  },
+  "remaining_limits": [
+    "Remote GitHub Actions run not performed",
+    "Hosted database grants/RLS and deployment verification excluded",
+    "Source authorization remains unresolved as documented in ADR 0002",
+    "MapLibre map chunk remains about1.1 MB minified (304 kB gzip), now loaded on first map visit; no production Core Web Vitals measurement"
+  ]
+}

@@ -1,0 +1,19 @@
+# Portable ASP.NET Core container for local demos, Lightsail or ECS.
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /workspace
+COPY backend/Directory.Build.props ./backend/
+COPY backend/src/ChapaTuChoro.Domain/ChapaTuChoro.Domain.csproj ./backend/src/ChapaTuChoro.Domain/
+COPY backend/src/ChapaTuChoro.Application/ChapaTuChoro.Application.csproj ./backend/src/ChapaTuChoro.Application/
+COPY backend/src/ChapaTuChoro.Infrastructure/ChapaTuChoro.Infrastructure.csproj ./backend/src/ChapaTuChoro.Infrastructure/
+COPY backend/src/ChapaTuChoro.Api/ChapaTuChoro.Api.csproj ./backend/src/ChapaTuChoro.Api/
+RUN dotnet restore backend/src/ChapaTuChoro.Api/ChapaTuChoro.Api.csproj
+COPY backend/ ./backend/
+RUN dotnet publish backend/src/ChapaTuChoro.Api/ChapaTuChoro.Api.csproj -c Release -o /out --no-restore
+
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
+WORKDIR /app
+COPY --from=build /out/ .
+ENV ASPNETCORE_URLS=http://+:8080
+EXPOSE 8080
+USER $APP_UID
+ENTRYPOINT ["dotnet", "ChapaTuChoro.Api.dll"]

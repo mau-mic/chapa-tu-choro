@@ -1,0 +1,209 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Review infrastructure without applying changes
+        required: true
+        type: choice
+        default: plan
+        options: [plan]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgis:
+        image: postgis/postgis:17-3.5
+        env:
+          POSTGRES_DB: chapatuchoro_test
+          POSTGRES_USER: ctc
+          POSTGRES_PASSWORD: test_only
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U ctc -d chapatuchoro_test"
+          --health-interval 5s --health-timeout 3s --health-retries 20
+    env:
+      CTC_TEST_CONNECTIONSTRING: Host=localhost;Database=chapatuchoro_test;Username=ctc;Password=test_only
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # v4.3.1
+        with:
+          dotnet-version: '10.0.x'
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: ~/.nuget/packages
+          # NuGet lock files are not configured; hash every dependency input.
+          key: nuget-${{ runner.os }}-${{ hashFiles('backend/**/*.csproj', 'backend/**/*.props', 'backend/**/*.targets', 'backend/**/packages.lock.json', 'global.json', 'NuGet.config') }}
+      - run: dotnet restore backend/ChapaTuChoro.slnx
+      - run: dotnet build backend/ChapaTuChoro.slnx --no-restore --configuration Release
+      - run: dotnet test backend/ChapaTuChoro.slnx --no-build --configuration Release
+
+  frontend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm run lint
+      - run: npm test
+      - name: Test HCP deployment orchestration (mocked API)
+        run: node --test ../scripts/tests/deploy-hcp.test.cjs
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # v4.3.1
+        with:
+          dotnet-version: '10.0.x'
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: ~/.nuget/packages
+          # NuGet lock files are not configured; hash every dependency input.
+          key: nuget-${{ runner.os }}-${{ hashFiles('backend/**/*.csproj', 'backend/**/*.props', 'backend/**/*.targets', 'backend/**/packages.lock.json', 'global.json', 'NuGet.config') }}
+      - name: Build real API for browser CORS check
+        run: dotnet publish ../backend/src/ChapaTuChoro.Api/ChapaTuChoro.Api.csproj -c Release -o /tmp/ctc-browser-api
+      - name: Start local API with production CORS defaults
+        env:
+          ASPNETCORE_ENVIRONMENT: Production
+          ASPNETCORE_URLS: http://127.0.0.1:5080
+          ConnectionStrings__Default: Host=127.0.0.1;Database=unused;Username=unused
+        run: |
+          dotnet /tmp/ctc-browser-api/ChapaTuChoro.Api.dll > /tmp/ctc-browser-api.log 2>&1 &
+          curl --retry 20 --retry-connrefused --retry-delay 1 --fail http://127.0.0.1:5080/api/health
+      - run: npm run test:e2e:built
+        env:
+          CTC_E2E_API_URL: http://127.0.0.1:5080
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: failure()
+        with:
+          name: browser-failure-artifacts
+          path: |
+            frontend/playwright-report/
+            frontend/test-results/
+          retention-days: 7
+
+  ingestion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgis:
+        image: postgis/postgis:17-3.5
+        env:
+          POSTGRES_DB: chapatuchoro_test
+          POSTGRES_USER: ctc
+          POSTGRES_PASSWORD: test_only
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U ctc -d chapatuchoro_test"
+          --health-interval 5s --health-timeout 3s --health-retries 20
+    env:
+      CTC_TEST_DATABASE_URL: postgresql://ctc:test_only@localhost:5432/chapatuchoro_test
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: |
+            ingestion/requirements.txt
+            ingestion/requirements.lock
+      - run: pip install -r ingestion/requirements.txt
+      - run: python -m unittest discover -s ingestion/tests -v
+      - run: bash scripts/package-ingestion.sh
+      - run: docker compose --profile etl config --quiet
+
+  deploy:
+    # Environment protections and this condition prevent PRs from using deployment credentials.
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && vars.ENABLE_AUTO_DEPLOY == 'true'))
+    needs: [backend, frontend, ingestion]
+    runs-on: ubuntu-latest
+    timeout-minutes: 85
+    environment: production
+    concurrency:
+      group: production-deployment
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      AWS_REGION: us-east-1
+      HCP_PLAN_ONLY: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
+      HCP_ORGANIZATION: ${{ vars.HCP_ORGANIZATION }}
+      HCP_WORKSPACE: ${{ vars.HCP_WORKSPACE }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # v4.3.1
+        with:
+          dotnet-version: '10.0.x'
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Build Lambda artifacts
+        run: bash scripts/package-lambdas.sh
+      - name: Build production frontend
+        working-directory: frontend
+        env:
+          VITE_SITE_URL: ${{ vars.SITE_URL }}
+          VITE_API_BASE_URL: ''
+          VITE_SEO_NOINDEX: ${{ vars.SEO_NOINDEX || 'true' }}
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+      - name: Execute Terraform in HCP Cloud
+        id: infrastructure
+        env:
+          HCP_TOKEN: ${{ secrets.HCP_TOKEN }}
+        run: bash scripts/deploy-hcp.sh
+      - name: Obtain temporary AWS publishing credentials
+        if: github.event_name == 'push'
+        # aws-actions/configure-aws-credentials v4.2.1
+        uses: aws-actions/configure-aws-credentials@b47578312673ae6fa5b5096b330d9fbac3d116df
+        with:
+          role-to-assume: ${{ vars.AWS_PUBLISH_ROLE_ARN }}
+          aws-region: us-east-1
+      - name: Publish static files and refresh CloudFront
+        if: github.event_name == 'push'
+        env:
+          SITE_BUCKET: ${{ steps.infrastructure.outputs.site_bucket }}
+          DISTRIBUTION: ${{ steps.infrastructure.outputs.cloudfront_distribution_id }}
+          SITE_URL: ${{ steps.infrastructure.outputs.cloudfront_url }}
+        run: |
+          # Upload assets before HTML; retain older hashed assets for open browser sessions.
+          aws s3 sync frontend/dist/ "s3://$SITE_BUCKET/" --exclude '*.html' --exclude 'assets/*' --exclude 'cloudfront-router.js' --cache-control 'public,max-age=300'
+          aws s3 sync frontend/dist/assets/ "s3://$SITE_BUCKET/assets/" --cache-control 'public,max-age=31536000,immutable'
+          aws s3 sync frontend/dist/ "s3://$SITE_BUCKET/" --exclude '*' --include '*.html' --cache-control 'no-cache' --metadata-directive REPLACE
+          INVALIDATION=$(aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION" --paths '/*' --query 'Invalidation.Id' --output text)
+          aws cloudfront wait invalidation-completed --distribution-id "$DISTRIBUTION" --id "$INVALIDATION"
+          curl --fail --silent --show-error --retry 5 --retry-all-errors "$SITE_URL/api/health"
+          curl --fail --silent --show-error --retry 5 --retry-all-errors --output /dev/null "$SITE_URL/"

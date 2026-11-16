@@ -1,0 +1,34 @@
+@baseUrl = http://localhost:5080
+
+### National monthly rates and territorial ranking
+GET {{baseUrl}}/api/population/comparison?year=2025&month=1
+
+### District scope (same-year population; never join by names)
+GET {{baseUrl}}/api/population/comparison?year=2025&month=1&department=15&province=1501&district=150101
+
+### Invalid month -> 400 ProblemDetails
+GET {{baseUrl}}/api/population/comparison?year=2025&month=13
+
+### No population for year -> 404 ProblemDetails
+GET {{baseUrl}}/api/population/comparison?year=2010&month=1
+
+### Multi-year monthly rates, with same-year populations and two peer departments
+GET {{baseUrl}}/api/population/history?fromYear=2024&fromMonth=1&toYear=2026&toMonth=9&compare=150000,070000
+
+### Explicitly select no peers (the scope's historical series remains)
+GET {{baseUrl}}/api/population/history?fromYear=2025&fromMonth=1&toYear=2025&toMonth=12&compare=
+
+### Rate map preserving all official count and geometry fields
+GET {{baseUrl}}/api/explorer/rates?year=2026&month=9
+
+### Invalid cross-level peer selection -> 400
+GET {{baseUrl}}/api/population/history?fromYear=2025&fromMonth=1&toYear=2025&toMonth=12&compare=150101
+
+### Advanced statistics: shared dates, same category nationally and territorially
+GET {{baseUrl}}/api/population/insights?fromYear=2021&fromMonth=1&toYear=2026&toMonth=9&department=15
+
+### District/category insights; reference windows can precede the visible range
+GET {{baseUrl}}/api/population/insights?fromYear=2025&fromMonth=1&toYear=2026&toMonth=9&department=15&province=1501&district=150101&category=Hurto
+
+### Invalid range: 400 ProblemDetails
+GET {{baseUrl}}/api/population/insights?fromYear=2026&fromMonth=10&toYear=2026&toMonth=1

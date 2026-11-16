@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-12",
+  "browserTests": {
+    "passed": 11,
+    "failed": 0,
+    "profiles": [
+      "desktop",
+      "Pixel 7",
+      "real-backend CORS"
+    ],
+    "fixtures": "synthetic TEST-only API/provider responses; real MapLibre/WebGL; API CORS health unmocked"
+  },
+  "frontendTests": {
+    "passed": 97,
+    "failed": 0
+  },
+  "productionBuildPassed": true,
+  "browserTypecheckPassed": true,
+  "maplibre": {
+    "previous": "5.24.0",
+    "patched": "6.18.0",
+    "advisory": "https://github.com/advisories/GHSA-jrc7-96c5-q579",
+    "worker": "version-matched local build asset"
+  },
+  "npmAuditVulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "nginx": {
+    "workerMime": "application/javascript",
+    "missingWorker404": true,
+    "apiProxyHealth": true
+  },
+  "cors": {
+    "deniedOriginCannotRead": true,
+    "sameOriginReads": true,
+    "serverToServerRequestsNotBlockedByCors": true
+  },
+  "ci": "configured; remote execution not performed",
+  "databaseUsed": false,
+  "productionChanges": false,
+  "existingStoppedApplicationRestarted": false
+}

@@ -1,0 +1,890 @@
+{
+  "checkedDateLocal": "2026-11-11",
+  "timeZone": "America/Lima",
+  "recordedAt": "2026-11-11T23:46:55.832022-05:00",
+  "purpose": "Read-only source validation. No runtime integration or full dataset import.",
+  "source": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0",
+  "discovery": "https://www.geoidep.gob.pe/catalogo-nacional-de-servicios-web?id_institucion=81",
+  "wms": "https://geomininter.mininter.gob.pe/arcgis/services/ogc/denuncias/MapServer/WMSServer?service=WMS&request=GetCapabilities",
+  "metadata": {
+    "arcgisVersion": 11.0,
+    "geometryType": "esriGeometryPoint",
+    "capabilities": "Map,Query,Data",
+    "formats": "JSON, geoJSON, PBF",
+    "maxRecordCount": 2000,
+    "advancedQueryCapabilities": {
+      "useStandardizedQueries": true,
+      "supportsStatistics": true,
+      "supportsPercentileStatistics": true,
+      "supportsHavingClause": true,
+      "supportsOrderBy": true,
+      "supportsDistinct": true,
+      "supportsCountDistinct": true,
+      "supportsPagination": true,
+      "supportsLod": false,
+      "supportsQueryWithLodSR": false,
+      "supportsTrueCurve": true,
+      "supportsQueryWithDatumTransformation": true,
+      "supportsReturningQueryExtent": true,
+      "supportsQueryWithDistance": true,
+      "supportsSqlExpression": true,
+      "supportsTimeRelation": true,
+      "supportsSqlFormat": false,
+      "supportsQueryAnalytic": true
+    },
+    "timeInfo": null,
+    "dateFieldsTimeReference": null,
+    "datesInUnknownTimezone": false,
+    "description": "",
+    "copyrightText": "",
+    "licenseInfo": "",
+    "accessInformation": "",
+    "hasMetadata": true,
+    "serviceItemId": "06be24f464dd42e3af0dd180690b89e4",
+    "indexes": [
+      {
+        "name": "i11140id_dgc",
+        "fields": "id_dgc",
+        "isAscending": true,
+        "isUnique": false,
+        "description": ""
+      },
+      {
+        "name": "r442_sde_rowid_uk",
+        "fields": "objectid",
+        "isAscending": true,
+        "isUnique": true,
+        "description": ""
+      },
+      {
+        "name": "a313_ix1",
+        "fields": "shape",
+        "isAscending": true,
+        "isUnique": true,
+        "description": ""
+      }
+    ]
+  },
+  "metadataDigests": {
+    "service": "59fdb5e97792283bddd81f1c1efe14f706c1c9abf0a0f9357de36667151a7a00",
+    "layer": "877680fc21598c0520004e05b4d6aec0e33ebf4c7ea98cbd5ccfa44a960523a4",
+    "itemInfo": "9c9765f7da262be3b08a42ecb71705f1d63f0d503144777b7ef0810e30b40228",
+    "layerMetadataXml": "feb774be0fff119c7b2333f5c29d74eff5e7695fff57dd76d86f4e8aea8c8a19",
+    "catalogue": "221691ab49ca55c92f7649b1c1fa67bbcc9b100e3bc3f0436390e69000f80731",
+    "terms": "bf031c9a7e1b934755b3a29ff3ab8f2537915946ccc58370493fbe01b876e6a9"
+  },
+  "privacy": "Only aggregate results and sample diagnostics are retained. No raw incident records, coordinates, addresses, free text or source record identifiers are included.",
+  "sampling": "Lima department 15, occurrence June 2025. 100 geocoded and 25 source-marked unlocated geometries, plus two pages of 100 geocoded records without geometry for date/pagination diagnostics. Samples are ordered, not random, overlap, and are not nationally representative.",
+  "queries": [
+    {
+      "name": "total_records",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=1%3D1&returnCountOnly=true",
+      "checkedAt": "2026-11-12T04:40:45.016049+00:00",
+      "httpStatus": 200,
+      "cors": null,
+      "result": {
+        "count": 9400491
+      },
+      "elapsedSeconds": 2.016
+    },
+    {
+      "name": "global_date_ranges",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A+%22min%22%2C+%22onStatisticField%22%3A+%22a%5Cu00f1o_hecho%22%2C+%22outStatisticFieldName%22%3A+%22min_0%22%7D%2C+%7B%22statisticType%22%3A+%22max%22%2C+%22onStatisticField%22%3A+%22a%5Cu00f1o_hecho%22%2C+%22outStatisticFieldName%22%3A+%22max_1%22%7D%2C+%7B%22statisticType%22%3A+%22min%22%2C+%22onStatisticField%22%3A+%22mes_hecho%22%2C+%22outStatisticFieldName%22%3A+%22min_2%22%7D%2C+%7B%22statisticType%22%3A+%22max%22%2C+%22onStatisticField%22%3A+%22mes_hecho%22%2C+%22outStatisticFieldName%22%3A+%22max_3%22%7D%2C+%7B%22statisticType%22%3A+%22min%22%2C+%22onStatisticField%22%3A+%22fecha_hora_hecho%22%2C+%22outStatisticFieldName%22%3A+%22min_4%22%7D%2C+%7B%22statisticType%22%3A+%22max%22%2C+%22onStatisticField%22%3A+%22fecha_hora_hecho%22%2C+%22outStatisticFieldName%22%3A+%22max_5%22%7D%2C+%7B%22statisticType%22%3A+%22min%22%2C+%22onStatisticField%22%3A+%22fecha_hora_registro_hecho%22%2C+%22outStatisticFieldName%22%3A+%22min_6%22%7D%2C+%7B%22statisticType%22%3A+%22max%22%2C+%22onStatisticField%22%3A+%22fecha_hora_registro_hecho%22%2C+%22outStatisticFieldName%22%3A+%22max_7%22%7D%2C+%7B%22statisticType%22%3A+%22min%22%2C+%22onStatisticField%22%3A+%22fecha_actualizacion%22%2C+%22outStatisticFieldName%22%3A+%22min_8%22%7D%2C+%7B%22statisticType%22%3A+%22max%22%2C+%22onStatisticField%22%3A+%22fecha_actualizacion%22%2C+%22outStatisticFieldName%22%3A+%22max_9%22%7D%5D",
+      "checkedAt": "2026-11-12T04:40:47.032932+00:00",
+      "httpStatus": 200,
+      "cors": null,
+      "result": {
+        "rows": [
+          {
+            "min_0": 1923,
+            "max_1": 2025,
+            "min_2": 1,
+            "max_3": 12,
+            "min_4": -1470227520000,
+            "max_5": 1751322900000,
+            "min_6": 1514764869000,
+            "max_7": 1751327986000,
+            "min_8": 1751241600000,
+            "max_9": 1751241600000
+          }
+        ],
+        "exceededTransferLimit": null
+      },
+      "elapsedSeconds": 7.474
+    },
+    {
+      "name": "counts_by_año_hecho",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=1%3D1&groupByFieldsForStatistics=a%C3%B1o_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22objectid%22%2C+%22outStatisticFieldName%22%3A+%22records%22%7D%5D&orderByFields=a%C3%B1o_hecho",
+      "checkedAt": "2026-11-12T04:40:54.507442+00:00",
+      "httpStatus": 200,
+      "cors": null,
+      "result": {
+        "rows": [
+          {
+            "año_hecho": 1923,
+            "records": 1
+          },
+          {
+            "año_hecho": 1945,
+            "records": 1
+          },
+          {
+            "año_hecho": 1948,
+            "records": 1
+          },
+          {
+            "año_hecho": 1963,
+            "records": 1
+          },
+          {
+            "año_hecho": 1965,
+            "records": 1
+          },
+          {
+            "año_hecho": 1966,
+            "records": 1
+          },
+          {
+            "año_hecho": 1973,
+            "records": 1
+          },
+          {
+            "año_hecho": 1976,
+            "records": 1
+          },
+          {
+            "año_hecho": 1977,
+            "records": 1
+          },
+          {
+            "año_hecho": 1980,
+            "records": 1
+          },
+          {
+            "año_hecho": 1981,
+            "records": 1
+          },
+          {
+            "año_hecho": 1983,
+            "records": 4
+          },
+          {
+            "año_hecho": 1984,
+            "records": 1
+          },
+          {
+            "año_hecho": 1986,
+            "records": 2
+          },
+          {
+            "año_hecho": 1988,
+            "records": 3
+          },
+          {
+            "año_hecho": 1989,
+            "records": 3
+          },
+          {
+            "año_hecho": 1990,
+            "records": 250
+          },
+          {
+            "año_hecho": 1991,
+            "records": 32
+          },
+          {
+            "año_hecho": 1992,
+            "records": 59
+          },
+          {
+            "año_hecho": 1993,
+            "records": 41
+          },
+          {
+            "año_hecho": 1994,
+            "records": 40
+          },
+          {
+            "año_hecho": 1995,
+            "records": 46
+          },
+          {
+            "año_hecho": 1996,
+            "records": 41
+          },
+          {
+            "año_hecho": 1997,
+            "records": 51
+          },
+          {
+            "año_hecho": 1998,
+            "records": 67
+          },
+          {
+            "año_hecho": 1999,
+            "records": 55
+          },
+          {
+            "año_hecho": 2000,
+            "records": 160
+          },
+          {
+            "año_hecho": 2001,
+            "records": 140
+          },
+          {
+            "año_hecho": 2002,
+            "records": 140
+          },
+          {
+            "año_hecho": 2003,
+            "records": 165
+          },
+          {
+            "año_hecho": 2004,
+            "records": 157
+          },
+          {
+            "año_hecho": 2005,
+            "records": 160
+          },
+          {
+            "año_hecho": 2006,
+            "records": 154
+          },
+          {
+            "año_hecho": 2007,
+            "records": 251
+          },
+          {
+            "año_hecho": 2008,
+            "records": 317
+          },
+          {
+            "año_hecho": 2009,
+            "records": 339
+          },
+          {
+            "año_hecho": 2010,
+            "records": 425
+          },
+          {
+            "año_hecho": 2011,
+            "records": 507
+          },
+          {
+            "año_hecho": 2012,
+            "records": 790
+          },
+          {
+            "año_hecho": 2013,
+            "records": 825
+          },
+          {
+            "año_hecho": 2014,
+            "records": 1130
+          },
+          {
+            "año_hecho": 2015,
+            "records": 1689
+          },
+          {
+            "año_hecho": 2016,
+            "records": 2510
+          },
+          {
+            "año_hecho": 2017,
+            "records": 15768
+          },
+          {
+            "año_hecho": 2018,
+            "records": 807363
+          },
+          {
+            "año_hecho": 2019,
+            "records": 936091
+          },
+          {
+            "año_hecho": 2020,
+            "records": 1046982
+          },
+          {
+            "año_hecho": 2021,
+            "records": 1318227
+          },
+          {
+            "año_hecho": 2022,
+            "records": 1480376
+          },
+          {
+            "año_hecho": 2023,
+            "records": 1577280
+          },
+          {
+            "año_hecho": 2024,
+            "records": 1524066
+          },
+          {
+            "año_hecho": 2025,
+            "records": 683773
+          }
+        ],
+        "exceededTransferLimit": null
+      },
+      "elapsedSeconds": 4.708
+    },
+    {
+      "name": "counts_by_estado_coord",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=1%3D1&groupByFieldsForStatistics=estado_coord&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22objectid%22%2C+%22outStatisticFieldName%22%3A+%22records%22%7D%5D&orderByFields=estado_coord",
+      "checkedAt": "2026-11-12T04:40:59.216094+00:00",
+      "httpStatus": 200,
+      "cors": null,
+      "result": {
+        "rows": [
+          {
+            "estado_coord": "CON COORDENADA",
+            "records": 4141361
+          },
+          {
+            "estado_coord": "SIN COORDENADA",
+            "records": 5259017
+          },
+          {
+            "estado_coord": "SIN COORDENADA XX",
+            "records": 79
+          },
+          {
+            "estado_coord": "SIN COORDENADA YY",
+            "records": 34
+          }
+        ],
+        "exceededTransferLimit": null
+      },
+      "elapsedSeconds": 6.963
+    },
+    {
+      "name": "counts_by_id_dpto_hecho",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=1%3D1&groupByFieldsForStatistics=id_dpto_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22objectid%22%2C+%22outStatisticFieldName%22%3A+%22records%22%7D%5D&orderByFields=id_dpto_hecho",
+      "checkedAt": "2026-11-12T04:41:06.180030+00:00",
+      "httpStatus": 200,
+      "cors": null,
+      "result": {
+        "rows": [
+          {
+            "id_dpto_hecho": "01",
+            "records": 85152
+          },
+          {
+            "id_dpto_hecho": "02",
+            "records": 307410
+          },
+          {
+            "id_dpto_hecho": "03",
+            "records": 143296
+          },
+          {
+            "id_dpto_hecho": "04",
+            "records": 1066995
+          },
+          {
+            "id_dpto_hecho": "05",
+            "records": 154474
+          },
+          {
+            "id_dpto_hecho": "06",
+            "records": 205110
+          },
+          {
+            "id_dpto_hecho": "07",
+            "records": 334684
+          },
+          {
+            "id_dpto_hecho": "08",
+            "records": 401868
+          },
+          {
+            "id_dpto_hecho": "09",
+            "records": 39707
+          },
+          {
+            "id_dpto_hecho": "10",
+            "records": 178775
+          },
+          {
+            "id_dpto_hecho": "11",
+            "records": 322983
+          },
+          {
+            "id_dpto_hecho": "12",
+            "records": 454119
+          },
+          {
+            "id_dpto_hecho": "13",
+            "records": 404751
+          },
+          {
+            "id_dpto_hecho": "14",
+            "records": 559539
+          },
+          {
+            "id_dpto_hecho": "15",
+            "records": 3385743
+          },
+          {
+            "id_dpto_hecho": "16",
+            "records": 115218
+          },
+          {
+            "id_dpto_hecho": "17",
+            "records": 59223
+          },
+          {
+            "id_dpto_hecho": "18",
+            "records": 74494
+          },
+          {
+            "id_dpto_hecho": "19",
+            "records": 45118
+          },
+          {
+            "id_dpto_hecho": "20",
+            "records": 398716
+          },
+          {
+            "id_dpto_hecho": "21",
+            "records": 162791
+          },
+          {
+            "id_dpto_hecho": "22",
+            "records": 189077
+          },
+          {
+            "id_dpto_hecho": "23",
+            "records": 117440
+          },
+          {
+            "id_dpto_hecho": "24",
+            "records": 84468
+          },
+          {
+            "id_dpto_hecho": "25",
+            "records": 109340
+          }
+        ],
+        "exceededTransferLimit": null
+      },
+      "elapsedSeconds": 5.428
+    },
+    {
+      "name": "counts_by_fuente",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=1%3D1&groupByFieldsForStatistics=fuente&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22objectid%22%2C+%22outStatisticFieldName%22%3A+%22records%22%7D%5D&orderByFields=fuente",
+      "checkedAt": "2026-11-12T04:41:11.608240+00:00",
+      "httpStatus": 200,
+      "cors": null,
+      "result": {
+        "rows": [
+          {
+            "fuente": "DGIS",
+            "records": 9400491
+          }
+        ],
+        "exceededTransferLimit": null
+      },
+      "elapsedSeconds": 6.859
+    },
+    {
+      "name": "lima_june_2025_count",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=a%C3%B1o_hecho+%3D+2025+AND+mes_hecho+%3D+6+AND+id_dpto_hecho+%3D+%2715%27&returnCountOnly=true",
+      "checkedAt": "2026-11-12T04:42:30.442988+00:00",
+      "httpStatus": 200,
+      "cors": "http://localhost:5173",
+      "result": {
+        "count": 36677
+      },
+      "elapsedSeconds": 4.105
+    },
+    {
+      "name": "lima_june_2025_distinct_business_ids",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=a%C3%B1o_hecho+%3D+2025+AND+mes_hecho+%3D+6+AND+id_dpto_hecho+%3D+%2715%27&returnCountOnly=true&returnDistinctValues=true&outFields=id_dgc",
+      "checkedAt": "2026-11-12T04:42:34.547772+00:00",
+      "httpStatus": 200,
+      "cors": "http://localhost:5173",
+      "result": {
+        "count": 34090
+      },
+      "elapsedSeconds": 4.107
+    },
+    {
+      "name": "geocoded_status_invalid_coordinate_attributes",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=estado_coord+%3D+%27CON+COORDENADA%27+AND+%28lat_hecho+IS+NULL+OR+long_hecho+IS+NULL+OR+lat_hecho+%3C+-90+OR+lat_hecho+%3E+90+OR+long_hecho+%3C+-180+OR+long_hecho+%3E+180+OR+lat_hecho+%3D+0+OR+long_hecho+%3D+0%29&returnCountOnly=true",
+      "checkedAt": "2026-11-12T04:42:38.655246+00:00",
+      "httpStatus": 200,
+      "cors": "http://localhost:5173",
+      "result": {
+        "count": 0
+      },
+      "elapsedSeconds": 7.156
+    },
+    {
+      "name": "lima_june_2025_types",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=a%C3%B1o_hecho+%3D+2025+AND+mes_hecho+%3D+6+AND+id_dpto_hecho+%3D+%2715%27&groupByFieldsForStatistics=materia_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22objectid%22%2C+%22outStatisticFieldName%22%3A+%22records%22%7D%5D&orderByFields=materia_hecho",
+      "checkedAt": "2026-11-12T04:42:45.811904+00:00",
+      "httpStatus": 200,
+      "cors": "http://localhost:5173",
+      "result": {
+        "rows": [
+          {
+            "materia_hecho": "FUERO COMUN",
+            "records": 17716
+          },
+          {
+            "materia_hecho": "HECHOS DE INTERES POLICIAL",
+            "records": 9339
+          },
+          {
+            "materia_hecho": "LEYES ESPECIALES",
+            "records": 9523
+          },
+          {
+            "materia_hecho": "NIÑOS Y ADOLESCENTES",
+            "records": 99
+          }
+        ],
+        "exceededTransferLimit": null
+      },
+      "elapsedSeconds": 3.994
+    },
+    {
+      "name": "latest_year_month_coverage",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=a%C3%B1o_hecho+%3D+2025&groupByFieldsForStatistics=mes_hecho&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22objectid%22%2C+%22outStatisticFieldName%22%3A+%22records%22%7D%5D&orderByFields=mes_hecho",
+      "checkedAt": "2026-11-12T04:42:49.806538+00:00",
+      "httpStatus": 200,
+      "cors": "http://localhost:5173",
+      "result": {
+        "rows": [
+          {
+            "mes_hecho": 1,
+            "records": 123276
+          },
+          {
+            "mes_hecho": 2,
+            "records": 112780
+          },
+          {
+            "mes_hecho": 3,
+            "records": 124155
+          },
+          {
+            "mes_hecho": 4,
+            "records": 117323
+          },
+          {
+            "mes_hecho": 5,
+            "records": 110590
+          },
+          {
+            "mes_hecho": 6,
+            "records": 95649
+          }
+        ],
+        "exceededTransferLimit": null
+      },
+      "elapsedSeconds": 3.89
+    },
+    {
+      "name": "sample_con_coordenada",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=geojson&returnGeometry=true&where=a%C3%B1o_hecho+%3D+2025+AND+mes_hecho+%3D+6+AND+id_dpto_hecho+%3D+%2715%27+AND+estado_coord+%3D+%27CON+COORDENADA%27&outFields=objectid%2Cid_dgc%2Cid_dpto_hecho%2Cid_prov_hecho%2Cid_dist_hecho%2Ca%C3%B1o_hecho%2Cmes_hecho%2Clat_hecho%2Clong_hecho%2Cestado_coord&outSR=4326&orderByFields=objectid&resultRecordCount=100",
+      "checkedAt": "2026-11-12T04:42:53.696743+00:00",
+      "httpStatus": 200,
+      "cors": "http://localhost:5173",
+      "result": {
+        "sampleSize": 100,
+        "missingGeometry": 0,
+        "outsideBroadPeruBoxOrInvalid": 0,
+        "geometryAttributeMismatch": 0,
+        "invalidGeographicPrefixes": 0,
+        "uniqueBusinessIds": 87,
+        "nullBusinessIds": 0,
+        "uniqueGeometries": 85,
+        "transferLimit": true
+      },
+      "elapsedSeconds": 5.64
+    },
+    {
+      "name": "sample_sin_coordenada",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=geojson&returnGeometry=true&where=a%C3%B1o_hecho+%3D+2025+AND+mes_hecho+%3D+6+AND+id_dpto_hecho+%3D+%2715%27+AND+estado_coord+%3D+%27SIN+COORDENADA%27&outFields=objectid%2Cid_dgc%2Cid_dpto_hecho%2Cid_prov_hecho%2Cid_dist_hecho%2Ca%C3%B1o_hecho%2Cmes_hecho%2Clat_hecho%2Clong_hecho%2Cestado_coord&outSR=4326&orderByFields=objectid&resultRecordCount=25",
+      "checkedAt": "2026-11-12T04:42:59.336861+00:00",
+      "httpStatus": 200,
+      "cors": "http://localhost:5173",
+      "result": {
+        "sampleSize": 25,
+        "missingGeometry": 0,
+        "outsideBroadPeruBoxOrInvalid": 0,
+        "geometryAttributeMismatch": 0,
+        "invalidGeographicPrefixes": 0,
+        "uniqueBusinessIds": 24,
+        "nullBusinessIds": 0,
+        "uniqueGeometries": 15,
+        "transferLimit": true
+      },
+      "elapsedSeconds": 5.521
+    },
+    {
+      "name": "scoped_crime_flags",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=a%C3%B1o_hecho+%3D+2025+AND+mes_hecho+%3D+6+AND+id_dpto_hecho+%3D+%2715%27&groupByFieldsForStatistics=es_delito_x%2Csolo_denuncia&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22objectid%22%2C+%22outStatisticFieldName%22%3A+%22records%22%7D%5D&orderByFields=es_delito_x%2Csolo_denuncia",
+      "result": {
+        "rows": [
+          {
+            "es_delito_x": "1.Delitos",
+            "solo_denuncia": 1,
+            "records": 16408
+          },
+          {
+            "es_delito_x": "2.Faltas",
+            "solo_denuncia": 1,
+            "records": 1308
+          },
+          {
+            "es_delito_x": "3. Niños y adolescentes",
+            "solo_denuncia": 1,
+            "records": 99
+          },
+          {
+            "es_delito_x": "4.Violencia contra la mujer e int",
+            "solo_denuncia": 1,
+            "records": 7741
+          },
+          {
+            "es_delito_x": "Otros",
+            "solo_denuncia": 0,
+            "records": 9339
+          },
+          {
+            "es_delito_x": "Otros",
+            "solo_denuncia": 1,
+            "records": 1782
+          }
+        ],
+        "error": null,
+        "exceededTransferLimit": null
+      }
+    },
+    {
+      "name": "scoped_coordinate_coverage",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=a%C3%B1o_hecho+%3D+2025+AND+mes_hecho+%3D+6+AND+id_dpto_hecho+%3D+%2715%27&groupByFieldsForStatistics=estado_coord&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22objectid%22%2C+%22outStatisticFieldName%22%3A+%22records%22%7D%5D&orderByFields=estado_coord",
+      "result": {
+        "rows": [
+          {
+            "estado_coord": "CON COORDENADA",
+            "records": 3115
+          },
+          {
+            "estado_coord": "SIN COORDENADA",
+            "records": 33562
+          }
+        ],
+        "error": null,
+        "exceededTransferLimit": null
+      }
+    },
+    {
+      "name": "minimal_pagination_and_date_sample",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=a%C3%B1o_hecho+%3D+2025+AND+mes_hecho+%3D+6+AND+id_dpto_hecho+%3D+%2715%27+AND+estado_coord+%3D+%27CON+COORDENADA%27&outFields=objectid%2Cid_dgc%2Ca%C3%B1o_hecho%2Cmes_hecho%2Cfecha_hora_hecho%2Cfecha_hora_registro_hecho%2Cfecha_actualizacion%2Cid_modalidad_hecho%2Cmodalidad_hecho&orderByFields=objectid&resultRecordCount=100&resultOffset=0",
+      "pageOffset": 0,
+      "pageSize": 100,
+      "exceededTransferLimit": true,
+      "error": null
+    },
+    {
+      "name": "minimal_pagination_and_date_sample",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=a%C3%B1o_hecho+%3D+2025+AND+mes_hecho+%3D+6+AND+id_dpto_hecho+%3D+%2715%27+AND+estado_coord+%3D+%27CON+COORDENADA%27&outFields=objectid%2Cid_dgc%2Ca%C3%B1o_hecho%2Cmes_hecho%2Cfecha_hora_hecho%2Cfecha_hora_registro_hecho%2Cfecha_actualizacion%2Cid_modalidad_hecho%2Cmodalidad_hecho&orderByFields=objectid&resultRecordCount=100&resultOffset=100",
+      "pageOffset": 100,
+      "pageSize": 100,
+      "exceededTransferLimit": true,
+      "error": null
+    },
+    {
+      "name": "pagination_and_date_diagnostics",
+      "result": {
+        "sampleSize": 200,
+        "uniqueObjectIds": 200,
+        "uniqueBusinessIds": 182,
+        "missingOccurrenceDates": 0,
+        "occurrenceYearMonthMismatchUsingUTC": 0,
+        "occurrenceYearMonthMismatchUsingLima": 19,
+        "occurrenceAfterRegistration": 0,
+        "missingModality": 0,
+        "sampleMethod": "first two ordered pages of 100, CON COORDENADA, Lima June 2025; not random or nationally representative"
+      }
+    },
+    {
+      "name": "lima_june_2025_null_business_ids",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&where=a%C3%B1o_hecho+%3D+2025+AND+mes_hecho+%3D+6+AND+id_dpto_hecho+%3D+%2715%27+AND+id_dgc+IS+NULL&returnCountOnly=true&returnGeometry=false",
+      "result": {
+        "count": 0
+      }
+    },
+    {
+      "name": "coordinate_coverage_by_occurrence_year",
+      "url": "https://geomininter.mininter.gob.pe/arcgis/rest/services/ogc/denuncias/MapServer/0/query?f=json&returnGeometry=false&where=a%C3%B1o_hecho+%3E%3D+2018&groupByFieldsForStatistics=a%C3%B1o_hecho%2Cestado_coord&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22objectid%22%2C+%22outStatisticFieldName%22%3A+%22records%22%7D%5D&orderByFields=a%C3%B1o_hecho%2Cestado_coord",
+      "result": {
+        "rows": [
+          {
+            "año_hecho": 2018,
+            "estado_coord": "CON COORDENADA",
+            "records": 537029
+          },
+          {
+            "año_hecho": 2018,
+            "estado_coord": "SIN COORDENADA",
+            "records": 270321
+          },
+          {
+            "año_hecho": 2018,
+            "estado_coord": "SIN COORDENADA XX",
+            "records": 6
+          },
+          {
+            "año_hecho": 2018,
+            "estado_coord": "SIN COORDENADA YY",
+            "records": 7
+          },
+          {
+            "año_hecho": 2019,
+            "estado_coord": "CON COORDENADA",
+            "records": 462531
+          },
+          {
+            "año_hecho": 2019,
+            "estado_coord": "SIN COORDENADA",
+            "records": 473557
+          },
+          {
+            "año_hecho": 2019,
+            "estado_coord": "SIN COORDENADA XX",
+            "records": 1
+          },
+          {
+            "año_hecho": 2019,
+            "estado_coord": "SIN COORDENADA YY",
+            "records": 2
+          },
+          {
+            "año_hecho": 2020,
+            "estado_coord": "CON COORDENADA",
+            "records": 436465
+          },
+          {
+            "año_hecho": 2020,
+            "estado_coord": "SIN COORDENADA",
+            "records": 610515
+          },
+          {
+            "año_hecho": 2020,
+            "estado_coord": "SIN COORDENADA XX",
+            "records": 1
+          },
+          {
+            "año_hecho": 2020,
+            "estado_coord": "SIN COORDENADA YY",
+            "records": 1
+          },
+          {
+            "año_hecho": 2021,
+            "estado_coord": "CON COORDENADA",
+            "records": 525699
+          },
+          {
+            "año_hecho": 2021,
+            "estado_coord": "SIN COORDENADA",
+            "records": 792527
+          },
+          {
+            "año_hecho": 2021,
+            "estado_coord": "SIN COORDENADA XX",
+            "records": 1
+          },
+          {
+            "año_hecho": 2022,
+            "estado_coord": "CON COORDENADA",
+            "records": 627897
+          },
+          {
+            "año_hecho": 2022,
+            "estado_coord": "SIN COORDENADA",
+            "records": 852476
+          },
+          {
+            "año_hecho": 2022,
+            "estado_coord": "SIN COORDENADA XX",
+            "records": 2
+          },
+          {
+            "año_hecho": 2022,
+            "estado_coord": "SIN COORDENADA YY",
+            "records": 1
+          },
+          {
+            "año_hecho": 2023,
+            "estado_coord": "CON COORDENADA",
+            "records": 940322
+          },
+          {
+            "año_hecho": 2023,
+            "estado_coord": "SIN COORDENADA",
+            "records": 636889
+          },
+          {
+            "año_hecho": 2023,
+            "estado_coord": "SIN COORDENADA XX",
+            "records": 54
+          },
+          {
+            "año_hecho": 2023,
+            "estado_coord": "SIN COORDENADA YY",
+            "records": 15
+          },
+          {
+            "año_hecho": 2024,
+            "estado_coord": "CON COORDENADA",
+            "records": 510731
+          },
+          {
+            "año_hecho": 2024,
+            "estado_coord": "SIN COORDENADA",
+            "records": 1013313
+          },
+          {
+            "año_hecho": 2024,
+            "estado_coord": "SIN COORDENADA XX",
+            "records": 14
+          },
+          {
+            "año_hecho": 2024,
+            "estado_coord": "SIN COORDENADA YY",
+            "records": 8
+          },
+          {
+            "año_hecho": 2025,
+            "estado_coord": "CON COORDENADA",
+            "records": 86908
+          },
+          {
+            "año_hecho": 2025,
+            "estado_coord": "SIN COORDENADA",
+            "records": 596865
+          }
+        ],
+        "error": null,
+        "exceededTransferLimit": null
+      }
+    }
+  ],
+  "limitations": [
+    "No national point-in-INEI containment audit or positional accuracy validation.",
+    "No source identifier/deduplication dictionary or SIDPOL CSV reconciliation.",
+    "Provider licensing, date/time semantics and unlocated-geometry semantics unresolved.",
+    "Aggregate requests are separate reads, not an atomic source snapshot.",
+    "Not a public hotspot endorsement or unique crime count."
+  ]
+}

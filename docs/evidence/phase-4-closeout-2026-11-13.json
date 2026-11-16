@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-13",
+  "scope": "Phase 4 historical statistics closeout; local development only",
+  "implemented": [
+    "Same-year population-normalized monthly histories, up to 120 months",
+    "Up to four selected territorial series with count/rate presentation",
+    "Statistics map count/rate toggle preserving report counts and geometries",
+    "Observed reporting/population/geometry availability indicators",
+    "Coordinated accessible initial loader with API and lazy-module failure recovery",
+    "Public methodology and API/setup documentation"
+  ],
+  "checks": {
+    "backend": {
+      "passed": 189,
+      "postgis_integration_executed": true,
+      "build_warnings": 0,
+      "build_errors": 0,
+      "command": "dotnet test backend/ChapaTuChoro.slnx (SDK 10 container, disposable schemas in local PostGIS)"
+    },
+    "frontend_unit": {
+      "passed": 141,
+      "command": "npm test"
+    },
+    "browser": {
+      "passed": 42,
+      "projects": [
+        "desktop",
+        "mobile"
+      ],
+      "command": "npm run test:e2e:built",
+      "also_verified": "Reduced-motion loader animation is disabled; failed lazy trends chunks release loader"
+    },
+    "frontend_build_types": "npm run build: passed",
+    "browser_types": "npm run typecheck:e2e: passed",
+    "lint": "npm run lint: passed",
+    "format": "npm run format:check: passed",
+    "compose": "Local PostGIS healthy, API/web running; real HTTP APIs and browsers validated; final local image rebuild completed"
+  },
+  "real_data_read_only_validation": {
+    "period": {
+      "year": 2026,
+      "month": 9
+    },
+    "months": 105,
+    "default_compared_territories": 3,
+    "closing_month": {
+      "period": {
+        "year": 2026,
+        "month": 9
+      },
+      "reports": 63043,
+      "population": 34660114,
+      "ratePer100k": 181.89,
+      "districtsWithReports": 1197,
+      "missingPopulationDistricts": 0,
+      "missingGeometryDistricts": 0
+    },
+    "quality": {
+      "expectedDistricts": 1892,
+      "districtsWithReports": 1197,
+      "missingPopulationDistricts": 0,
+      "missingGeometryDistricts": 0,
+      "populationDistrictsWithoutGeometry": 2,
+      "monthsWithReports": 105,
+      "requestedMonths": 105,
+      "yearsWithoutPopulation": []
+    },
+    "map_geometries": 25,
+    "rates_preserve_original_map_counts": true,
+    "historical_080915_2020_May_June": "Imported counts preserved; rates null due to incompatible denominator",
+    "first_request_seconds": {
+      "history": 3.178,
+      "rates": 1.425,
+      "counts": 1.009,
+      "anomaly": 0.089
+    },
+    "warm_reads": {
+      "warm_history_seconds": [
+        1.256,
+        0.85
+      ],
+      "selected_series": 2
+    },
+    "timing_limit": "Single local observations, not a load benchmark or AWS/Supabase SLA"
+  },
+  "real_browser": {
+    "desktop": "Official count 63043, projected residents 34660114 and rate 181.89 rendered; no page errors or horizontal overflow",
+    "mobile": "Same official values rendered; no page errors or horizontal overflow"
+  },
+  "limits": [
+    "INEI population series remains preliminary and does not incorporate definitive Census 2025 results",
+    "No finer street/block population distribution is inferred",
+    "Observed reporting coverage is not certified completeness or personal risk",
+    "Existing MapLibre chunk-size build warning remains",
+    "No additional schema migration, reimport, remote Supabase changes or cloud deployment performed"
+  ]
+}

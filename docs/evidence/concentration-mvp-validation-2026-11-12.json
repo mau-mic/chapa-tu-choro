@@ -1,0 +1,84 @@
+{
+  "checkedDateLocal": "2026-11-12",
+  "scope": "Disposable local QA DB only. Real official monthly source imports; existing application data read-only copied for reference. No production writes.",
+  "snapshots": [
+    {
+      "year": 2026,
+      "month": 10,
+      "category": "all",
+      "sourceRows": 44062,
+      "territorialSourceRows": 38449,
+      "mappedRows": 38414,
+      "visibleRows": 36863,
+      "gridMetres": 10000,
+      "minimumCellRecords": 5,
+      "cellCount": 457,
+      "territories": 25,
+      "sidpolContextTerritories": 0,
+      "quality": {
+        "rejected": {
+          "invalid_ubigeo": 5613
+        },
+        "gridSizeMetres": 1000,
+        "providerStates": {
+          "1": 38449,
+          "2": 5613
+        },
+        "sourceEditInfo": {
+          "lastEditDate": 1794326061303,
+          "dataLastEditDate": 1794281280140,
+          "schemaLastEditDate": 1794326061303
+        },
+        "missingBoundary": 0,
+        "coordinatePrecision": "undeclared",
+        "outsideDeclaredDistrict": 35
+      }
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "robbery",
+      "sourceRows": 4914,
+      "territorialSourceRows": 4332,
+      "mappedRows": 597,
+      "visibleRows": 424,
+      "gridMetres": 10000,
+      "minimumCellRecords": 5,
+      "cellCount": 26,
+      "territories": 25,
+      "sidpolContextTerritories": 25,
+      "quality": {
+        "rejected": {
+          "invalid_ubigeo": 154,
+          "outside_category_predicate": 428,
+          "unlocated_or_unknown_status": 3735
+        },
+        "gridSizeMetres": 1000,
+        "providerStates": {
+          "1": 760,
+          "3": 4154
+        },
+        "sourceEditInfo": {
+          "lastEditDate": 1761600998149,
+          "dataLastEditDate": 1761600998149,
+          "schemaLastEditDate": 1761600998149
+        },
+        "missingBoundary": 0,
+        "coordinatePrecision": "undeclared",
+        "normalizationVersion": "concentration-v1",
+        "outsideDeclaredDistrict": 0
+      }
+    }
+  ],
+  "browser": {
+    "real2026MappedRows": 38414,
+    "real2025MappedRows": 597,
+    "sidpolUnchanged": 63043,
+    "aggregatePopupVerified": true,
+    "canvasRetained": true,
+    "archiveCombinedTotalAbsent": true,
+    "providerFailureAndRetry": true,
+    "mobileOverflow": false,
+    "pageErrors": []
+  }
+}

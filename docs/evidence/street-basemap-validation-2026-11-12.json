@@ -1,0 +1,27 @@
+{
+  "checkedDateLocal": "2026-11-12",
+  "provider": "OpenFreeMap / OpenMapTiles / OpenStreetMap",
+  "scope": "Live public street context and existing local aggregate APIs; no statistical database writes or source imports.",
+  "frontendTests": 80,
+  "buildAndTypeScript": "passed",
+  "browser": {
+    "realRoadNames": [
+      "Avenida Petit Thouars",
+      "Avenida José Pardo",
+      "Avenida José Larco",
+      "Calle Bolognesi",
+      "Malecón 28 de Julio",
+      "Avenida Ricardo Palma"
+    ],
+    "streetLabelsRendered": 33,
+    "sameCanvas": true,
+    "statisticsTotal": 63043,
+    "concentrationMappedRows": 38414,
+    "independentToggle": true,
+    "providerFailureIsolated": true,
+    "retryRecovered": true,
+    "attributionVisible": true,
+    "mobileOverflow": false,
+    "pageErrors": []
+  }
+}

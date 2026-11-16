@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ChapaTuChoro.Domain/ChapaTuChoro.Domain.csproj" />
+    <Project Path="src/ChapaTuChoro.Application/ChapaTuChoro.Application.csproj" />
+    <Project Path="src/ChapaTuChoro.Infrastructure/ChapaTuChoro.Infrastructure.csproj" />
+    <Project Path="src/ChapaTuChoro.Api/ChapaTuChoro.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ChapaTuChoro.Tests/ChapaTuChoro.Tests.csproj" />
+  </Folder>
+</Solution>
