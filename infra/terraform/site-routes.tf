@@ -5,6 +5,21 @@ ${replace(local.generated_router, "function handler(event)", "function routeRequ
 function handler(event) {
   var request = event.request;
   var domain = ${jsonencode(var.site_domain)};
+  var protectedOrigin = ${jsonencode(var.enable_cloudflare_proxy)};
+  var token = ${jsonencode(var.cloudflare_origin_token)};
+  var headers = request.headers || {};
+  delete headers['x-ctc-client-ip'];
+  if (protectedOrigin) {
+    var proof = headers['x-ctc-origin-token'];
+    var visitor = headers['cf-connecting-ip'];
+    var publicHost = headers.host && headers.host.value.toLowerCase();
+    if (!proof || proof.multiValue || proof.value !== token || !visitor || visitor.multiValue || !visitor.value || (publicHost !== domain && publicHost !== 'www.' + domain)) {
+      return {statusCode: 403, headers: {'cache-control': {value: 'no-store'}}, body: 'Forbidden'};
+    }
+    headers['x-ctc-client-ip'] = {value: visitor.value};
+  }
+  delete headers['x-ctc-origin-token'];
+  request.headers = headers;
   var host = request.headers && request.headers.host;
   if (domain && host && host.value.toLowerCase() === 'www.' + domain) {
     var pairs = [];
@@ -30,6 +45,10 @@ resource "aws_cloudfront_function" "site_routes" {
   # Validation can run before a build; planning a deployment requires the real artifact.
   code = local.site_router_code
   lifecycle {
+    precondition {
+      condition     = !var.enable_cloudflare_proxy || (var.site_domain != "" && var.cloudflare_origin_token != "")
+      error_message = "Cloudflare proxy protection requires a public domain and a private origin token."
+    }
     precondition {
       condition     = length(base64encode(local.site_router_code)) <= 13332 && can(regex("function handler\\(event\\)", local.generated_router))
       error_message = "The edge router must expose handler(event) and fit CloudFront's 10 KB limit including the domain redirect."

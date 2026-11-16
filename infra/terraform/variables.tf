@@ -71,3 +71,20 @@ variable "site_certificate_arn" {
     error_message = "CloudFront requires an ACM certificate ARN in us-east-1."
   }
 }
+
+variable "enable_cloudflare_proxy" {
+  type        = bool
+  default     = false
+  description = "Require the private Cloudflare header at the edge and use its verified visitor IP."
+}
+
+variable "cloudflare_origin_token" {
+  type        = string
+  sensitive   = true
+  default     = ""
+  description = "Private header value set by Cloudflare. Stored in HCP state and edge code; never commit or log it."
+  validation {
+    condition     = var.cloudflare_origin_token == "" || can(regex("^[A-Za-z0-9_-]{43,128}$", var.cloudflare_origin_token))
+    error_message = "Use a cryptographically random 43–128 character base64url token."
+  }
+}

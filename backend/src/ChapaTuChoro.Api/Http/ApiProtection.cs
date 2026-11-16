@@ -18,6 +18,7 @@ public sealed class ApiRateLimitOptions
 
 public sealed class ProxyTrustOptions
 {
+    public bool UseVerifiedEdgeClientIp { get; set; }
     public string[] KnownProxies { get; set; } = [];
     public string[] KnownNetworks { get; set; } = [];
 }

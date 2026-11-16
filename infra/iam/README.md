@@ -31,9 +31,16 @@ Review evidence, 2026-11-16: generated a read-only production Terraform plan and
 used IAM Policy Autopilot 0.4.0 as a baseline. Its output contained overbroad IAM
 resources/PassRole and unrelated services, omitted update operations and had an
 incorrect Scheduler ARN. The reviewed policy removes these issues. AWS IAM
-Access Analyzer `validate-policy` returned `findings: []`. Minified size is 5,789
+Access Analyzer `validate-policy` returned `findings: []`. The baseline minified size was 5,789
 characters, below the 10,240 aggregate inline-policy character limit for a role
 (allow for any other inline policies already on the role). No policy was attached
 and no apply ran. Syntax validation does not establish that every provider call
 will succeed; validate the first HCP plan and apply with this role and review any
 AccessDenied against the exact required action and resource.
+
+
+The response-security-headers update adds CloudFront response-policy creation
+and scoped read/update/delete permissions. Replace the existing inline policy
+before running the new plan; no publisher permissions change. Access Analyzer
+validation of the updated policy returned no findings; no attachment or apply
+was performed by the agent.

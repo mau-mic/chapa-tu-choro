@@ -197,7 +197,7 @@ jobs:
         env:
           SITE_BUCKET: ${{ steps.infrastructure.outputs.site_bucket }}
           DISTRIBUTION: ${{ steps.infrastructure.outputs.cloudfront_distribution_id }}
-          SITE_URL: ${{ steps.infrastructure.outputs.cloudfront_url }}
+          SITE_URL: ${{ vars.SITE_URL || steps.infrastructure.outputs.cloudfront_url }}
         run: |
           # Upload assets before HTML; retain older hashed assets for open browser sessions.
           aws s3 sync frontend/dist/ "s3://$SITE_BUCKET/" --exclude '*.html' --exclude 'assets/*' --exclude 'cloudfront-router.js' --cache-control 'public,max-age=300'

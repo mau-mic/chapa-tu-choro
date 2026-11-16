@@ -95,3 +95,26 @@ rejection of Local execution, successful plan-only runs and invalid mode input.
 Plan-only checks assert that no state outputs are requested. They also inspect the upload allowlist and ensure
 that the HCP bearer token is not sent to the signed artifact URL. These tests do
 not establish that hosted credentials, AWS permissions or a live deployment work.
+
+Security headers can be tested with Terraform 1.17.2 and the pinned AWS provider:
+
+```bash
+bash scripts/tests/security-headers.sh
+```
+
+The harness creates an isolated temporary configuration with mock AWS and
+synthetic ZIP/router fixtures, without using credentials, real Lambda builds or
+cloud resources. It checks both CloudFront behavior associations, HSTS scope,
+framing/nosniff protections, report-only map compatibility and unchanged CORS.
+The fixtures cannot be used by the deployment pipeline. Real browser CSP checks
+and live response headers still require an authorized deployment.
+
+The isolated Terraform harness also evaluates the actual rendered CloudFront
+function with a fixed synthetic token. It checks missing/wrong/duplicate proof,
+missing visitor identity, direct CloudFront hostname rejection, overwrite of a
+spoofed client header, removal of the private header, redirects and edge size.
+`VerifiedEdgeClientIpTests` covers IPv4/IPv6, malformed identity and disabled-mode
+spoofing. The proxy/rate-limit focused suite ran in the SDK 10 container because
+the local SDK could build (with the documented prune workaround) but the host
+lacked the ASP.NET runtime: 38 passed, zero skipped. Live DNS, Transform Rules and
+cross-proxy IP behavior remain deployment checks, not mock-test guarantees.

@@ -153,8 +153,9 @@ resource "aws_lambda_function" "api" {
   }
   environment {
     variables = {
-      ASPNETCORE_ENVIRONMENT     = "Production"
-      Database__SsmParameterName = var.database_ssm_parameter_name
+      ASPNETCORE_ENVIRONMENT                = "Production"
+      Database__SsmParameterName            = var.database_ssm_parameter_name
+      ReverseProxy__UseVerifiedEdgeClientIp = tostring(var.enable_cloudflare_proxy)
     }
   }
   depends_on = [aws_iam_role_policy_attachment.api_basic_logs, aws_cloudwatch_log_group.api]
@@ -240,12 +241,13 @@ resource "aws_cloudfront_distribution" "site" {
   }
 
   default_cache_behavior {
-    allowed_methods        = ["GET", "HEAD", "OPTIONS"]
-    cached_methods         = ["GET", "HEAD"]
-    target_origin_id       = "static-s3"
-    viewer_protocol_policy = "redirect-to-https"
-    cache_policy_id        = data.aws_cloudfront_cache_policy.optimized.id
-    compress               = true
+    allowed_methods            = ["GET", "HEAD", "OPTIONS"]
+    cached_methods             = ["GET", "HEAD"]
+    target_origin_id           = "static-s3"
+    viewer_protocol_policy     = "redirect-to-https"
+    response_headers_policy_id = aws_cloudfront_response_headers_policy.security.id
+    cache_policy_id            = data.aws_cloudfront_cache_policy.optimized.id
+    compress                   = true
     function_association {
       event_type   = "viewer-request"
       function_arn = aws_cloudfront_function.site_routes.arn
@@ -253,14 +255,15 @@ resource "aws_cloudfront_distribution" "site" {
   }
 
   ordered_cache_behavior {
-    path_pattern             = "/api/*"
-    allowed_methods          = ["GET", "HEAD", "OPTIONS", "PUT", "POST", "PATCH", "DELETE"]
-    cached_methods           = ["GET", "HEAD"]
-    target_origin_id         = "api-lambda"
-    viewer_protocol_policy   = "redirect-to-https"
-    cache_policy_id          = data.aws_cloudfront_cache_policy.disabled.id
-    origin_request_policy_id = data.aws_cloudfront_origin_request_policy.forward_without_host.id
-    compress                 = true
+    path_pattern               = "/api/*"
+    allowed_methods            = ["GET", "HEAD", "OPTIONS", "PUT", "POST", "PATCH", "DELETE"]
+    cached_methods             = ["GET", "HEAD"]
+    target_origin_id           = "api-lambda"
+    viewer_protocol_policy     = "redirect-to-https"
+    response_headers_policy_id = aws_cloudfront_response_headers_policy.security.id
+    cache_policy_id            = data.aws_cloudfront_cache_policy.disabled.id
+    origin_request_policy_id   = data.aws_cloudfront_origin_request_policy.forward_without_host.id
+    compress                   = true
     function_association {
       event_type   = "viewer-request"
       function_arn = aws_cloudfront_function.site_routes.arn
