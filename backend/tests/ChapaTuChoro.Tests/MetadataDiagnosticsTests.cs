@@ -12,12 +12,14 @@ public sealed class MetadataDiagnosticsTests
     public async Task MeasuresCompletedStagesAndIdentifiesFailedStageWithoutLoggingSourceDetails()
     {
         var schema = "ctc_metadata_" + Guid.NewGuid().ToString("N");
-        await using var admin = new NpgsqlConnection(Environment.GetEnvironmentVariable("CTC_TEST_CONNECTIONSTRING"));
+        var connectionString = Environment.GetEnvironmentVariable("CTC_TEST_CONNECTIONSTRING")!;
+        await using var admin = new NpgsqlConnection(connectionString);
         await admin.OpenAsync();
         await new NpgsqlCommand($"CREATE SCHEMA {schema}", admin).ExecuteNonQueryAsync();
         try
         {
-            var cs = new NpgsqlConnectionStringBuilder(admin.ConnectionString) { SearchPath = schema };
+            // An opened connection hides its password; retain the original test configuration.
+            var cs = new NpgsqlConnectionStringBuilder(connectionString) { SearchPath = schema };
             await using var source = new NpgsqlDataSourceBuilder(cs.ConnectionString).UseNetTopologySuite().Build();
             await using (var connection = await source.OpenConnectionAsync())
                 await new NpgsqlCommand("""
