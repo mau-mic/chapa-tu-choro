@@ -153,8 +153,9 @@ resource "aws_lambda_function" "api" {
   }
   environment {
     variables = {
-      ASPNETCORE_ENVIRONMENT     = "Production"
-      Database__SsmParameterName = var.database_ssm_parameter_name
+      ASPNETCORE_ENVIRONMENT                = "Production"
+      Database__SsmParameterName            = var.database_ssm_parameter_name
+      ReverseProxy__UseVerifiedEdgeClientIp = tostring(var.enable_cloudflare_proxy)
     }
   }
   depends_on = [aws_iam_role_policy_attachment.api_basic_logs, aws_cloudwatch_log_group.api]

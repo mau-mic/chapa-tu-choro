@@ -179,5 +179,53 @@ After an authorized deployment, inspect actual response headers on `/`,
 Also check redirects and unknown paths: responses synthesized by edge functions
 or CloudFront errors must be checked separately from origin responses. This
 change does not claim those edge-generated responses receive the same headers.
-Do not remove ACM validation DNS records. Cloudflare origin protection, alerts and
-budget configuration remain separate prelaunch tasks.
+Do not remove ACM validation DNS records. Cloudflare origin protection is covered in the proxy section below. Alerts and
+budget configuration are deferred by the MVP scope decision.
+
+## Cloudflare proxy and protected origin
+
+Do this **before enabling automatic deployment**, and keep alerts deferred for MVP.
+The same viewer-request function guards static and API traffic, overwrites the
+verified client header, strips the private proof and rejects unknown hosts. Lambda
+URL remains IAM-only behind OAC. ASP.NET only enables verified-IP handling when
+Terraform enables the edge gate. Missing/malformed verified IPs return 400 before
+rate limiting; local development ignores that header. Rate limits remain per
+Lambda instance, not globally synchronized across all instances.
+
+1. Generate a random base64url token locally (at least 32 random bytes, 43–128
+   characters). Do not share it in chat, commits, screenshots or log output.
+2. In HCP set **Terraform variable** `cloudflare_origin_token` as **Sensitive**,
+   HCL off. Set `enable_cloudflare_proxy=true` with **HCL on** and keep the domain
+   and issued certificate variables configured.
+3. In Cloudflare create a Request Header Transform Rule for exactly
+   `chapatuchoro.com` and `www.chapatuchoro.com`. **Set static**, not Add:
+   `X-Ctc-Origin-Token` to the same token, overwriting incoming values. Restrict
+   dashboard/rule visibility. Keep Pseudo IPv4 off (or Add Header, not Overwrite
+   Headers), keep CF-Connecting-IP enabled and do not override it in Workers.
+4. The token is necessarily present in the deployed edge function and Terraform
+   state. Sensitive hides ordinary UI/plan output but does not encrypt it from
+   authorized state/function readers. Restrict those permissions. Rotate both
+   sides together during a maintenance window; never put it in GitHub build vars.
+5. Set GitHub SITE_URL to `https://chapatuchoro.com`, keep SEO_NOINDEX=true, use
+   Cloudflare **Full (strict)** and verify its edge certificate is active. When
+   CloudFront exists, point apex/www CNAMEs to its hostname with **Proxied** on.
+   Keep ACM validation CNAMEs DNS-only. Preserve mail records.
+6. Add a cache bypass rule for `/api` and `/api/*`; avoid Cache Everything for
+   HTML. Static hashed assets may cache. CloudFront invalidation does not purge
+   Cloudflare: if unversioned icons change, purge their Cloudflare URLs separately.
+7. The publishing job now checks SITE_URL, not the blocked CloudFront origin.
+   On initial provisioning the domain cannot be connected until the distribution
+   exists. The first health check may fail while DNS is being connected. Complete
+   DNS, verify it, then rerun the reviewed deployment. Do not disable the gate.
+8. Verify domain/API requests succeed through Cloudflare; requests directly to
+   the CloudFront hostname (also with the public Host but without the private
+   proof) must return 403. Check both desktop/mobile map interactions, 429 behavior
+   and real viewer IP separation. Do not test by putting the token in curl logs.
+
+Cloudflare proxied traffic receives its configured protections; this shared-proof
+gate prevents routine origin bypass, not a leaked-token attack. A forged proof
+must never be accepted from clients at Cloudflare: use Set to overwrite it.
+API JSON remains public; this is neither end-user authentication nor a guarantee
+that automated clients cannot use the public website. No alert resources or paid
+AWS WAF are introduced by this change. No AWS/Cloudflare state was changed by the
+implementation.

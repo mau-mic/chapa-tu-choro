@@ -20,3 +20,9 @@ printf 'synthetic mock-only artifact' > "$BUILD/dist/ingestion.zip"
 printf 'function handler(event) { return event.request; }' > "$BUILD/frontend/dist/cloudfront-router.js"
 terraform -chdir="$BUILD/infra/terraform" init -backend=false -input=false
 terraform -chdir="$BUILD/infra/terraform" test -filter=tests/security_headers.tftest.hcl
+# This is a fixed public test fixture, never the HCP origin token.
+printf 'nonsensitive(jsonencode(local.site_router_code))\n' | terraform -chdir="$BUILD/infra/terraform" console \
+  -var=enable_cloudflare_proxy=true -var=site_domain=chapatuchoro.com \
+  -var=cloudflare_origin_token=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \
+  > "$BUILD/router.json"
+node "$ROOT/scripts/tests/cloudflare-edge.cjs" "$BUILD/router.json"

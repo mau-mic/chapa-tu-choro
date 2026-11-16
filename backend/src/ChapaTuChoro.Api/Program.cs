@@ -68,6 +68,7 @@ app.UseExceptionHandler();
 app.UseStatusCodePages();
 app.UseSerilogRequestLogging();
 app.UseForwardedHeaders();
+app.UseMiddleware<VerifiedEdgeClientIpMiddleware>();
 app.UseRouting();
 app.UseCors(FrontendCors.PolicyName);
 if (app.Environment.IsDevelopment())
