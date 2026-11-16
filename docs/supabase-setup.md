@@ -14,7 +14,7 @@ In your Supabase project:
 - Keep **automatic RLS** disabled; migrations explicitly enable RLS and define policies on application tables. This creation-time option is different from enabling RLS through our SQL. An automatic trigger that changes only `public` tables can interfere with baseline adoption, which compares them with a temporary verification schema.
 - Confirm PostGIS is installed in `extensions`.
 - Under **Database → Settings → SSL Configuration**, enable SSL enforcement and download the server root certificate. Save it locally as `/tmp/ctc-supabase-ca.crt` for the commands below. Re-download it if your project changes its CA. The certificate is public; it is not a password.
-- Under **Connect**, copy the actual **Session pooler** parameters for operator commands. Use transaction mode for Lambda runtime traffic later.
+- Under **Connect**, copy the actual **Session pooler** parameters for operator commands. The production API also uses Session pooler; Python ingestion retains transaction mode as described below.
 
 The commands below use the project established in this setup session: `xjjivrlwlizkskbhomnc`, pooler `aws-0-us-east-1.pooler.supabase.com`, database `postgres`, region `us-east-1`. Confirm these against your portal. Do not use these values for a different environment. Pooler usernames include the project reference; direct-connection usernames do not. Operator commands below use session-pooler port `5432`, which is reachable over IPv4.
 
@@ -371,10 +371,10 @@ In the AWS console, open **Systems Manager → Parameter Store → Create parame
 
 These are **templates**, not ready-to-paste credentials. Npgsql values with delimiter characters need connection-string quoting; a double quote inside a double-quoted value is doubled. In a libpq single-quoted value, backslashes and single quotes must be escaped with backslashes. URI passwords require percent encoding instead. Do not paste an unescaped password into any template.
 
-API SecureString (Npgsql format, transaction pooler):
+API SecureString (Npgsql format, **Session pooler**, port `5432`):
 
 ```text
-Host=aws-0-us-east-1.pooler.supabase.com;Port=6543;Database=postgres;Username=ctc_api.xjjivrlwlizkskbhomnc;Password="<API_PASSWORD>";SSL Mode=VerifyFull;Root Certificate=/var/task/certs/supabase-ca.crt;Search Path=public,extensions
+Host=aws-0-us-east-1.pooler.supabase.com;Port=5432;Database=postgres;Username=ctc_api.xjjivrlwlizkskbhomnc;Password="<API_PASSWORD>";SSL Mode=VerifyFull;Root Certificate=/var/task/certs/supabase-ca.crt;Search Path=public,extensions
 ```
 
 Ingestion SecureString (libpq format, transaction pooler):
@@ -383,7 +383,9 @@ Ingestion SecureString (libpq format, transaction pooler):
 host=aws-0-us-east-1.pooler.supabase.com port=6543 dbname=postgres user=ctc_ingestion.xjjivrlwlizkskbhomnc password='<INGESTION_PASSWORD>' sslmode=verify-full sslrootcert=/var/task/certs/supabase-ca.crt
 ```
 
-3. **Use transaction port `6543` for Lambda runtime traffic**, copied/confirmed from the portal. Both clients already disable automatic prepared statements. Verify search path, spatial types, staging and role access through that actual pooler before release; the session-port checks above do not prove transaction-pooler behavior. Keep migrations/backups on direct or session connections. Never run migrations during API/Lambda startup.
+3. **Use Session pooler port `5432` for the production API.** Copy the actual host/port from **Connect → Session pooler**, retaining the restricted `ctc_api.<project-ref>` username, `VerifyFull`, CA and search path. Python ingestion remains on transaction port `6543`; this incident did not validate or change its runtime connection. Both clients continue to disable automatic prepared statements. Keep migrations/backups on direct or session connections. Never run migrations during API/Lambda startup.
+
+   This API-specific choice follows the 2026-11-16 timeout investigation: after switching the API connection and renewing Lambda environments, supplied CloudWatch logs showed metadata, categories and explorer returning 200; metadata completed all stages, including the previously stalled count. The experiment changed both pooler mode and environments, so it does not establish a provider defect or isolate either change as the sole cause. Session connections consume backend capacity for the connection lifetime; retain the small API client pool (maximum 2 per execution environment) and monitor total connections as Lambda concurrency grows. See [Supabase connection guidance](https://supabase.com/docs/guides/database/connecting-to-postgres).
 4. **Pin `sidpol_source_url`** in the deployment configuration to the reviewed CSV used in step 6. Empty discovery currently fails on the nine-link catalogue. Keep `enable_ingestion_schedule = false` until a manual invocation succeeds.
 5. **Review and deploy the built artifacts through the release procedure.** The API retrieves its secret at process startup; recycle/redeploy warm environments after credential rotation. Python retrieves its secret for each new connection. Remove any unintended direct `DATABASE_URL` override, which takes precedence over SSM in Python. The current Lambdas have no customer VPC attachment; adding one requires an egress design for government sources, Supabase and AWS APIs.
 6. **Verify through CloudFront:** readiness plus real statistics, map, population and concentration endpoints; TLS failures, pool usage, latency and buffered response sizes; one manually invoked ETL with source provenance. Configure failure notifications and backup/recovery, then enable scheduling. The default scheduled ETL only refreshes statistics/boundaries. Concentration and population are separate jobs; no automatic population download/scheduled adapter is implemented.

@@ -130,3 +130,26 @@ Instrumentation does not fix or increase the Lambda timeout, change queries,
 connection-pool limits, CORS, data or API response contracts. Use the observed
 stage to choose the next correction. Do not expose diagnostic logs through a
 public API endpoint or enable sensitive-data logging to inspect passwords.
+
+### Refresh API database configuration
+
+Production API: **Supabase Session pooler, port 5432**. Python ingestion retains
+transaction pooler, port 6543. Connection templates and TLS requirements are in
+[Supabase setup](supabase-setup.md).
+
+After updating `/chapa-tu-choro/prod/database-url` in SSM, renew the API Lambda
+execution environments: the API loads this secret at process startup. Updating
+SSM alone does not refresh warm environments. An environment-variable change
+(for example a non-secret `CONFIG_REFRESH` marker) causes new environments to
+initialize; preserve all existing variables and wait for the configuration update
+to complete before testing. A temporary console marker creates Terraform drift;
+remove it through the next reviewed Terraform apply. Never put credentials in
+the marker. See [AWS environment update behavior](https://aws.amazon.com/blogs/mt/introducing-aws-appconfig-lambda-extension-deploying-application-configuration-serverless/).
+
+Verify `/api/metadata`, `/api/categories` and `/api/explorer`, then map, trends,
+population and concentration filters. The supplied 2026-11-16 logs verified 200
+responses for the first three endpoints only; they do not prove every endpoint
+or ingestion works through the new configuration. In `pg_stat_activity`, `idle`
+with `ClientRead` means the backend is waiting for another client command;
+`now() - query_start` keeps increasing after completion and is not the duration
+of an active query unless `state = 'active'`.

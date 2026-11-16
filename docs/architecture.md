@@ -65,3 +65,5 @@ Static statistical HTML is a separate read-only export/build and may lag the liv
 Terraform declares private S3 + CloudFront for the site, a .NET Lambda Function URL protected by CloudFront OAC, Python ingestion Lambda, EventBridge Scheduler, CloudWatch logs and externally managed Supabase Postgres/PostGIS. No VPC/NAT, load balancer or always-on application server is required by the current design.
 
 This is a configuration target, not a claim that production exists. [AWS review](aws-review.md) records costs, limits and launch blockers; [deployment](deployment.md) describes the release procedure. [ADR 0001](adrs/0001-mvp-architecture.md) and [ADR 0002](adrs/0002-mvp-data-use-with-unresolved-authorization.md) retain the architecture and source-use decisions.
+
+The production API connects to Supabase through **Session pooler (port 5432)** with a restricted read role, verified TLS and a maximum client pool of 2 connections per Lambda execution environment. Python ingestion retains Transaction pooler (6543); operators use direct/session connections. See the [connection templates and operational rationale](supabase-setup.md) in the Supabase runbook.
